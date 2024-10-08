@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TechWorld</title>
+</head>
+<body>
+    <!-- Header -->
+    <nav id="navbar" class="sticky top-0 left-0 right-0 z-50 px-4 py-4 flex justify-between items-center bg-gray-100 transition duration-300 ease-linear">
+        <!-- Logo -->
+        <div class="flex justify-center items-center gap-2">
+            <a class="text-3xl font-bold leading-none" href="#">
+                <img src="./styles/image/techworld-high-resolution-logo-grayscale-transparent.png" alt="TechWorld" class="h-10">
+            </a>
+            <span class="hidden text-2xl font-semibold lg:block">TechWorld</span>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="lg:hidden flex items-center">
+            <button class="navbar-burger flex items-center text-blue-600 p-3">
+                <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <title>Mobile menu</title>
+                    <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- List -->
+        <div class="hidden lg:flex lg:items-center lg:justify-center flex-grow">
+            <ul class="flex lg:items-center lg:space-x-6">
+                <li><a class="text-xl text-blue-600 font-bold" href="#">Trang chủ</a></li>
+                <li><a class="text-xl text-gray-400 hover:text-black duration-500 ease-linear" href="#">Sản phẩm</a></li>
+                <li><a class="text-xl text-gray-400 hover:text-black duration-500 ease-linear" href="#">Liên hệ</a></li>
+                <li><a class="text-xl text-gray-400 hover:text-black duration-500 ease-linear" href="#">Bảo hành</a></li>
+            </ul>
+        </div>
+        <!-- Search input and Signup, Signin -->
+        <div class="hidden lg:flex lg:items-center">
+            <input type="text" placeholder="Tìm kiếm" class="px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <a class="lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-300" href="#">Sign In</a>
+            <a class="py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-300" href="#">Sign up</a>
+        </div>
+    </nav>
+    
+    <!-- Banner -->
+    <div class="container mx-auto mt-5">
+        <div id="indicators-carousel" class="relative w-full" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div class="relative overflow-hidden rounded-lg md:h-[31rem]">
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+                    <img src="https://cdn2.fptshop.com.vn/unsafe/2023_11_14_638356007024019763_anime-ai-la-gi-bat-mi-cach-tao-anime-bang-ai-cuc-don-gian.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 2 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:quality(100)/2023_12_11_638378641466845781_avatar-anime.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 3 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="https://diaocdangmuasaigon.com/wp-content/uploads/2024/10/anime-cute-1IonYuD.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+                <!-- Item 4 -->
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="https://diaocdangmuasaigon.com/wp-content/uploads/2024/10/anime-cute-1IonYuD.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="nline-flex items-center justify-center w-10 h-10 rounded-full group-hover:scale-125 duration-300 ease-in">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:scale-125 duration-300 ease-in">
+                    <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Section -->
+    <div class="container mx-auto mt-5 max-w-[1000px]">
+        <ul class="grid grid-cols-4 gap-4">
+            <li class="bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg p-4 flex items-center justify-center gap-2  hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 will-change-transform ease-in-out">
+                <img src="./styles/image/laptop.png" alt="LaptopIcon" class="h-12">
+                <div class="text-center font-medium transform-gpu">Laptop</div>
+            </li>
+            <li class="bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg p-4 flex items-center justify-center hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 will-change-transform ease-in-out">
+                <img src="./styles/image/gaming.png" alt="GamingIcon">
+                <div class="text-center font-medium transform-gpu">Laptop Gaming</div>
+            </li>
+            <li class="bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg p-4 flex items-center justify-center gap-2 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 will-change-transform ease-in-out">
+                <img src="./styles/image/keyboard-and-mouse.png" alt="Keyboard&MouseIcon">
+                <div class="text-center font-medium transform-gpu">Bàn Phím & Chuột</div>
+            </li>
+            <li class="bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg p-4 flex items-center justify-center gap-4 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 will-change-transform ease-in-out">
+                <img src="./styles/image/monitor.png" alt="HeadphoneIcon" class="h-12">
+                <div class="text-center font-medium transform-gpu">Màn Hình</div>
+            </li>
+            <li class="bg-gradient-to-r from-violet-500 to-blue-500 h-[96px] rounded-lg p-4 flex items-center justify-center gap-4 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 will-change-transform ease-in-out">
+                <img src="./styles/image/loudspeaker.png" alt="LoundSpeakerIcon" class="h-12">
+                <div class="text-center font-medium transform-gpu">Loa</div>
+            </li>
+            <li class="bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg p-4 flex items-center justify-center gap-4 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 will-change-transform ease-in-out">
+                <img src="./styles/image/chair.png" alt="Table&ChairIcon" class="h-12">
+                <div class="text-center font-medium transform-gpu">Ghế & Bàn</div>
+            </li>
+            <li class="bg-gradient-to-r from-violet-500 to-blue-500 rounded-lg p-4 flex items-center justify-center gap-4 hover:shadow-lg transition-all duration-300 cursor-pointer hover:scale-105 will-change-transform ease-in-out">
+                <img src="./styles/image/motherboard.png" alt="Table&ChairIcon" class="h-12">
+                <div class="text-center font-medium transform-gpu">Linh Kiện Máy Tính</div>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
