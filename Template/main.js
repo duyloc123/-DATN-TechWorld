@@ -142,3 +142,6 @@ prevMonitor.addEventListener("click", () => {
     goPrevMonitor();
     if(defaultTransformMonitor === 0 ) return prevMonitor.classList.add("invisible");
 });
+window.addEventListener('load', function () {
+    window.HSSelectCustom.init();
+  });
