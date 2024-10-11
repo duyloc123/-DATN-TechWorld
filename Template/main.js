@@ -144,4 +144,123 @@ prevMonitor.addEventListener("click", () => {
 });
 window.addEventListener('load', function () {
     window.HSSelectCustom.init();
-  });
+});
+
+// Show Password
+const showPasswordCheckBox = document.getElementById('showPassword');
+const hiddenPassword = document.getElementById('remember');
+const passwordInput = document.getElementById('password');
+showPasswordCheckBox.addEventListener('change',(e) => {
+    passwordInput.type = e.target.checked ? 'text' : 'password';
+    hiddenPassword.textContent = e.target.checked ? 'Ẩn mật khẩu' : 'Hiện mật khẩu';
+})
+const iconPassword = document.getElementById('iconPassword');
+const passwordResign = document.getElementById('passwordFirst');
+let isPassword = false;
+iconPassword.addEventListener('click', () => {
+    isPassword = !isPassword;
+    passwordResign.type = isPassword ? 'text' : 'password';
+})
+// signIn Modal
+const signInModal = document.getElementById('authentication-modal');
+const openModalButtons = document.querySelectorAll('[data-modal-target="authentication-modal"]');
+const closeModalButtons = document.querySelectorAll('[data-modal-hide="authentication-modal"]');
+
+// Hàm mở modal
+const openModal = () => {
+    signInModal.classList.remove('hidden');
+    signInModal.classList.add('flex');
+    
+    // Thêm timeout để animation hoạt động
+    setTimeout(() => {
+        signInModal.classList.add('translate-y-0');
+        signInModal.classList.remove('-translate-y-full');
+    }, 10);
+};
+
+// Hàm đóng modal
+const closeModal = () => {
+    signInModal.classList.add('-translate-y-full');
+    signInModal.classList.remove('translate-y-0');
+    
+    setTimeout(() => {
+        signInModal.classList.add('hidden');
+        signInModal.classList.remove('flex');
+    }, 300);
+};
+
+// Thêm event listeners cho tất cả các nút mở modal
+openModalButtons.forEach(button => {
+    button.addEventListener('click', openModal);
+});
+
+// Thêm event listeners cho tất cả các nút đóng modal
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', closeModal);
+});
+
+// Đóng modal khi click ra ngoài
+signInModal.addEventListener('click', (e) => {
+    if (e.target === signInModal) {
+        closeModal();
+    }
+});
+
+// Đóng modal khi nhấn ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !signInModal.classList.contains('hidden')) {
+        closeModal();
+    }
+});
+
+// Resign Modal
+const resignModal = document.getElementById('signup-modal');
+const openModalButtonsResign = document.querySelectorAll('[data-modal-target="signup-modal"]');
+const closeModalButtonsResign = document.querySelectorAll('[data-modal-hide="signup-modal"]');
+
+// Hàm mở modal
+const openModalResign = () => {
+    resignModal.classList.remove('hidden');
+    resignModal.classList.add('flex');
+    
+    // Thêm timeout để animation hoạt động
+    setTimeout(() => {
+        resignModal.classList.add('translate-y-0');
+        resignModal.classList.remove('-translate-y-full');
+    }, 10);
+};
+
+// Hàm đóng modal
+const closeModalResign = () => {
+    resignModal.classList.add('-translate-y-full');
+    resignModal.classList.remove('translate-y-0');
+    
+    setTimeout(() => {
+        resignModal.classList.add('hidden');
+        resignModal.classList.remove('flex');
+    }, 300);
+};
+
+// Thêm event listeners cho tất cả các nút mở modal
+openModalButtonsResign.forEach(button => {
+    button.addEventListener('click', openModalResign);
+});
+
+// Thêm event listeners cho tất cả các nút đóng modal
+closeModalButtonsResign.forEach(button => {
+    button.addEventListener('click', closeModalResign);
+});
+
+// Đóng modal khi click ra ngoài
+resignModal.addEventListener('click', (e) => {
+    if (e.target === resignModal) {
+        closeModalResign();
+    }
+});
+
+// Đóng modal khi nhấn ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !resignModal.classList.contains('hidden')) {
+        closeModalResign();
+    }
+});

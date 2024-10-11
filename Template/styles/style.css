@@ -39,16 +39,30 @@ body {
 }
 
 @keyframes slideUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
-  
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-slideUp {
-    animation: slideUp 0.3s ease-out;
+  animation: slideUp 0.3s ease-out;
+}
+/* Gradient */
+.gradient-1 {
+  background: linear-gradient(120deg, #e0f4ff, #87ceeb);
+}
+.gradient-2 {
+  background: linear-gradient(120deg, #e0f4ff, rgba(244, 107, 107, 0.788));
+}
+.gradient-3 {
+  background: linear-gradient(120deg, #e0f4ff, rgb(102, 238, 102));
+}
+/* Rotate img */
+.flip-y {
+  transform: rotateY(180deg);
 }
