@@ -1,0 +1,100 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.hover-line {
+    position: relative;
+}
+
+    .hover-line::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: currentColor;
+        bottom: -4px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: width 0.3s ease;
+    }
+
+    .hover-line:hover::after {
+        width: 100%;
+    }
+
+.delivery-animation {
+    transition: transform 0.3s ease;
+}
+
+.hover-trigger:hover .delivery-animation {
+    animation: deliveryMove 2s ease infinite;
+}
+
+@keyframes deliveryMove {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(50px);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideUp {
+    animation: slideUp 0.3s ease-out;
+}
+/* Gradient */
+.gradient-1 {
+    background: linear-gradient(120deg, #e0f4ff, #87ceeb);
+}
+
+.gradient-2 {
+    background: linear-gradient(120deg, #e0f4ff, rgba(244, 107, 107, 0.788));
+}
+
+.gradient-3 {
+    background: linear-gradient(120deg, #e0f4ff, rgb(102, 238, 102));
+}
+/* Rotate img */
+.flip-y {
+    transform: rotateY(180deg);
+}
+
+.transition-transform {
+    transition: transform 0.3s ease-in-out;
+}
+
+/*Drop menu sort product*/
+.dropdown-enter {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.dropdown-enter-active {
+    transition: opacity 300ms, transform 300ms;
+}
+
+.dropdown-exit {
+    opacity: 0;
+    transform: translateY(10px) scale(0.95);
+}
+
+.dropdown-exit-active {
+    transition: opacity 300ms, transform 300ms;
+}

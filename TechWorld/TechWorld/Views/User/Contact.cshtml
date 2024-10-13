@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!-- Breadcums -->
+<div class="mt-10">
+    <div class="container mx-auto">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                <li class="inline-flex items-center">
+                    <a href="/User/Index"
+                       class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 duration-200 ease-linear">
+                        <svg class="w-3 h-3 me-2.5"
+                             aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg"
+                             fill="currentColor"
+                             viewBox="0 0 20 20">
+                            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+                        </svg>
+                        Trang chủ
+                    </a>
+                </li>
+                <li aria-current="page">
+                    <div class="flex items-center">
+                        <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+                             aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 6 10">
+                            <path stroke="currentColor"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="m1 9 4-4-4-4" />
+                        </svg>
+                        <span class="ms-1 text-sm font-medium text-blue-700 md:ms-2">Liên hệ</span>
+                    </div>
+                </li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- Ads -->
+<div class="mt-10 w-full">
+    <div class="max-w-[1700px] mx-auto flex items-center">
+        <div class="gradient-1 flex flex-col justify-center p-12 space-y-6 w-1/2 h-[300px] sm:space-y-4">
+            <h2 class="text-3xl font-bold text-gray-800">
+                Thông tin hướng dẫn
+                <span class="text-blue-500">Thanh toán</span>
+            </h2>
+            <span class="text-gray-700 text-lg max-w-md">
+                Trang nội dung mang đến cho khách hàng thông tin thanh toán tại TechWorld.
+            </span>
+            <a href="#transferMethod" class="group relative inline-block overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 w-fit">
+                <span class="relative z-10">Tìm hiểu ngay</span>
+                <span class="absolute inset-0 bg-white opacity-20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+            </a>
+        </div>
+        <div class="w-1/2">
+            <img src="~/styles/image/cong-thanh-toan-thuong-mai-dien-tu-1.png"
+                 alt="Payment illustration"
+                 class="h-[300px] w-full object-cover" />
+        </div>
+    </div>
+</div>
+
+<!-- Payment Method -->
+<div class="mt-10">
+    <div class="container mx-auto max-w-7xl h-80 bg-[#EDF6FF] rounded-xl scroll-mt-32" id="transferMethod">
+        <div class="flex gap-4 items-center h-full px-4">
+            <!-- Items 1 -->
+            <a href="#paypalPayment" class="bg-white rounded-xl shadow-xl h-[230px] cursor-pointer hover:scale-105 duration-300 ease-linear transform-gpu mx-4 sm:h-[240px]">
+                <div class="flex justify-between items-center gap-4 mt-4 mb-2">
+                    <h1 class="text-2xl font-bold ml-4">Thanh toán <br> <span>PayPal</span></h1>
+                    <img src="~/styles/image/credit-card.png" alt="creditCard" class="mr-4">
+                </div>
+                <hr class="w-8 border-4 ml-4 border-red-500">
+                <p class="text-lg mx-4 mt-2 text-gray-400">Quý khách hàng có thể chuyển khoản qua tài khoản Paypal của TechWorld.</p>
+                <p class="block text-blue-500 mt-4 ml-4">Xem chi tiết >>></p>
+            </a>
+            <!-- Items 2 -->
+            <a href="#paymentDelivery" class="bg-white rounded-xl shadow-xl h-[230px] cursor-pointer hover:scale-105 duration-300 ease-linear transform-gpu mx-4 sm:h-[240px]">
+                <div class="flex justify-between items-center gap-4 mt-4 mb-2">
+                    <h1 class="text-2xl font-bold ml-4">Thanh toán <br> <span>khi nhận hàng</span></h1>
+                    <img src="~/styles/image/cash-payment.png" alt="deliveryPayment" class="mr-4">
+                </div>
+                <hr class="w-8 border-4 ml-4 border-red-500">
+                <p class="text-lg mx-4 mt-2 text-gray-400">Quý khách hàng có thể thanh toán cho nhân viên giao nhận hoặc đơn vị vận chuyển.</p>
+                <p class="block text-blue-500 mt-4 ml-4">Xem chi tiết >>></p>
+            </a>
+            <!-- Items 3 -->
+            <a href="#policy" class="bg-white rounded-xl shadow-xl h-[230px] cursor-pointer hover:scale-105 duration-300 ease-linear transform-gpu mx-4 sm:h-[240px]">
+                <div class="flex justify-between items-center gap-4 mt-4 mb-2">
+                    <h1 class="text-2xl font-bold ml-4">Chính sách <br> <span>đổi trả</span></h1>
+                    <img src="~/styles/image/quality.png" alt="qualityContact" class="mr-4">
+                </div>
+                <hr class="w-8 border-4 ml-4 border-red-500">
+                <p class="text-lg mx-4 mt-2 text-gray-400">Quý khách hàng có thể xem qua chính sách bảo hành đổi trả tại TechWorld.</p>
+                <p class="block text-blue-500 mt-4 ml-4">Xem chi tiết >>></p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Transfer payment -->
+<div class="mt-10 w-full">
+    <div class="max-w-[1700px] mx-auto flex items-center scroll-mt-32" id="paypalPayment">
+        <div class="gradient-1 flex flex-col justify-center p-12 space-y-6 w-1/2 h-[400px]">
+            <h2 class="text-3xl font-bold text-gray-800">
+                PayPal paymenst <br>
+                <span class="text-blue-500">Thanh toán PayPal</span>
+            </h2>
+            <span class="text-gray-500 text-lg max-w-md">
+                Quý khách có thể thanh toán đơn hàng bằng hình thức Paypal nếu quý khách chọn thanh toán Paypal sau đó quét mã thanh toán và thanh toán đơn hàng quý khách sẽ thành công.
+            </span>
+            <a href="#" class="group relative inline-block overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 w-fit">
+                <span class="relative z-10">Thanh toán thành công</span>
+                <span class="absolute inset-0 bg-white opacity-20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+            </a>
+        </div>
+        <div class="w-1/2">
+            <img src="~/styles/image/paypal.jpg"
+                 alt="Payment illustration"
+                 class="h-[400px] w-full object-fit" />
+        </div>
+    </div>
+</div>
+
+<!-- Payment on delivery -->
+<div class="mt-20">
+    <div class="container mx-auto max-w-7xl scroll-mt-32" id="paymentDelivery">
+        <h2 class="text-2xl text-blue-500 sm:ml-2">Payment on delivery</h2>
+        <h3 class="text-3xl text-[#2D4379] font-bold mt-2 sm:ml-2">Thanh toán khi nhận hàng.</h3>
+        <div class="max-w-7xl h-64 bg-[#EDF6FF] rounded-xl mt-4 relative">
+            <p class="max-w-2xl pt-10 p-6 text-lg text-gray-700 text-semibold">Khi quý khách hàng nhận hàng sẽ thanh toán tổng giá trị đơn hàng hoặc phần còn lại (sau khi khách hàng đã đặt cọc trước) bằng tiền mặt hoặc PayPal (chỉ áp dụng đơn hàng ở nội thành Tp. Hồ Chí Minh)</p>
+            <p class="max-w-2xl p-4 text-lg text-gray-700 text-semibold">Quý khách hàng sẽ thanh toán tại địa điểm nhận hàng cho nhân viên giao nhận của TechWorld hoặc đơn vị vận chuyển mà TechWorld sử dụng.</p>
+            <img src="~/styles/image/2023_11_3_638346181356369639_shipper.jpg" alt="" class="w-80 h-80 absolute top-[-30px] right-40 rounded-xl flip-y sm:translate-x-[170px]">
+        </div>
+    </div>
+</div>
+
+<!-- Policy  -->
+<div class="mt-40 w-full">
+    <div class="max-w-[1700px] mx-auto flex items-center scroll-mt-32" id="policy">
+        <!-- Item 1 -->
+        <div class="gradient-2 flex flex-col justify-center p-12 space-y-6 w-1/2 h-[300px] rounded-md sm:space-y-2">
+            <h2 class="text-3xl font-bold text-gray-800">
+                Chính sách <br>
+                <span class="text-red-500">bảo mật</span>
+            </h2>
+            <span class="text-gray-500 text-lg max-w-md">
+                Quý khách khi mua hàng tại cửa hàng sẽ có thông tin khách hàng sẽ được bảo mật theo chính sách bảo mật của TechWorld.
+            </span>
+            <a href="#" class="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 w-fit">
+                Xem chi tiết
+            </a>
+        </div>
+        <!-- Item 2 -->
+        <div class="gradient-3 flex flex-col justify-center p-12 space-y-6 w-1/2 h-[300px] rounded-md sm:space-y-2">
+            <h2 class="text-3xl font-bold text-gray-800">
+                Điều khoản <br>
+                <span class="text-green-500">dịch vụ</span>
+            </h2>
+            <span class="text-gray-500 text-lg max-w-md">
+                Khi quý khách truy cập vào trang web của chúng tôi có nghĩa quý khách đồng ý với các điều khoản bên TechWorld.
+            </span>
+            <a href="#" class="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 w-fit">
+                Xem chi tiết
+            </a>
+        </div>
+       <!-- Item 3-->
+        <div class="gradient-1 flex flex-col justify-center p-12 space-y-6 w-1/2 h-[300px] rounded-md sm:space-y-2">
+            <h2 class="text-3xl font-bold text-gray-800">
+                Chính sách <br>
+                <span class="text-blue-500">giao hàng</span>
+            </h2>
+            <span class="text-gray-500 text-lg max-w-md">
+                Khi quý khách tham gia vào trang web của chúng tôi có nghĩa là quý khách đồng ý với các điều khoản của chính sách giao hàng
+            </span>
+            <a href="#" class="inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-6 py-3 rounded-lg hover:scale-105 transition duration-300 w-fit">
+                Xem chi tiết
+            </a>
+        </div>
+    </div>
+</div>
+
