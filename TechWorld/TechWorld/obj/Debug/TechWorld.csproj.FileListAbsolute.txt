@@ -77,3 +77,7 @@ D:\DATN\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.csproj.CoreCompi
 D:\DATN\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.csproj.Up2Date
 D:\DATN\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.dll
 D:\DATN\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.pdb
+D:\DATN\-DATN-TechWorld\TechWorld\TechWorld\bin\EntityFramework.dll
+D:\DATN\-DATN-TechWorld\TechWorld\TechWorld\bin\EntityFramework.SqlServer.dll
+D:\DATN\-DATN-TechWorld\TechWorld\TechWorld\bin\EntityFramework.xml
+D:\DATN\-DATN-TechWorld\TechWorld\TechWorld\bin\EntityFramework.SqlServer.xml

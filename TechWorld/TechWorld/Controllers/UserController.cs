@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TechWorld.Models;
 
 namespace TechWorld.Controllers
 {
     public class UserController : Controller
     {
+        TechWorldEntities db = new TechWorldEntities();
         // GET: User
         public ActionResult Index()
         {
@@ -17,8 +19,9 @@ namespace TechWorld.Controllers
 
         public ActionResult Product()
         {
-            ViewBag.ActivePage = "Product"; // Đặt trang hiện tại là "Product"
-            return View();
+                ViewBag.ActivePage = "Product"; // Đặt trang hiện tại là "Product"
+                var sanPhams = db.SanPhams.ToList();
+                return View(sanPhams);
         }
 
         public ActionResult Contact()

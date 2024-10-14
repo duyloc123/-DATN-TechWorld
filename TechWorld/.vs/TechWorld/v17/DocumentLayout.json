@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\packages.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\productmobile\\iphonecategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\productmobile\\iphonecategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\user\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\user\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\productmobile\\iphonelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\productmobile\\iphonelist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|D:\\DATN\\-DATN-TechWorld\\TechWorld\\techworld\\views\\shared\\_layoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\shared\\_layoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\controllers\\productmobilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\controllers\\productmobilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "TechWorld\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "TechWorld\\App_Start\\RouteConfig.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T18:00:00.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "packages.config",
-              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\packages.config",
-              "RelativeDocumentMoniker": "TechWorld\\packages.config",
-              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\packages.config",
-              "RelativeToolTip": "TechWorld\\packages.config",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAABtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-10-13T08:35:27.487Z",
+              "Title": "IphoneCategory.cshtml",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\ProductMobile\\IphoneCategory.cshtml",
+              "RelativeDocumentMoniker": "TechWorld\\Views\\ProductMobile\\IphoneCategory.cshtml",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\ProductMobile\\IphoneCategory.cshtml",
+              "RelativeToolTip": "TechWorld\\Views\\ProductMobile\\IphoneCategory.cshtml",
+              "ViewState": "AQIAAG8AAAAAAAAAAAAAAB4AAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-14T17:53:44.914Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Product.cshtml",
-              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\User\\Product.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\User\\Product.cshtml",
-              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\User\\Product.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\User\\Product.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABYAAABZAAAA",
+              "Title": "IphoneList.cshtml",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\ProductMobile\\IphoneList.cshtml",
+              "RelativeDocumentMoniker": "TechWorld\\Views\\ProductMobile\\IphoneList.cshtml",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\ProductMobile\\IphoneList.cshtml",
+              "RelativeToolTip": "TechWorld\\Views\\ProductMobile\\IphoneList.cshtml",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACIAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-13T08:09:15.724Z",
+              "WhenOpened": "2024-10-14T17:47:39.893Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_LayoutUser.cshtml",
-              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Shared\\_LayoutUser.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\Shared\\_LayoutUser.cshtml",
-              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Shared\\_LayoutUser.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\Shared\\_LayoutUser.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-13T07:52:14.193Z",
+              "Title": "ProductMobileController.cs",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\ProductMobileController.cs",
+              "RelativeDocumentMoniker": "TechWorld\\Controllers\\ProductMobileController.cs",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\ProductMobileController.cs",
+              "RelativeToolTip": "TechWorld\\Controllers\\ProductMobileController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABsAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T17:45:50.458Z",
               "EditorCaption": ""
             }
           ]
