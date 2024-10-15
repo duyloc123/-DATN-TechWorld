@@ -127,6 +127,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\LaptopController.cs" />
     <Compile Include="Controllers\ProductMobileController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -206,6 +207,9 @@
     <Content Include="Styles\Image\headphones %281%29.png" />
     <Content Include="Styles\Image\headphones.png" />
     <Content Include="Styles\Image\hide.png" />
+    <Content Include="Styles\Image\icons8-dell-logo-48.png" />
+    <Content Include="Styles\Image\icons8-hp-logo-48.png" />
+    <Content Include="Styles\Image\icons8-lenovo-logo-48.png" />
     <Content Include="Styles\Image\iphone.png" />
     <Content Include="Styles\Image\keyboard-and-mouse %281%29.png" />
     <Content Include="Styles\Image\keyboard-and-mouse.png" />
@@ -259,10 +263,17 @@
     <Content Include="Views\User\Product.cshtml" />
     <Content Include="Views\User\Contact.cshtml" />
     <Content Include="Views\User\News.cshtml" />
-    <Content Include="Views\User\Test.cshtml" />
     <Content Include="Views\User\ProductIphone.cshtml" />
     <Content Include="Views\ProductMobile\IphoneList.cshtml" />
     <Content Include="Views\ProductMobile\IphoneCategory.cshtml" />
+    <Content Include="Views\ProductMobile\SearchIphone.cshtml" />
+    <Content Include="Views\ProductMobile\SortAsc.cshtml" />
+    <Content Include="Views\ProductMobile\SortDesc.cshtml" />
+    <Content Include="Views\Laptop\LaptopList.cshtml" />
+    <Content Include="Views\Laptop\LaptopCategory.cshtml" />
+    <Content Include="Views\Laptop\SearchLaptop.cshtml" />
+    <Content Include="Views\Laptop\SortAsc.cshtml" />
+    <Content Include="Views\Laptop\SortDesc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -18,6 +18,11 @@ namespace TechWorld
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "User", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+            name: "IphoneCategory",
+            url: "ProductMobile/IphoneCategory/{id}",
+            defaults: new { controller = "ProductMobile", action = "IphoneCategory", id = UrlParameter.Optional }
+            );
         }
     }
 }

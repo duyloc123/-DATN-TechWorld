@@ -542,6 +542,20 @@
                 }
             });
         });
+
+        // Search Input Iphone
+        document.addEventListener('DOMContentLoaded', function () {
+            var searchInput = document.getElementById('search');
+            var searchForm = document.getElementById('searchForm');
+            var timer;
+
+            searchInput.addEventListener('keyup', function () {
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    searchForm.submit();
+                }, 500); // Đợi 500ms sau khi người dùng ngừng gõ
+            });
+        });
     </script>
 
 </body>

@@ -3,38 +3,35 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Services.Description;
 using TechWorld.Models;
 
 namespace TechWorld.Controllers
 {
-    public class ProductMobileController : Controller
+    public class LaptopController : Controller
     {
         TechWorldEntities db = new TechWorldEntities();
-        // GET: ProductMobile
+        // GET: Laptop
         public ActionResult Index()
         {
-
             return View();
         }
 
-        public ActionResult IphoneList()
+        public ActionResult LaptopList()
         {
-            ViewBag.ActivePage = "Product";
-
-            var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Dien Thoai").ToList();
+            var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Laptop").ToList(); 
             return View(list);
         }
 
-        public ActionResult IphoneCategory(int? id, string sort) 
+        public ActionResult LaptopCategory(int? id)
         {
             ViewBag.CategoryId = id; // Lưu id category để sử dụng trong view
+            ViewBag.ActivePage = "Product";
 
             var products = db.SanPhams.Where(p => p.NhaCungCap.MaNCC == id).ToList();
             return View(products);
         }
 
-        public ActionResult SearchIphone(string Search)
+        public ActionResult SearchLaptop(string Search)
         {
             ViewBag.ActivePage = "Product";
 
@@ -47,9 +44,9 @@ namespace TechWorld.Controllers
 
             ViewBag.ActivePage = "Product";
             var ascMobile = (from item in db.SanPhams
-                             where item.LoaiHang.TenLoai == "Dien Thoai"
-                             orderby item.GiaTienDaKhuyenMai 
-                             ascending 
+                             where item.LoaiHang.TenLoai == "Laptop"
+                             orderby item.GiaTienDaKhuyenMai
+                             ascending
                              select item).ToList();
             return View(ascMobile);
         }
@@ -58,7 +55,7 @@ namespace TechWorld.Controllers
         {
             ViewBag.ActivePage = "Product";
             var descMobile = (from item in db.SanPhams
-                              where item.LoaiHang.TenLoai == "Dien Thoai"
+                              where item.LoaiHang.TenLoai == "Laptop"
                               orderby item.GiaTienDaKhuyenMai
                               descending
                               select item).ToList();

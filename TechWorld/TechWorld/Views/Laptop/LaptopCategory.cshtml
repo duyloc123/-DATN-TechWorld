@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "IphoneList";
+    ViewBag.Title = "LaptopCategory";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
@@ -14,30 +14,39 @@
                         <h2 class="text-lg font-semibold mb-4">Thương Hiệu</h2>
                     </li>
                     <li>
-                        <a href="/ProductMobile/IphoneCategory?id=1"
+                        <a href="/Laptop/LaptopCategory?id=1"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/apple-logo.png"
+                            <img src="~/styles/image/icons8-dell-logo-48.png"
                                  alt=""
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Iphone</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Dell</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/ProductMobile/IphoneCategory?id=2"
+                        <a href="/Laptop/LaptopCategory?id=2"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/samsung.png"
+                            <img src="~/styles/image/icons8-lenovo-logo-48.png"
                                  alt="samsungLogo"
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Samsung</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Lenovo</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Laptop/LaptopCategory?id=3"
+                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
+                            <img src="~/styles/image/icons8-hp-logo-48.png"
+                                 alt="samsungLogo"
+                                 class="w-6 h-6" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">HP</span>
                         </a>
                     </li>
                     <li>
                         <a href="/ProductMobile/IphoneCategory?id=3"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/nokia.png"
+                            <img src="~/styles/image/apple-logo-svgrepo-com.svg"
                                  alt="samsungLogo"
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Nokia</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Macbook</span>
                         </a>
                     </li>
                 </ul>
@@ -75,7 +84,7 @@
                                       d="m1 9 4-4-4-4" />
                             </svg>
                             <a href="#"
-                               class="ms-1 text-sm font-medium text-blue-700 md:ms-2 cursor-text">Điện Thoại</a>
+                               class="ms-1 text-sm font-medium text-blue-700 md:ms-2 cursor-text">Laptop</a>
                         </div>
                     </li>
                 </ol>
@@ -96,7 +105,7 @@
                                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </div>
-                        <form id="searchForm" action="/ProductMobile/SearchIphone" method="get">
+                        <form id="searchForm" action="/Laptop/SearchLaptop" method="get">
                             <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2 bg-white"
                                    type="text"
                                    id="search"
@@ -107,8 +116,8 @@
                     <details class="dropdown">
                         <summary class="btn btn-ghost border border-gray-300 text-black m-1">Sắp xếp giá</summary>
                         <ul class="menu dropdown-content white rounded-box z-[1] w-52 p-2 shadowb bg-white">
-                            <li class="text-black"><a href="/ProductMobile/SortAsc">Giá tăng dần</a></li>
-                            <li class="text-black"><a href="/ProductMobile/SortDesc">Giá giảm dần</a></li>
+                            <li class="text-black"><a href="/Laptop/SortAsc">Giá tăng dần</a></li>
+                            <li class="text-black"><a href="/Laptop/SortDesc">Giá giảm dần</a></li>
                         </ul>
                     </details>
                 </div>
@@ -195,4 +204,3 @@
         </div>
     </div>
 </div>
-
