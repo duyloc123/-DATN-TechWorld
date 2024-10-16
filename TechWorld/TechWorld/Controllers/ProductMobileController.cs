@@ -26,11 +26,14 @@ namespace TechWorld.Controllers
             return View(list);
         }
 
-        public ActionResult IphoneCategory(int? id, string sort) 
+        public ActionResult IphoneCategory(string name) 
         {
-            ViewBag.CategoryId = id; // Lưu id category để sử dụng trong view
+            ViewBag.ActivePage = "Product";
+            ViewBag.IphoneCategory = name;
+            // Lưu giá trị name
+            Session["IphoneCategory"] = name;
 
-            var products = db.SanPhams.Where(p => p.NhaCungCap.MaNCC == id).ToList();
+            var products = db.SanPhams.Where(item => item.NhaCungCap.TenNCC == name).ToList();
             return View(products);
         }
 
@@ -40,6 +43,15 @@ namespace TechWorld.Controllers
 
             var search = db.SanPhams.Where(item => item.TenSP.Contains(Search)).ToList();
             return View(search);
+        }
+
+        public ActionResult SearchIphoneCategory(string Search)
+        {
+            ViewBag.ActivePage = "Product";
+            // Sử dụng giá trị name đã lưu
+            string name = Session["IphoneCategory"] as string;
+            var searchApple = db.SanPhams.Where(item => item.TenSP.Contains(Search) && item.NhaCungCap.TenNCC == name).ToList();
+            return View(searchApple);
         }
 
         public ActionResult SortAsc()
@@ -54,11 +66,35 @@ namespace TechWorld.Controllers
             return View(ascMobile);
         }
 
+        public ActionResult SortAscCategory()
+        {
+            ViewBag.ActivePage = "Product";
+            string name = Session["IphoneCategory"] as string;
+            var ascMobile = (from item in db.SanPhams
+                             where item.NhaCungCap.TenNCC == name && item.LoaiHang.TenLoai == "Dien Thoai"
+                             orderby item.GiaTienDaKhuyenMai
+                             ascending
+                             select item).ToList();
+            return View(ascMobile);
+        }
+
         public ActionResult SortDesc()
         {
             ViewBag.ActivePage = "Product";
             var descMobile = (from item in db.SanPhams
                               where item.LoaiHang.TenLoai == "Dien Thoai"
+                              orderby item.GiaTienDaKhuyenMai
+                              descending
+                              select item).ToList();
+            return View(descMobile);
+        }
+
+        public ActionResult SortDescCategory()
+        {
+            ViewBag.ActivePage = "Product";
+            string name = Session["IphonCategory"] as string;
+            var descMobile = (from item in db.SanPhams
+                              where item.LoaiHang.TenLoai == "Dien Thoai" && item.NhaCungCap.TenNCC == name
                               orderby item.GiaTienDaKhuyenMai
                               descending
                               select item).ToList();

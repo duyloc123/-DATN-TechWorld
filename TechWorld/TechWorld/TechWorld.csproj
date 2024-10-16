@@ -127,7 +127,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\KeyboardMouseController.cs" />
     <Compile Include="Controllers\LaptopController.cs" />
+    <Compile Include="Controllers\LaptopGamingController.cs" />
+    <Compile Include="Controllers\MonitorController.cs" />
     <Compile Include="Controllers\ProductMobileController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -195,27 +198,37 @@
     </Content>
     <Content Include="Styles\Image\2023_11_3_638346181356369639_shipper.jpg" />
     <Content Include="Styles\Image\648858cbfae720397e600c8f6c57ab29.png" />
+    <Content Include="Styles\Image\acer.png" />
     <Content Include="Styles\Image\apple-logo-svgrepo-com.svg" />
     <Content Include="Styles\Image\apple-logo.png" />
     <Content Include="Styles\Image\cash-payment.png" />
     <Content Include="Styles\Image\chair %282%29.png" />
     <Content Include="Styles\Image\chair.png" />
     <Content Include="Styles\Image\cong-thanh-toan-thuong-mai-dien-tu-1.png" />
+    <Content Include="Styles\Image\corsair.png" />
     <Content Include="Styles\Image\credit-card.png" />
     <Content Include="Styles\Image\fast-delivery.png" />
     <Content Include="Styles\Image\gaming.png" />
     <Content Include="Styles\Image\headphones %281%29.png" />
     <Content Include="Styles\Image\headphones.png" />
     <Content Include="Styles\Image\hide.png" />
+    <Content Include="Styles\Image\icons8-aorus-logo-64.png" />
+    <Content Include="Styles\Image\icons8-asus-64.png" />
     <Content Include="Styles\Image\icons8-dell-logo-48.png" />
     <Content Include="Styles\Image\icons8-hp-logo-48.png" />
+    <Content Include="Styles\Image\icons8-keyboard-64.png" />
     <Content Include="Styles\Image\icons8-lenovo-logo-48.png" />
+    <Content Include="Styles\Image\icons8-lg-electronics-a-south-korean-multinational-electronics-company-24.png" />
+    <Content Include="Styles\Image\icons8-mouse-64.png" />
+    <Content Include="Styles\Image\icons8-msi-logo-48.png" />
+    <Content Include="Styles\Image\icons8-razer-logo-48.png" />
     <Content Include="Styles\Image\iphone.png" />
     <Content Include="Styles\Image\keyboard-and-mouse %281%29.png" />
     <Content Include="Styles\Image\keyboard-and-mouse.png" />
     <Content Include="Styles\Image\kisspng-computer-keyboard-cherry-gaming-keypad-republic-of-spilrepublikken-ser-lyset-tech-test-5b653db20509b9.2066534015333615860207.png" />
     <Content Include="Styles\Image\laptop %281%29.png" />
     <Content Include="Styles\Image\laptop.png" />
+    <Content Include="Styles\Image\logitech.png" />
     <Content Include="Styles\Image\loudspeaker.png" />
     <Content Include="Styles\Image\monitor %281%29.png" />
     <Content Include="Styles\Image\monitor.png" />
@@ -227,6 +240,7 @@
     <Content Include="Styles\Image\pc-game.png" />
     <Content Include="Styles\Image\quality.png" />
     <Content Include="Styles\Image\reliability.png" />
+    <Content Include="Styles\Image\rog.png" />
     <Content Include="Styles\Image\samsung.png" />
     <Content Include="Styles\Image\smartphone.png" />
     <Content Include="Styles\Image\techworld-high-resolution-logo-grayscale-transparent.png" />
@@ -274,6 +288,36 @@
     <Content Include="Views\Laptop\SearchLaptop.cshtml" />
     <Content Include="Views\Laptop\SortAsc.cshtml" />
     <Content Include="Views\Laptop\SortDesc.cshtml" />
+    <Content Include="Views\LaptopGaming\LaptopGamingList.cshtml" />
+    <Content Include="Views\LaptopGaming\LaptopGamingCategory.cshtml" />
+    <Content Include="Views\LaptopGaming\SearchLaptopGaming.cshtml" />
+    <Content Include="Views\LaptopGaming\SortAsc.cshtml" />
+    <Content Include="Views\LaptopGaming\SortDesc.cshtml" />
+    <Content Include="Views\KeyboardMouse\KeyBoardMouseList.cshtml" />
+    <Content Include="Views\ProductMobile\SearchIphoneCategory.cshtml" />
+    <Content Include="Views\ProductMobile\SortAscCategory.cshtml" />
+    <Content Include="Views\ProductMobile\SortDescCategory.cshtml" />
+    <Content Include="Views\Laptop\SearchLaptopCategory.cshtml" />
+    <Content Include="Views\Laptop\SortAscLaptopCategory.cshtml" />
+    <Content Include="Views\Laptop\SortDescLaptopCategory.cshtml" />
+    <Content Include="Views\LaptopGaming\SearchLaptopGamingCategory.cshtml" />
+    <Content Include="Views\LaptopGaming\SortDescLaptopGamingCategory.cshtml" />
+    <Content Include="Views\LaptopGaming\SortAscLaptopGamingCategory.cshtml" />
+    <Content Include="Views\KeyboardMouse\KeyBoardMouseSortAsc.cshtml" />
+    <Content Include="Views\KeyboardMouse\KeyBoardMouseSortDesc.cshtml" />
+    <Content Include="Views\KeyboardMouse\KeyBoardMouseFind.cshtml" />
+    <Content Include="Views\KeyboardMouse\KeyBoardMouseCategory.cshtml" />
+    <Content Include="Views\KeyboardMouse\KeyBoardMouseCategoryFind.cshtml" />
+    <Content Include="Views\KeyboardMouse\KeyBoardMouseCategorySortAsc.cshtml" />
+    <Content Include="Views\KeyboardMouse\KeyBoardMouseCategorySortDesc.cshtml" />
+    <Content Include="Views\Monitor\MonitorList.cshtml" />
+    <Content Include="Views\Monitor\MonitorCategory.cshtml" />
+    <Content Include="Views\Monitor\MonitorSearch.cshtml" />
+    <Content Include="Views\Monitor\MonitorSortAsc.cshtml" />
+    <Content Include="Views\Monitor\MonitorSortDesc.cshtml" />
+    <Content Include="Views\Monitor\MonitorCategorySearch.cshtml" />
+    <Content Include="Views\Monitor\MonitorCategorySortDesc.cshtml" />
+    <Content Include="Views\Monitor\MonitorCategorySortAsc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

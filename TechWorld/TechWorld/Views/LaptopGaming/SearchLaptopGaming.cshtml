@@ -1,0 +1,207 @@
+﻿
+@{
+    ViewBag.Title = "SearchLaptopGaming";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!-- Section -->
+<div class="mt-10">
+    <div class="container mx-auto flex gap-10">
+        <aside class="w-64 sticky top-[100px] self-start" aria-label="Sidebar">
+            <div class="px-3 py-4 overflow-y-auto rounded bg-gray-50 sm:w-[224px] sm:overflow-hidden rounded-xl">
+                <ul class="space-y-2">
+                    <li class="text-center">
+                        <h2 class="text-lg font-semibold mb-4">Thương Hiệu</h2>
+                    </li>
+                    <li>
+                        <a href="/LaptopGaming/LaptopGamingCategory?name=Asus"
+                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
+                            <img src="~/styles/image/icons8-asus-64.png"
+                                 alt="asusLogo"
+                                 class="w-6 h-6" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Asus</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/LaptopGaming/LaptopGamingCategory?name=Msi"
+                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
+                            <img src="~/styles/image/icons8-msi-logo-48.png"
+                                 alt="msiLogo"
+                                 class="w-6 h-6" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Msi</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/LaptopGaming/LaptopGamingCategory?name=Gigabyte"
+                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
+                            <img src="~/styles/image/icons8-aorus-logo-64.png"
+                                 alt="aorusLogo"
+                                 class="w-6 h-6" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Aorus/Gigabyte</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/LaptopGaming/LaptopGamingCategory?name=Rog"
+                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
+                            <img src="~/styles/image/rog.png"
+                                 alt="rogLogo"
+                                 class="w-6 h-6" />
+                            <span class="flex-1 ml-3 whitespace-nowrap">Rog</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <!-- Breadcrumb, Products -->
+        <div class="flex flex-col">
+            <!-- Breadcrumb -->
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+                    <li class="inline-flex items-center">
+                        <a href="/User/Index"
+                           class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 duration-300 ease-linear">
+                            <svg class="w-3 h-3 me-2.5"
+                                 aria-hidden="true"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 fill="currentColor"
+                                 viewBox="0 0 20 20">
+                                <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+                            </svg>
+                            Trang Chủ
+                        </a>
+                    </li>
+                    <li>
+                        <div class="flex items-center">
+                            <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+                                 aria-hidden="true"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 6 10">
+                                <path stroke="currentColor"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="m1 9 4-4-4-4" />
+                            </svg>
+                            <a href="#"
+                               class="ms-1 text-sm font-medium text-blue-700 md:ms-2 cursor-text">Laptop Gaming</a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+            <!-- Search, Sort -->
+            <div class="mt-5" id="searchHidden">
+                <div class="flex gap-20">
+                    <div class="relative flex items-center w-72 h-12 rounded-lg shadow-lg bg-white overflow-hidden">
+                        <div class="grid place-items-center h-full w-12 text-gray-300">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 class="h-6 w-6"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                        </div>
+                        <form id="searchForm" action="/Laptop/SearchLaptop" method="get">
+                            <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2 bg-white"
+                                   type="text"
+                                   id="search"
+                                   name="Search"
+                                   placeholder="Tìm kiếm theo tên.." />
+                        </form>
+                    </div>
+                    <details class="dropdown">
+                        <summary class="btn btn-ghost border border-gray-300 text-black m-1">Sắp xếp giá</summary>
+                        <ul class="menu dropdown-content white rounded-box z-[1] w-52 p-2 shadowb bg-white">
+                            <li class="text-black"><a href="/Laptop/SortAsc">Giá tăng dần</a></li>
+                            <li class="text-black"><a href="/Laptop/SortDesc">Giá giảm dần</a></li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+            <!-- Product -->
+            <div class="mt-14 flex flex-row flex-wrap gap-4 sm:gap-2">
+                <!-- Item 1 -->
+                @foreach (var item in Model)
+                {
+                    <div class="group flex rounded-md max-w-[300px] max-h-[500px] flex-col overflow-hidden border border-neutral-300 bg-neutral-50 text-neutral-600 sm:w-[240px]">
+                        <div class="h-52 md:h-64 overflow-hidden">
+                            <img src="@item.HinhAnh"
+                                 class="object-cover transition duration-700 ease-out group-hover:scale-105"
+                                 alt="a penguin robot talking with a human" />
+                        </div>
+                        <div class="flex flex-col p-6 h-full justify-between">
+                            <span class="text-sm font-medium">Iphone</span>
+                            <h3 class="text-balance text-xl lg:text-2xl font-bold text-neutral-900"
+                                aria-describedby="featureDescription">
+                                @item.TenSP
+                            </h3>
+                            <p id="featureDescription" class="text-pretty text-sm">
+                                @item.MoTaSanPham
+                            </p>
+                            <span class="text-lg"><del>@item.GiaTien</del></span>
+                            <div class="flex items-center gap-2">
+                                <h3 class="text-2xl text-red-600">@item.GiaTienDaKhuyenMai</h3>
+                                <span class="text-black border bg-red-500 p-1 rounded-full">-3%</span>
+                            </div>
+                            <button class="rounded-md bg-blue-600 py-2 px-4 mt-4 border border-transparent text-center text-sm text-white transition-all duration-250 ease-linear shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-none active:bg-blue-700 hover:bg-blue-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
+                                    type="button">
+                                Thêm vào giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <!-- Pagination -->
+            <nav aria-label="Page navigation example" class="mt-10">
+                <ul class="list-style-none flex justify-center">
+                    <li class="border-[1px] border-gray-300 rounded-l-lg hover:bg-neutral-100 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 transition duration-300 active:text-primary-700 hover:text-blue-500">
+                        <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface"
+                           href="#">
+                            <svg class="h-5 w-5"
+                                 viewBox="0 0 20 20"
+                                 fill="currentColor"
+                                 aria-hidden="true"
+                                 data-slot="icon">
+                                <path fill-rule="evenodd"
+                                      d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+                                      clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="border-y border-r border-gray-300 hover:bg-neutral-100 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 transition duration-300 active:text-primary-700">
+                        <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface hover:text-blue-500"
+                           href="#">1</a>
+                    </li>
+                    <li aria-current="page"
+                        class="border-y border-r border-gray-300 hover:bg-neutral-100 hover:text-blue-500 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 transition duration-300 active:text-primary-700">
+                        <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface"
+                           href="#">2</a>
+                    </li>
+                    <li class="border-y border-gray-300 hover:bg-neutral-100 hover:text-blue-600 focus:bg-neutral-100 focus:text-primary-700 transition duration-300">
+                        <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface"
+                           href="#">3</a>
+                    </li>
+                    <li class="border border-gray-300 rounded-r-lg hover:bg-neutral-100 focus:bg-neutral-100 focus:text-primary-700 focus:outline-none focus:ring-0 active:bg-neutral-100 transition duration-300 active:text-primary-700 hover:text-blue-500">
+                        <a class="relative block rounded bg-transparent px-3 py-1.5 text-sm text-surface"
+                           href="#">
+                            <svg class="h-5 w-5"
+                                 viewBox="0 0 20 20"
+                                 fill="currentColor"
+                                 aria-hidden="true"
+                                 data-slot="icon">
+                                <path fill-rule="evenodd"
+                                      d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+                                      clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+

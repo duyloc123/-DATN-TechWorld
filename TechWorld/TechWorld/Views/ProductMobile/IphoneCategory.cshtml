@@ -14,16 +14,16 @@
                         <h2 class="text-lg font-semibold mb-4">Thương Hiệu</h2>
                     </li>
                     <li>
-                        <a href="/ProductMobile/IphoneCategory?id=1"
+                        <a href="/ProductMobile/IphoneCategory?name=Apple"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
                             <img src="~/styles/image/apple-logo.png"
                                  alt=""
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Iphone</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Apple</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/ProductMobile/IphoneCategory?id=2"
+                        <a href="/ProductMobile/IphoneCategory?name=Samsung"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
                             <img src="~/styles/image/samsung.png"
                                  alt="samsungLogo"
@@ -32,7 +32,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/ProductMobile/IphoneCategory?id=3"
+                        <a href="/ProductMobile/IphoneCategory?name=Nokia"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
                             <img src="~/styles/image/nokia.png"
                                  alt="samsungLogo"
@@ -81,7 +81,7 @@
                 </ol>
             </nav>
             <!-- Search, Sort -->
-            <div class="mt-5">
+            <div class="mt-5" id="searchHidden">
                 <div class="flex gap-20">
                     <div class="relative flex items-center w-72 h-12 rounded-lg shadow-lg bg-white overflow-hidden">
                         <div class="grid place-items-center h-full w-12 text-gray-300">
@@ -96,17 +96,19 @@
                                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </div>
-
-                        <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2 bg-white"
-                               type="text"
-                               id="search"
-                               placeholder="Tìm kiếm theo tên.." />
+                        <form id="searchForm" action="/ProductMobile/SearchIphoneCategory?name=@Session["IphoneCategory"]" method="get">
+                            <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2 bg-white"
+                                   type="text"
+                                   id="search"
+                                   name="Search"
+                                   placeholder="Tìm kiếm theo tên.." />
+                        </form>
                     </div>
                     <details class="dropdown">
                         <summary class="btn btn-ghost border border-gray-300 text-black m-1">Sắp xếp giá</summary>
                         <ul class="menu dropdown-content white rounded-box z-[1] w-52 p-2 shadowb bg-white">
-                            <li class="text-black"><a>Giá tăng dần</a></li>
-                            <li class="text-black"><a>Giá giảm dần</a></li>
+                            <li class="text-black"><a href="/ProductMobile/SortAscCategory">Giá tăng dần</a></li>
+                            <li class="text-black"><a href="/ProductMobile/SortDescCategory">Giá giảm dần</a></li>
                         </ul>
                     </details>
                 </div>
@@ -193,4 +195,6 @@
         </div>
     </div>
 </div>
+
+
 

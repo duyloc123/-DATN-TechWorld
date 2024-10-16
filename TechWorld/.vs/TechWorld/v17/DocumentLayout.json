@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\controllers\\laptopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\controllers\\laptopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\controllers\\monitorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\controllers\\monitorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\laptop\\laptoplist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\laptop\\laptoplist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\controllers\\laptopgamingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\controllers\\laptopgamingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\laptop\\laptopcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\laptop\\laptopcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\laptop\\searchlaptop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\laptop\\searchlaptop.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\laptop\\sortasc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\laptop\\sortasc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\laptop\\sortdesc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\laptop\\sortdesc.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\monitor\\monitorcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\monitor\\monitorcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +22,66 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SortDesc.cshtml",
-              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\SortDesc.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\Laptop\\SortDesc.cshtml",
-              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\SortDesc.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\Laptop\\SortDesc.cshtml",
-              "ViewState": "AQIAALIAAAAAAAAAAAAYwM0AAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-15T18:13:38.98Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SortAsc.cshtml",
-              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\SortAsc.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\Laptop\\SortAsc.cshtml",
-              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\SortAsc.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\Laptop\\SortAsc.cshtml",
-              "ViewState": "AQIAAIUAAAAAAAAAAAAYwM0AAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-15T18:13:30.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SearchLaptop.cshtml",
-              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\SearchLaptop.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\Laptop\\SearchLaptop.cshtml",
-              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\SearchLaptop.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\Laptop\\SearchLaptop.cshtml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAM0AAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-15T18:13:13.878Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LaptopCategory.cshtml",
-              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\LaptopCategory.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\Laptop\\LaptopCategory.cshtml",
-              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\LaptopCategory.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\Laptop\\LaptopCategory.cshtml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Title": "MonitorCategory.cshtml",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Monitor\\MonitorCategory.cshtml",
+              "RelativeDocumentMoniker": "TechWorld\\Views\\Monitor\\MonitorCategory.cshtml",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Monitor\\MonitorCategory.cshtml",
+              "RelativeToolTip": "TechWorld\\Views\\Monitor\\MonitorCategory.cshtml",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAG0AAABbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-15T18:11:45.104Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "LaptopList.cshtml",
-              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\LaptopList.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\Laptop\\LaptopList.cshtml",
-              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Laptop\\LaptopList.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\Laptop\\LaptopList.cshtml",
-              "ViewState": "AQIAABkAAAAAAAAAAAAAAC4AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-15T18:01:11.96Z",
+              "WhenOpened": "2024-10-16T16:42:31.601Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LaptopController.cs",
-              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\LaptopController.cs",
-              "RelativeDocumentMoniker": "TechWorld\\Controllers\\LaptopController.cs",
-              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\LaptopController.cs",
-              "RelativeToolTip": "TechWorld\\Controllers\\LaptopController.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAiwCUAAABZAAAA",
+              "Title": "MonitorController.cs",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\MonitorController.cs",
+              "RelativeDocumentMoniker": "TechWorld\\Controllers\\MonitorController.cs",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\MonitorController.cs",
+              "RelativeToolTip": "TechWorld\\Controllers\\MonitorController.cs",
+              "ViewState": "AQIAADUAAAAAAAAAAAASwFoAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T17:56:36.698Z",
+              "WhenOpened": "2024-10-16T16:00:54.287Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "FloatingWindowState": {
+        "Id": "8680a743-4191-413a-be08-052cb799079a",
+        "Display": 0,
+        "X": 371,
+        "Y": 84,
+        "Width": 1561,
+        "Height": 859,
+        "WindowState": 0
+      },
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LaptopGamingController.cs",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\LaptopGamingController.cs",
+              "RelativeDocumentMoniker": "TechWorld\\Controllers\\LaptopGamingController.cs",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\LaptopGamingController.cs",
+              "RelativeToolTip": "TechWorld\\Controllers\\LaptopGamingController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAEMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T16:22:59.364Z",
               "EditorCaption": ""
             }
           ]
