@@ -128,6 +128,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComputerComponentController.cs" />
+    <Compile Include="Controllers\InfomationUserController.cs" />
     <Compile Include="Controllers\EarphoneController.cs" />
     <Compile Include="Controllers\GamingChairController.cs" />
     <Compile Include="Controllers\KeyboardMouseController.cs" />
@@ -354,6 +355,7 @@
     <Content Include="Views\ComputerComponent\ComputerCategorySearch.cshtml" />
     <Content Include="Views\ComputerComponent\ComputerCategoryAsc.cshtml" />
     <Content Include="Views\ComputerComponent\ComputerCategoryDesc.cshtml" />
+    <Content Include="Views\InfomationUser\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

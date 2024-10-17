@@ -62,32 +62,70 @@
             </ul>
         </div>
         <!-- Signup, Signin -->
-        <div class="lg:flex lg:items-center">
-            <input type="text"
-                   placeholder="Tìm kiếm"
-                   class="px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
-            <div class="relative scale-75 cursor-pointer mr-2">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     fill="none"
-                     viewBox="0 0 24 24"
-                     stroke-width="1.5"
-                     stroke="currentColor"
-                     class="h-8 w-8 text-gray-600">
-                    <path stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                </svg>
-                <span class="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">1</span>
+        @if (Session["gmail"] != null)
+        {
+            <div class="lg:flex lg:items-center">
+                <input type="text"
+                       placeholder="Tìm kiếm"
+                       class="px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                <div class="relative scale-75 cursor-pointer mr-6">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke-width="1.5"
+                         stroke="currentColor"
+                         class="h-8 w-8 text-gray-600">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+                    <span class="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">1</span>
+                </div>
+                <!-- Avatar-->
+                <div class="dropdown dropdown-end">
+                    <div class="avatar online" tabindex="0" role="button">
+                        <div class="w-8 rounded-full">
+                            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                        </div>
+                    </div>
+                    <ul tabindex="0" class="dropdown-content menu bg-gray-200 rounded-box z-[1] w-52 p-2 shadow mt-2">
+                        <li><a class="text-black">@Session["tenKhachHang"]</a></li>
+                        <li><a class="text-black hover:text-black">Thông tin khách hàng</a><li>
+                        <li><a class="text-black hover:text-black">Xem đơn hàn</a></li>
+                        <li><a class="text-black hover:text-black" href="/InfomationUser/Exit">Đăng xuất</a></li>
+                    </ul>
+                </div>
             </div>
-            <button class="lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-300"
-                    id="openModalButton" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">
-                Đăng nhập
-            </button>
-            <button class="py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-300"
-                    data-modal-target="signup-modal" data-modal-toggle="signup-modal">
-                Đăng Ký
-            </button>
-        </div>
+        }
+        else
+        {
+            <div class="lg:flex lg:items-center">
+                <input type="text"
+                       placeholder="Tìm kiếm"
+                       class="px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
+                <div class="relative scale-75 cursor-pointer mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke-width="1.5"
+                         stroke="currentColor"
+                         class="h-8 w-8 text-gray-600">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+                    <span class="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50">1</span>
+                </div>
+                <button class="lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-300"
+                        id="openModalButton" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">
+                    Đăng nhập
+                </button>
+                <button class="py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-300"
+                        data-modal-target="signup-modal" data-modal-toggle="signup-modal">
+                    Đăng Ký
+                </button>
+            </div>
+        }
     </nav>
 
     <!-- Mobile Menu -->
@@ -140,6 +178,18 @@
     <!-- Modal Sign in -->
     <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full -translate-y-full transition-transform duration-300 ease-in-out">
         <div class="relative p-4 w-full max-w-md max-h-full">
+            <div role="alert" class="alert alert-error mb-4 hidden" id="errorSignin">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="h-6 w-6 shrink-0 stroke-current"
+                     fill="none"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin.</span>
+            </div>
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow">
                 <!-- Modal header -->
@@ -156,10 +206,12 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-4 md:p-5">
-                    <form class="space-y-4" action="#">
+                    @using (Html.BeginForm("Signin", "InfomationUser", FormMethod.Post, new { id = "loginForm", @class = "space-y-4" }))
+                    {
+                        @Html.AntiForgeryToken()
                         <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-black ">Tài khoản</label>
-                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="..." required />
+                            <label for="email" class="block mb-2 text-sm font-medium text-black">Gmail</label>
+                            <input type="text" name="user" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="...gmail.com" required />
                         </div>
                         <div>
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Mật khẩu</label>
@@ -168,18 +220,17 @@
                         <div class="flex justify-between">
                             <div class="flex items-start">
                                 <div class="flex items-center h-5 bg-white">
-                                    <input id="showPassword" type="checkbox" value="" class="checkbox checkbox-primary  w-4 h-4 border border-gray-300 rounded focus:ring-3 focus:ring-blue-300" required />
+                                    <input id="showPassword" type="checkbox" value="" class="checkbox checkbox-primary w-4 h-4 border border-gray-300 rounded focus:ring-3 focus:ring-blue-300" />
                                 </div>
-                                <label for="remember" id="remember" class="ms-2 text-sm font-medium text-gray-900">Hiện mật khẩu</label>
-
+                                <label for="showPassword" class="ms-2 text-sm font-medium text-gray-900">Hiện mật khẩu</label>
                             </div>
-                            <Quên href="#" class="text-sm text-blue-700 hover:underline cursor-pointer">Quên mật khẩu?</a>
+                            <a href="#" class="text-sm text-blue-700 hover:underline cursor-pointer">Quên mật khẩu?</a>
                         </div>
                         <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 duration-300 ease-in">Đăng nhập</button>
                         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                            Bạn chưa có tài khoản? <button href="#" class="text-blue-700 hover:underline " data-modal-target="signup-modal" data-modal-toggle="signup-modal" data-modal-hide="authentication-modal">Tạo tài khoản.</button>
+                            Bạn chưa có tài khoản? <button type="button" class="text-blue-700 hover:underline" data-modal-target="signup-modal" data-modal-toggle="signup-modal" data-modal-hide="authentication-modal">Tạo tài khoản.</button>
                         </div>
-                    </form>
+                    }
                 </div>
             </div>
         </div>
@@ -187,6 +238,30 @@
     <!-- Modal Sign up -->
     <div id="signup-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full -translate-y-full transition-transform duration-300">
         <div class="relative p-4 w-full max-w-md max-h-full">
+            <div role="alert" class="alert alert-error mb-4 hidden" id="errorMessage">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="h-6 w-6 shrink-0 stroke-current"
+                     fill="none"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Email đã tồn tại.</span>
+            </div>
+            <div role="alert" class="alert alert-success mb-4 hidden" id="succesMessage">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="h-6 w-6 shrink-0 stroke-current"
+                     fill="none"
+                     viewBox="0 0 24 24">
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Đăng ký thành công. Vui lòng đăng nhập tài khoản!</span>
+            </div>
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow">
                 <!-- Modal header -->
@@ -203,14 +278,24 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-4 md:p-5">
-                    <form class="space-y-4" action="#">
+                    @using (Html.BeginForm("Register", "InfomationUser", FormMethod.Post, new { id = "registerForm", @class = "space-y-4" }))
+                    {
+                        @Html.AntiForgeryToken()
                         <div>
-                            <label for="email" class="block mb-2 text-sm font-medium text-black ">Tài khoản</label>
-                            <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Tên tài khoản..." required />
+                            <label for="fullName" class="block mb-2 text-sm font-medium text-black ">Tài khoản</label>
+                            <input type="text" name="hoTen" id="user" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Họ tên..." required />
                         </div>
                         <div>
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Gmail</label>
-                            <input type="email" name="text" id="email" placeholder="...gmail.com" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                            <input type="email" name="email" id="email" placeholder="...gmail.com" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                        </div>
+                        <div>
+                            <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Gmail</label>
+                            <input type="text" name="address" id="address" placeholder="Địa chỉ..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                        </div>
+                        <div>
+                            <label for="numberPhone" class="block mb-2 text-sm font-medium text-gray-900">Gmail</label>
+                            <input type="number" name="numberPhone" id="numberPhone" placeholder="Số điện thoại" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
                         </div>
                         <div>
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Mật khẩu</label>
@@ -231,7 +316,7 @@
                         <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
                             Bạn đã có tài khoản? <button href="#" class="text-blue-700 hover:underline " data-modal-hide="signup-modal" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">Đăng nhập</button>
                         </div>
-                    </form>
+                    }
                 </div>
             </div>
         </div>
@@ -558,6 +643,62 @@
                 }, 500); // Đợi 500ms sau khi người dùng ngừng gõ
             });
         });
+
+        // Login 
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const successSingin = document.getElementById('successSingin');
+            const errorSignin = document.getElementById('errorSignin');
+
+            var formData = new FormData(this);
+
+            fetch('/InfomationUser/Signin', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                            window.location.href = data.redirectUrl;
+                    } else {
+                        errorSignin.classList.remove('hidden');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+        // Resign
+        document.getElementById('registerForm').addEventListener('submit', function (e) {
+            const errorMess = document.getElementById('errorMessage');
+            const successMess = document.getElementById('succesMessage');
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            fetch('/InfomationUser/Register', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        succesMessage.classList.remove('hidden');
+                        setTimeout(function () {
+                            window.location.href = data.redirectUrl;
+                        }, 2000);
+                    } else {
+                        errorMess.classList.remove('hidden');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
     </script>
 
 </body>
