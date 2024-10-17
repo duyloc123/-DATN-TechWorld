@@ -1,7 +1,6 @@
-﻿@model IEnumerable<TechWorld.Models.SanPham>
-
+﻿
 @{
-    ViewBag.Title = "Product";
+    ViewBag.Title = "ComputerList";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
@@ -12,78 +11,60 @@
             <div class="px-3 py-4 overflow-y-auto rounded bg-gray-50 sm:w-[224px] sm:overflow-hidden rounded-xl">
                 <ul class="space-y-2">
                     <li class="text-center">
-                        <h2 class="text-lg font-semibold mb-4">Danh Mục</h2>
+                        <h2 class="text-lg font-semibold mb-4">Linh Kiện</h2>
                     </li>
                     <li>
-                        <a href="/ProductMobile/IphoneList"
+                        <a href="/ComputerComponent/ComputerCategory?name=Main"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/smartphone.png"
-                                 alt=""
+                            <img src="~/styles/image/circuit-board.png"
+                                 alt="asusLogo"
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Điện thoại</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Main</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/Laptop/LaptopList"
+                        <a href="/ComputerComponent/ComputerCategory?name=CPU"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/laptop (1).png"
-                                 alt="samsungLogo"
+                            <img src="~/styles/image/cpu-tower.png"
+                                 alt="msiLogo"
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Laptop</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">CPU</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/LaptopGaming/LaptopGamingList"
+                        <a href="/ComputerComponent/ComputerCategory?name=VGA"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/pc-game.png"
-                                 alt="samsungLogo"
+                            <img src="~/styles/image/video-card.png"
+                                 alt="aorusLogo"
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Laptop Gaming</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">VGA</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/KeyboardMouse/KeyboardMouseList"
+                        <a href="/ComputerComponent/ComputerCategory?name=Case"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/keyboard-and-mouse (1).png"
-                                 alt="samsungLogo"
+                            <img src="~/styles/image/computer-case.png"
+                                 alt="aorusLogo"
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Bàn phím & Chuột</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Case</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/Monitor/MonitorList"
+                        <a href="/ComputerComponent/ComputerCategory?name=Nguồn/Tản"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/monitor (1).png"
-                                 alt="samsungLogo"
+                            <img src="~/styles/image/power-supply.png"
+                                 alt="aorusLogo"
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Màn hình</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Nguồn/Tản</span>
                         </a>
                     </li>
                     <li>
-                        <a href="/Earphone/EarphoneList"
+                        <a href="/ComputerComponent/ComputerCategory?name=Ổ cứng/Ram/Thẻ nhớ"
                            class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/headphones (1).png"
-                                 alt="samsungLogo"
+                            <img src="~/styles/image/hard-disk.png"
+                                 alt="aorusLogo"
                                  class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Tai nghe</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/GamingChair/GamingChairList"
-                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/chair (2).png"
-                                 alt="samsungLogo"
-                                 class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Ghế & Bàn</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/ComputerComponent/ComputerList"
-                           class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg hover:bg-gray-100 hover:text-blue-500 duration-300 ease-linear">
-                            <img src="~/styles/image/motherboard (1).png"
-                                 alt="samsungLogo"
-                                 class="w-6 h-6" />
-                            <span class="flex-1 ml-3 whitespace-nowrap">Linh kiện máy tính</span>
+                            <span class="flex-1 ml-3 whitespace-nowrap">Ổ cứng/Ram/Thẻ nhớ</span>
                         </a>
                     </li>
                 </ul>
@@ -121,13 +102,13 @@
                                       d="m1 9 4-4-4-4" />
                             </svg>
                             <a href="#"
-                               class="ms-1 text-sm font-medium text-blue-700 md:ms-2 cursor-text">Điện Thoại</a>
+                               class="ms-1 text-sm font-medium text-blue-700 md:ms-2 cursor-text">Linh kiện</a>
                         </div>
                     </li>
                 </ol>
             </nav>
             <!-- Search, Sort -->
-            <div class="mt-5">
+            <div class="mt-5" id="searchHidden">
                 <div class="flex gap-20">
                     <div class="relative flex items-center w-72 h-12 rounded-lg shadow-lg bg-white overflow-hidden">
                         <div class="grid place-items-center h-full w-12 text-gray-300">
@@ -142,17 +123,19 @@
                                       d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </div>
-
-                        <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2 bg-white"
-                               type="text"
-                               id="search"
-                               placeholder="Tìm kiếm theo tên.." />
+                        <form id="searchForm" action="/ComputerComponent/ComputerSearch" method="get">
+                            <input class="peer h-full w-full outline-none text-sm text-gray-700 pr-2 bg-white"
+                                   type="text"
+                                   id="search"
+                                   name="Search"
+                                   placeholder="Tìm kiếm theo tên.." />
+                        </form>
                     </div>
                     <details class="dropdown">
                         <summary class="btn btn-ghost border border-gray-300 text-black m-1">Sắp xếp giá</summary>
                         <ul class="menu dropdown-content white rounded-box z-[1] w-52 p-2 shadowb bg-white">
-                            <li class="text-black"><a>Giá tăng dần</a></li>
-                            <li class="text-black"><a>Giá giảm dần</a></li>
+                            <li class="text-black"><a href="/ComputerComponent/ComputerAsc">Giá tăng dần</a></li>
+                            <li class="text-black"><a href="/ComputerComponent/ComputerDesc">Giá giảm dần</a></li>
                         </ul>
                     </details>
                 </div>

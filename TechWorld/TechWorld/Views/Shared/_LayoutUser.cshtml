@@ -62,7 +62,7 @@
             </ul>
         </div>
         <!-- Signup, Signin -->
-        <div class="hidden lg:flex lg:items-center">
+        <div class="lg:flex lg:items-center">
             <input type="text"
                    placeholder="Tìm kiếm"
                    class="px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
@@ -81,7 +81,7 @@
             </div>
             <button class="lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-300"
                     id="openModalButton" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">
-                Đăng Nhập
+                Đăng nhập
             </button>
             <button class="py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-300"
                     data-modal-target="signup-modal" data-modal-toggle="signup-modal">
@@ -124,16 +124,19 @@
             <div class="mt-auto">
                 <div class="pt-6">
                     <button class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl h-[48px]"
-                       id="openModalButton" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">Đăng Nhập</button>
+                            id="openModalButton" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">
+                        Tài Khoản
+                    </button>
                     <button class="block px-4 py-3 mb-2 leading-loose text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700 rounded-xl"
-                       data-modal-target="signup-modal" data-modal-toggle="signup-modal">Đăng Ký</button>
+                            data-modal-target="signup-modal" data-modal-toggle="signup-modal">
+                        Đăng Ký
+                    </button>
                 </div>
             </div>
         </nav>
     </div>
 
     <div class="mt-5">@RenderBody()</div>
-
     <!-- Modal Sign in -->
     <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full -translate-y-full transition-transform duration-300 ease-in-out">
         <div class="relative p-4 w-full max-w-md max-h-full">
@@ -181,7 +184,6 @@
             </div>
         </div>
     </div>
-
     <!-- Modal Sign up -->
     <div id="signup-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full -translate-y-full transition-transform duration-300">
         <div class="relative p-4 w-full max-w-md max-h-full">
@@ -284,35 +286,35 @@
                     <h4 class="text-lg text-gray-900 font-medium mb-7">Sản Phẩm</h4>
                     <ul class="text-sm transition-all duration-500">
                         <li class="mb-6">
-                            <a href="javascript:;"
+                            <a href="/ProductMobile/IphoneList"
                                class="hover-line text-gray-600 hover:text-gray-900">Điện Thoại</a>
                         </li>
                         <li class="mb-6">
-                            <a href="javascript:;"
+                            <a href="/Laptop/LaptopList"
                                class="hover-line text-gray-600 hover:text-gray-900">Laptop</a>
                         </li>
                         <li class="mb-6">
-                            <a href="javascript:;"
+                            <a href="/LaptopGaming/LaptopGamingList"
                                class="hover-line text-gray-600 hover:text-gray-900">Laptop Gaming</a>
                         </li>
                         <li class="mb-6">
-                            <a href="javascript:;"
+                            <a href="/KeyboardMouse/KeyBoardMouseList"
                                class="hover-line text-gray-600 hover:text-gray-900">Bàn Phím & Chuột</a>
                         </li>
                         <li class="mb-6">
-                            <a href="javascript:;"
+                            <a href="/Monitor/MonitorList"
                                class="hover-line text-gray-600 hover:text-gray-900">Màn Hình</a>
                         </li>
                         <li class="mb-6">
-                            <a href="javascript:;"
-                               class="hover-line text-gray-600 hover:text-gray-900">Loa & Tai Nghe</a>
+                            <a href="/Earphone/EarphoneList"
+                               class="hover-line text-gray-600 hover:text-gray-900">Tai Nghe</a>
                         </li>
                         <li class="mb-6">
-                            <a href="javascript:;"
-                               class="hover-line text-gray-600 hover:text-gray-900">Ghế & Bàn</a>
+                            <a href="/GamingChair/GamingChairList"
+                               class="hover-line text-gray-600 hover:text-gray-900">Ghế</a>
                         </li>
                         <li class="mb-6">
-                            <a href="javascript:;"
+                            <a href="/ComputerComponent/ComputerList"
                                class="hover-line text-gray-600 hover:text-gray-900">Linh Kiện Máy Tính</a>
                         </li>
                     </ul>

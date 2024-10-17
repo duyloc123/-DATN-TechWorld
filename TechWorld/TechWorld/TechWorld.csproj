@@ -127,6 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ComputerComponentController.cs" />
+    <Compile Include="Controllers\EarphoneController.cs" />
+    <Compile Include="Controllers\GamingChairController.cs" />
     <Compile Include="Controllers\KeyboardMouseController.cs" />
     <Compile Include="Controllers\LaptopController.cs" />
     <Compile Include="Controllers\LaptopGamingController.cs" />
@@ -204,18 +207,25 @@
     <Content Include="Styles\Image\cash-payment.png" />
     <Content Include="Styles\Image\chair %282%29.png" />
     <Content Include="Styles\Image\chair.png" />
+    <Content Include="Styles\Image\circuit-board.png" />
+    <Content Include="Styles\Image\computer-case.png" />
     <Content Include="Styles\Image\cong-thanh-toan-thuong-mai-dien-tu-1.png" />
     <Content Include="Styles\Image\corsair.png" />
+    <Content Include="Styles\Image\cpu-tower.png" />
     <Content Include="Styles\Image\credit-card.png" />
     <Content Include="Styles\Image\fast-delivery.png" />
     <Content Include="Styles\Image\gaming.png" />
+    <Content Include="Styles\Image\hard-disk.png" />
     <Content Include="Styles\Image\headphones %281%29.png" />
     <Content Include="Styles\Image\headphones.png" />
+    <Content Include="Styles\Image\helmet.png" />
     <Content Include="Styles\Image\hide.png" />
     <Content Include="Styles\Image\icons8-aorus-logo-64.png" />
     <Content Include="Styles\Image\icons8-asus-64.png" />
     <Content Include="Styles\Image\icons8-dell-logo-48.png" />
+    <Content Include="Styles\Image\icons8-earphone-64.png" />
     <Content Include="Styles\Image\icons8-hp-logo-48.png" />
+    <Content Include="Styles\Image\icons8-hyperx-64.png" />
     <Content Include="Styles\Image\icons8-keyboard-64.png" />
     <Content Include="Styles\Image\icons8-lenovo-logo-48.png" />
     <Content Include="Styles\Image\icons8-lg-electronics-a-south-korean-multinational-electronics-company-24.png" />
@@ -229,7 +239,7 @@
     <Content Include="Styles\Image\laptop %281%29.png" />
     <Content Include="Styles\Image\laptop.png" />
     <Content Include="Styles\Image\logitech.png" />
-    <Content Include="Styles\Image\loudspeaker.png" />
+    <Content Include="Styles\Image\E-dra.png" />
     <Content Include="Styles\Image\monitor %281%29.png" />
     <Content Include="Styles\Image\monitor.png" />
     <Content Include="Styles\Image\motherboard %281%29.png" />
@@ -238,6 +248,7 @@
     <Content Include="Styles\Image\package-delivery.png" />
     <Content Include="Styles\Image\paypal.jpg" />
     <Content Include="Styles\Image\pc-game.png" />
+    <Content Include="Styles\Image\power-supply.png" />
     <Content Include="Styles\Image\quality.png" />
     <Content Include="Styles\Image\reliability.png" />
     <Content Include="Styles\Image\rog.png" />
@@ -246,6 +257,7 @@
     <Content Include="Styles\Image\techworld-high-resolution-logo-grayscale-transparent.png" />
     <Content Include="Styles\Image\thanh-toan-thuong-mai-dien-tu-678x381.png" />
     <Content Include="Styles\Image\user-interface.png" />
+    <Content Include="Styles\Image\video-card.png" />
     <Content Include="Styles\Image\view.png" />
     <Content Include="Styles\main.js" />
     <Content Include="Styles\styles.css" />
@@ -318,6 +330,30 @@
     <Content Include="Views\Monitor\MonitorCategorySearch.cshtml" />
     <Content Include="Views\Monitor\MonitorCategorySortDesc.cshtml" />
     <Content Include="Views\Monitor\MonitorCategorySortAsc.cshtml" />
+    <Content Include="Views\Earphone\EarphoneList.cshtml" />
+    <Content Include="Views\Earphone\EarphoneSearch.cshtml" />
+    <Content Include="Views\Earphone\EarphoneAsc.cshtml" />
+    <Content Include="Views\Earphone\EarphoneDesc.cshtml" />
+    <Content Include="Views\Earphone\EarphoneCategory.cshtml" />
+    <Content Include="Views\Earphone\CategorySearch.cshtml" />
+    <Content Include="Views\Earphone\CategoryAsc.cshtml" />
+    <Content Include="Views\Earphone\CategoryDesc.cshtml" />
+    <Content Include="Views\GamingChair\GamingChairList.cshtml" />
+    <Content Include="Views\GamingChair\GamingChairSearch.cshtml" />
+    <Content Include="Views\GamingChair\GamingChairAsc.cshtml" />
+    <Content Include="Views\GamingChair\GamingChairDesc.cshtml" />
+    <Content Include="Views\GamingChair\ChairCategory.cshtml" />
+    <Content Include="Views\GamingChair\ChairCategoryAsc.cshtml" />
+    <Content Include="Views\GamingChair\ChairCategoryDesc.cshtml" />
+    <Content Include="Views\GamingChair\ChairCategorySearch.cshtml" />
+    <Content Include="Views\ComputerComponent\ComputerList.cshtml" />
+    <Content Include="Views\ComputerComponent\ComputerSearch.cshtml" />
+    <Content Include="Views\ComputerComponent\ComputerAsc.cshtml" />
+    <Content Include="Views\ComputerComponent\ComputerDesc.cshtml" />
+    <Content Include="Views\ComputerComponent\ComputerCategory.cshtml" />
+    <Content Include="Views\ComputerComponent\ComputerCategorySearch.cshtml" />
+    <Content Include="Views\ComputerComponent\ComputerCategoryAsc.cshtml" />
+    <Content Include="Views\ComputerComponent\ComputerCategoryDesc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

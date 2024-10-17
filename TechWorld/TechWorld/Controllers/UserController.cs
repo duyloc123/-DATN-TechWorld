@@ -33,7 +33,8 @@ namespace TechWorld.Controllers
         public ActionResult News()
         {
             ViewBag.ActivePage = "News";
-            return View();
+            var news = db.TinTucs.ToList();
+            return View(news);
         }
     }
 }
