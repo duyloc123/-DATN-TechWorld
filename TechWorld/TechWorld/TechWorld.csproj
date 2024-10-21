@@ -143,6 +143,7 @@
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>TechWorldModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductDetailViewModel.cs" />
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>TechWorldModel.tt</DependentUpon>
     </Compile>
@@ -208,6 +209,7 @@
     <Content Include="Styles\Image\cash-payment.png" />
     <Content Include="Styles\Image\chair %282%29.png" />
     <Content Include="Styles\Image\chair.png" />
+    <Content Include="Styles\Image\check.png" />
     <Content Include="Styles\Image\circuit-board.png" />
     <Content Include="Styles\Image\computer-case.png" />
     <Content Include="Styles\Image\cong-thanh-toan-thuong-mai-dien-tu-1.png" />
@@ -249,6 +251,7 @@
     <Content Include="Styles\Image\package-delivery.png" />
     <Content Include="Styles\Image\paypal.jpg" />
     <Content Include="Styles\Image\pc-game.png" />
+    <Content Include="Styles\Image\persent.png" />
     <Content Include="Styles\Image\power-supply.png" />
     <Content Include="Styles\Image\quality.png" />
     <Content Include="Styles\Image\reliability.png" />
@@ -276,6 +279,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ProductDetailViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\TechWorldModel.edmx">
@@ -356,6 +360,11 @@
     <Content Include="Views\ComputerComponent\ComputerCategoryAsc.cshtml" />
     <Content Include="Views\ComputerComponent\ComputerCategoryDesc.cshtml" />
     <Content Include="Views\InfomationUser\Register.cshtml" />
+    <Content Include="Views\ProductMobile\ProductMobileDetail.cshtml" />
+    <Content Include="Views\User\ProductDetail.cshtml" />
+    <Content Include="Views\User\ProductFind.cshtml" />
+    <Content Include="Views\User\SortAsc.cshtml" />
+    <Content Include="Views\User\SortDesc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

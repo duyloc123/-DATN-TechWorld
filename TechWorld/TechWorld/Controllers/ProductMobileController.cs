@@ -100,5 +100,12 @@ namespace TechWorld.Controllers
                               select item).ToList();
             return View(descMobile);
         }
+
+        // Product Mobile Details
+        public ActionResult ProductMobileDetail()
+        {
+
+            return View();
+        }
     }
 }
