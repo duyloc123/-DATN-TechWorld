@@ -92,20 +92,13 @@ namespace TechWorld.Controllers
         public ActionResult SortDescCategory()
         {
             ViewBag.ActivePage = "Product";
-            string name = Session["IphonCategory"] as string;
+            string name = Session["IphoneCategory"] as string;
             var descMobile = (from item in db.SanPhams
                               where item.LoaiHang.TenLoai == "Dien Thoai" && item.NhaCungCap.TenNCC == name
                               orderby item.GiaTienDaKhuyenMai
                               descending
                               select item).ToList();
             return View(descMobile);
-        }
-
-        // Product Mobile Details
-        public ActionResult ProductMobileDetail()
-        {
-
-            return View();
         }
     }
 }
