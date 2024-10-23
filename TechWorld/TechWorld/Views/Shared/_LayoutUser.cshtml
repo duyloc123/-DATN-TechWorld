@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet" />
     <link rel="stylesheet" href="~/Styles/styles.css" />
+    <link rel="stylesheet" href="~/Styles/styleCart.css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
 
     <title>TechWorld</title>
@@ -68,19 +69,20 @@
                 <input type="text"
                        placeholder="Tìm kiếm"
                        class="px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
-                <div class="relative scale-75 cursor-pointer mr-6">
+                <a href="/ShoppingCart/Index" class="relative scale-75 cursor-pointer mr-2">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          fill="none"
                          viewBox="0 0 24 24"
                          stroke-width="1.5"
                          stroke="currentColor"
-                         class="h-8 w-8 text-gray-600">
+                         class="h-8 w-8 text-gray-600"
+                         id="showCart">
                         <path stroke-linecap="round"
                               stroke-linejoin="round"
                               d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                     </svg>
-                    <span class="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50" id="countProduct" value="0"></span>
-                </div>
+                    <span class="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50" id="checkout_items">0</span>
+                </a>
                 <!-- Avatar-->
                 <div class="dropdown dropdown-end">
                     <div class="avatar online" tabindex="0" role="button">
@@ -104,7 +106,7 @@
                 <input type="text"
                        placeholder="Tìm kiếm"
                        class="px-3 py-2 mr-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white" />
-                <div class="relative scale-75 cursor-pointer mr-2">
+                <a href="/ShoppingCart/Index" class="relative scale-75 cursor-pointer mr-2">
                     <svg xmlns="http://www.w3.org/2000/svg"
                          fill="none"
                          viewBox="0 0 24 24"
@@ -116,8 +118,8 @@
                               stroke-linejoin="round"
                               d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                     </svg>
-                    <span class="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50" id="countProduct">0</span>
-                </div>
+                    <span class="absolute -top-2 left-4 rounded-full bg-red-500 p-0.5 px-2 text-sm text-red-50" id="checkout_items">0</span>
+                </a>
                 <button class="lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-300"
                         id="openModalButton" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal">
                     Đăng nhập
@@ -564,8 +566,9 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-    <script src="~/Styles/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="~/Styles/main.js"></script>
+    <script src="~/Styles/ShoppingCart.js"></script>
     <script>
         // signIn Modal
         const signInModal = document.getElementById('authentication-modal');
@@ -774,46 +777,8 @@
         buttonCloseCart.addEventListener("click", () => {
             show.classList.add("hidden");
         })
-        // Input Number
-        function decrement(e) {
-            const btn = e.target.parentNode.parentElement.querySelector(
-                'button[data-action="decrement"]'
-            );
-            const target = btn.nextElementSibling;
-            let value = Number(target.value);
-            value--;
-            target.value = value;
-        }
-
-        function increment(e) {
-            const btn = e.target.parentNode.parentElement.querySelector(
-                'button[data-action="decrement"]'
-            );
-            const target = btn.nextElementSibling;
-            let value = Number(target.value);
-            value++;
-            target.value = value;
-        }
-
-        const decrementButtons = document.querySelectorAll(
-            `button[data-action="decrement"]`
-        );
-
-        const incrementButtons = document.querySelectorAll(
-            `button[data-action="increment"]`
-        );
-
-        decrementButtons.forEach(btn => {
-            btn.addEventListener("click", decrement);
-        });
-
-        incrementButtons.forEach(btn => {
-            btn.addEventListener("click", increment);
-        });
 
     </script>
-
-    <script src="~/Styles/shoppingCart.js"></script>
 
 </body>
 </html>

@@ -184,137 +184,93 @@
     </div>
 
     <div class="mt-10">
-        <div class="container max-w-[300px] mx-auto">
-            <ol class="flex items-center w-full">
-                <li class="flex w-full items-center text-blue-700  after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-100 after:border-4 after:inline-block">
-                    <span class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full lg:h-12 lg:w-12  shrink-0">
-                        <svg class="w-3.5 h-3.5 text-blue-600 lg:w-4 lg:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </span>
-                </li>
-                <li class="flex w-full items-center text-blue-700  after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-100 after:border-4 after:inline-block">
-                    <span class="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-full lg:h-12 lg:w-12  shrink-0">
-                        <svg class="w-3.5 h-3.5 text-blue-600 lg:w-4 lg:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
-                        </svg>
-                    </span>
-                </li>
-                <li class="flex items-center w-full">
-                    <span class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full lg:h-12 lg:w-12 shrink-0">
-                        <svg class="w-4 h-4 text-gray-500 lg:w-5 lg:h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
-                            <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2ZM7 2h4v3H7V2Zm5.7 8.289-3.975 3.857a1 1 0 0 1-1.393 0L5.3 12.182a1.002 1.002 0 1 1 1.4-1.436l1.328 1.289 3.28-3.181a1 1 0 1 1 1.392 1.435Z"/>
-                        </svg>
-                    </span>
-                </li>
-            </ol>
-        </div>
-    </div>
-
-    <!-- Cart -->
-    <div class="relative z-[900] hidden" id="cart">
-        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
-      
-        <div class="fixed inset-0 overflow-hidden">
-          <div class="absolute inset-0 overflow-hidden">
-            <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
-              <div class="pointer-events-auto w-screen max-w-md">
-                <div class="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
-                  <div class="flex-1 overflow-y-auto px-4 py-6 sm:px-6">
-                    <div class="flex items-start justify-between">
-                      <h2 class="text-lg font-medium text-gray-900" id="slide-over-title">Giỏ Hàng</h2>
-                      <div class="ml-3 flex h-7 items-center">
-                        <button type="button" id="btnCloseCart" class="relative -m-2 p-2 text-gray-400 hover:text-gray-500">
-                          <span class="absolute -inset-0.5"></span>
-                          <span class="sr-only">Close panel</span>
-                          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
-      
-                    <div class="mt-8">
-                      <div class="flow-root">
-                        <ul role="list" class="-my-6 divide-y divide-gray-200">
-                          <li class="flex py-6">
-                            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                              <img src="https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-04-product-01.jpg" alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt." class="h-full w-full object-cover object-center">
-                            </div>
-      
-                            <div class="ml-4 flex flex-1 flex-col">
-                              <div>
-                                <div class="flex justify-between text-base font-medium text-gray-900">
-                                  <h3>
-                                    <a href="#">Throwback Hip Bag</a>
-                                  </h3>
-                                  <p class="ml-4">$90.00</p>
-                                </div>
-                                <p class="mt-1 text-sm text-gray-500">Salmon</p>
-                              </div>
-                              <div class="flex flex-1 items-end justify-between text-sm">
-                                <p class="text-gray-500">Qty 1</p>
-      
-                                <div class="flex">
-                                  <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500 duration-200 ease-in-out">Remove</button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-                          <li class="flex py-6">
-                            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                              <img src="https://tailwindui.com/plus/img/ecommerce-images/shopping-cart-page-04-product-02.jpg" alt="Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch." class="h-full w-full object-cover object-center">
-                            </div>
-      
-                            <div class="ml-4 flex flex-1 flex-col">
-                              <div>
-                                <div class="flex justify-between text-base font-medium text-gray-900">
-                                  <h3>
-                                    <a href="#">Medium Stuff Satchel</a>
-                                  </h3>
-                                  <p class="ml-4">$32.00</p>
-                                </div>
-                                <p class="mt-1 text-sm text-gray-500">Blue</p>
-                              </div>
-                              <div class="flex flex-1 items-end justify-between text-sm">
-                                <p class="text-gray-500">Qty 1</p>
-      
-                                <div class="flex">
-                                  <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500 duration-200 ease-in-out">Remove</button>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-      
-                          <!-- More products... -->
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-      
-                  <div class="border-t border-gray-200 px-4 py-6 sm:px-6">
-                    <div class="flex justify-between text-base font-medium text-gray-900">
-                      <p>Subtotal</p>
-                      <p>$262.00</p>
-                    </div>
-                    <p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
-                    <div class="mt-6">
-                      <a href="#" class="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700">Checkout</a>
-                    </div>
-                    <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
-                      <p>
-                        or
-                        <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">
-                          Continue Shopping
-                          <span aria-hidden="true"> &rarr;</span>
-                        </button>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        <div class="max-w-3xl mx-auto bg-gray-100 rounded-lg p-8">
+            <div class="flex justify-center mb-8">
+                <ol class="flex items-center w-3/4">
+                    <li class="flex w-full items-center text-white after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-300 after:border-4 after:inline-block">
+                        <span class="flex items-center justify-center w-10 h-10 bg-blue-300 rounded-full lg:h-12 lg:w-12 shrink-0">
+                            <svg class="w-3.5 h-3.5 text-blue-700 lg:w-4 lg:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5"/>
+                            </svg>
+                        </span>
+                    </li>
+                    <li class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-300 after:border-4 after:inline-block">
+                        <span class="flex items-center justify-center w-10 h-10 bg-gray-300 rounded-full lg:h-12 lg:w-12 shrink-0">
+                            <svg class="w-4 h-4 text-gray-500 lg:w-5 lg:h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                                <path d="M18 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2ZM6.5 3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3.014 13.021l.157-.625A3.427 3.427 0 0 1 6.5 9.571a3.426 3.426 0 0 1 3.322 2.805l.159.622-6.967.023ZM16 12h-3a1 1 0 0 1 0-2h3a1 1 0 0 1 0 2Zm0-3h-3a1 1 0 1 1 0-2h3a1 1 0 1 1 0 2Zm0-3h-3a1 1 0 1 1 0-2h3a1 1 0 1 1 0 2Z"/>
+                            </svg>
+                        </span>
+                    </li>
+                    <li class="flex items-center w-full">
+                        <span class="flex items-center justify-center w-10 h-10 bg-gray-300 rounded-full lg:h-12 lg:w-12 shrink-0">
+                            <svg class="w-4 h-4 text-gray-500 lg:w-5 lg:h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                                <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2ZM7 2h4v3H7V2Zm5.7 8.289-3.975 3.857a1 1 0 0 1-1.393 0L5.3 12.182a1.002 1.002 0 1 1 1.4-1.436l1.328 1.289 3.28-3.181a1 1 0 1 1 1.392 1.435Z"/>
+                            </svg>
+                        </span>
+                    </li>
+                </ol>
             </div>
-          </div>
+
+            <div class="mt-10">
+                <div class="max-w-3xl mx-auto p-8 bg-gray-200">
+                    <h1 class="text-2xl font-semibold mb-8">Shopping Cart</h1>
+                    
+                    <!-- Cart Items -->
+                    <div class="space-y-4 mb-8">
+                        <!-- iMac -->
+                        <div class="flex items-center justify-between p-4 rounded-lg">
+                            <div class="flex items-center gap-4">
+                                <img src="/styles/image/Remove-bg.ai_1729616670358.png" alt="" class="w-20 h-20">
+                                <span class="font-medium">Apple iMac 27"</span>
+                            </div>
+                            
+                            <div class="flex items-center gap-8">
+                                <div class="flex items-center gap-3">
+                                    <button class="w-8 h-8 flex items-center justify-center bg-white rounded-full hover:bg-gray-300 duration-200 ease-in-out">-</button>
+                                    <span class="w-6 text-center">1</span>
+                                    <button class="w-8 h-8 flex items-center justify-center bg-white rounded-full hover:bg-gray-300 duration-200 ease-in-out">+</button>
+                                </div>
+                                <span class="w-24 text-right">$1,499</span>
+                                <button class="text-gray-400 hover:text-red-500 duration-200 ease-in-out">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                                    </svg>
+                                </button>
+                                <button class="refresh text-gray-400 hover:text-red-500 duration-200 ease-in-out">
+                                    <img src="./styles/image/refresh.png" alt="" class="w-5 h-5">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Order Summary -->
+                    <div class="bg-white p-6 rounded-lg">
+                        <h2 class="text-xl font-semibold mb-4">Tóm Tắt Đơn Hàng</h2>
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Giá tiền</span>
+                                <span>$6,592.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-400">Số lượng</span>
+                                <span>$99</span>
+                            </div>
+                        </div>
+                        <div class="mt-10 flex justify-between border-t border-gray-300 pt-4">
+                            <span class="text-black font-bold text-xl">Tổng Tiền</span>
+                            <span class="text-lg text-semibold text-green-500">$99</span>
+                        </div>
+                        <div class="mt-6 grid grid-cols-2 gap-4">
+                            <button class="shine-button bg-gray-200 text-gray-700 py-3 px-6 rounded-lg w-full hover:bg-gray-300 transition-colors relative overflow-hidden">
+                                Tiếp Tục Mua Sắm
+                            </button>
+                            <button class="shine-button bg-blue-500 text-white py-3 px-6 rounded-lg w-full hover:bg-blue-600 transition-colors relative overflow-hidden">
+                                Thanh Toán
+                            </button>
+                        </div>
+                    </div>
+                </div>
+             </div>
         </div>
     </div>
 
@@ -420,136 +376,66 @@
     </div> 
 
     <!-- Cart View -->
-    <div class="container mx-auto mt-10">
-        <div class="flex shadow-md my-10">
-          <div class="w-3/4 bg-white px-10 py-10">
-            <div class="flex justify-between border-b pb-8">
-              <h1 class="font-semibold text-2xl">Giỏ Hàng</h1>
-              <h2 class="font-semibold text-2xl">Sản phẩm: 3</h2>
-            </div>
-            <div class="flex mt-10 mb-5">
-              <h3 class="font-semibold text-gray-600 text-xs uppercase w-2/5">Thông tin sản phẩm</h3>
-              <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Số lượng</h3>
-              <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Giá</h3>
-              <h3 class="font-semibold text-center text-gray-600 text-xs uppercase w-1/5 text-center">Tông tiền</h3>
-            </div>
-            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-              <div class="flex w-2/5"> <!-- product -->
-                <div class="w-20">
-                  <img class="h-24" src="https://drive.google.com/uc?id=18KkAVkGFvaGNqPy2DIvTqmUH_nk39o3z" alt="">
+     <div class="mt-10">
+        <div class="max-w-3xl mx-auto p-8 bg-gray-200">
+            <h1 class="text-2xl font-semibold mb-8">Shopping Cart</h1>
+            
+            <!-- Cart Items -->
+            <div class="space-y-4 mb-8">
+                <!-- iMac -->
+                <div class="flex items-center justify-between p-4 rounded-lg">
+                    <div class="flex items-center gap-4">
+                        <img src="/styles/image/Remove-bg.ai_1729616670358.png" alt="" class="w-20 h-20">
+                        <span class="font-medium">Apple iMac 27"</span>
+                    </div>
+                    
+                    <div class="flex items-center gap-8">
+                        <div class="flex items-center gap-3">
+                            <button class="w-8 h-8 flex items-center justify-center bg-white rounded-full hover:bg-gray-300 duration-200 ease-in-out">-</button>
+                            <span class="w-6 text-center">1</span>
+                            <button class="w-8 h-8 flex items-center justify-center bg-white rounded-full hover:bg-gray-300 duration-200 ease-in-out">+</button>
+                        </div>
+                        <span class="w-24 text-right">$1,499</span>
+                        <button class="text-gray-400 hover:text-red-500 duration-200 ease-in-out">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                            </svg>
+                        </button>
+                        <button class="refresh text-gray-400 hover:text-red-500 duration-200 ease-in-out">
+                            <img src="./styles/image/refresh.png" alt="" class="w-5 h-5">
+                        </button>
+                    </div>
                 </div>
-                <div class="flex flex-col justify-between ml-4 flex-grow">
-                  <span class="font-bold text-sm">Iphone 6S</span>
-                  <span class="text-red-500 text-xs">Apple</span>
-                  <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs duration-200 ease-in-out">Xoá</a>
+            </div>
+    
+            <!-- Order Summary -->
+            <div class="bg-white p-6 rounded-lg">
+                <h2 class="text-xl font-semibold mb-4">Tóm Tắt Đơn Hàng</h2>
+                <div class="space-y-2">
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Giá tiền</span>
+                        <span>$6,592.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span class="text-gray-400">Số lượng</span>
+                        <span>$99</span>
+                    </div>
                 </div>
-              </div>
-              <div class="flex justify-center w-1/5">
-                <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-                </svg>
-    
-                <input class="mx-2 border text-center w-8" type="text" value="1">
-    
-                <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                  <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-                </svg>
-              </div>
-              <span class="text-center w-1/5 font-semibold text-sm">$400.00</span>
-              <span class="text-center w-1/5 font-semibold text-sm">$400.00</span>
-            </div>
-    
-            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-              <div class="flex w-2/5"> <!-- product -->
-                <div class="w-20">
-                  <img class="h-24" src="https://drive.google.com/uc?id=10ht6a9IR3K2i1j0rHofp9-Oubl1Chraw" alt="">
+                <div class="mt-10 flex justify-between border-t border-gray-300 pt-4">
+                    <span class="text-black font-bold text-xl">Tổng Tiền</span>
+                    <span class="text-lg text-semibold text-green-500">$99</span>
                 </div>
-                <div class="flex flex-col justify-between ml-4 flex-grow">
-                  <span class="font-bold text-sm">Xiaomi Mi 20000mAh</span>
-                  <span class="text-red-500 text-xs">Xiaomi</span>
-                  <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
+                <div class="mt-6 grid grid-cols-2 gap-4">
+                    <button class="shine-button bg-gray-200 text-gray-700 py-3 px-6 rounded-lg w-full hover:bg-gray-300 transition-colors relative overflow-hidden">
+                        Tiếp Tục Mua Sắm
+                    </button>
+                    <button class="shine-button bg-blue-500 text-white py-3 px-6 rounded-lg w-full hover:bg-blue-600 transition-colors relative overflow-hidden">
+                        Thanh Toán
+                    </button>
                 </div>
-              </div>
-              <div class="flex justify-center w-1/5">
-                <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-                </svg>
-    
-                <input class="mx-2 border text-center w-8" type="text" value="1">
-    
-                <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                  <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-                </svg>
-              </div>
-              <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
-              <span class="text-center w-1/5 font-semibold text-sm">$40.00</span>
             </div>
-    
-            <div class="flex items-center hover:bg-gray-100 -mx-8 px-6 py-5">
-              <div class="flex w-2/5"> <!-- product -->
-                <div class="w-20">
-                  <img class="h-24" src="https://drive.google.com/uc?id=1vXhvO9HoljNolvAXLwtw_qX3WNZ0m75v" alt="">
-                </div>
-                <div class="flex flex-col justify-between ml-4 flex-grow">
-                  <span class="font-bold text-sm">Airpods</span>
-                  <span class="text-red-500 text-xs">Apple</span>
-                  <a href="#" class="font-semibold hover:text-red-500 text-gray-500 text-xs">Remove</a>
-                </div>
-              </div>
-              <div class="flex justify-center w-1/5">
-                <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-                </svg>
-                <input class="mx-2 border text-center w-8" type="text" value="1">
-    
-                <svg class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-                  <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
-                </svg>
-              </div>
-              <span class="text-center w-1/5 font-semibold text-sm">$150.00</span>
-              <span class="text-center w-1/5 font-semibold text-sm">$150.00</span>
-            </div>
-    
-            <a href="#" class="flex font-semibold text-indigo-600 text-sm mt-10">
-          
-              <svg class="fill-current mr-2 text-indigo-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
-              Tiếp Tục Mua Sắm
-            </a>
-          </div>
-    
-          <div id="summary" class="w-1/4 px-8 py-10 bg-[#f6f6f6]">
-            <h1 class="font-semibold text-2xl border-b pb-8">Tóm Tắt Đơn Hàng</h1>
-            <div class="flex justify-between mt-10 mb-5">
-              <span class="font-semibold text-sm uppercase">Sản Phẩm: 3</span>
-              <span class="font-semibold text-sm">590$</span>
-            </div>
-            <div>
-              <label for="username" class="font-medium inline-block mb-3 text-sm uppercase">Tên khách hàng</label>
-              <input type="text" id="username" placeholder="Họ tên khách hàng..." required class="p-2 text-sm w-full">
-            </div>
-            <div class="pt-4">
-                <label for="numberPhone" class="font-semibold inline-block mb-3 text-sm uppercase">Số điện thoại</label>
-                <input type="number" id="numberPhone" placeholder="Số điện thoại..." required class="p-2 text-sm w-full">
-              </div>
-            <div class="pt-4">
-              <label for="address" class="font-semibold inline-block mb-3 text-sm uppercase">Địa chỉ</label>
-              <input type="text" id="address" placeholder="Địa chỉ" class="p-2 text-sm w-full">
-            </div>
-            <div class="pt-4">
-                <label for="payment" class="font-semibold inline-block mb-3 text-sm uppercase">Phương thức thanh toán</label>
-                <select class="block p-2 text-gray-600 w-full text-sm">
-                    <option>Thanh toán khi nhận hàng (COD)</option>
-                    <option>Thanh toán bằng Paypal</option>
-                </select>
-            </div>
-            <div class="border-t mt-8">
-              <div class="flex font-semibold justify-between py-6 text-sm uppercase">
-                <span>Tổng tiền</span>
-                <span>$600</span>
-              </div>
-              <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full duration-200 ease-in-out">Thanh toán</button>
-            </div>
-          </div>
-    
         </div>
-    </div>
+     </div>
 
     <!-- Footer -->
     <footer class="w-full mt-20 border-t-2">
@@ -814,6 +700,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    
     <script src="/main.js"></script>
 </body>
 </html>

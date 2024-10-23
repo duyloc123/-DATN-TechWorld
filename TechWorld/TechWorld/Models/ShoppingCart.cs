@@ -7,43 +7,61 @@ namespace TechWorld.Models
 {
     public class ShoppingCart
     {
-        public List<ShoppingCartItem> items { get; set; }
+        public List<ShoppingCartItem> Items { get; set; }
+        public ShoppingCart() 
+        {
+            this.Items = new List<ShoppingCartItem>();
+        }
+        public void AddToCart(ShoppingCartItem item, int Quantity)
+        {
+            // Kiểm tra sản phẩm có trong list
+            var checkExits = Items.FirstOrDefault(x => x.MaSP == item.MaSP);
+            if (checkExits != null)
+            {
+                checkExits.SoLuong += Quantity;
+                checkExits.TongTien = checkExits.GiaTien * checkExits.SoLuong;
+                return;
+            }
+            Items.Add(item);
+        }
 
-        public ShoppingCart()
+        public void Delete(int id)
         {
-            this.items = new List<ShoppingCartItem>();
-        }
-        public void AddToCart(ShoppingCartItem item, int soluong)
-        {
-            var check = items.FirstOrDefault(x => x.MaSP == item.MaSP);
-            if (check != null)
+            var checkDelete = Items.SingleOrDefault(x => x.MaSP == id);
+            if (checkDelete != null)
             {
-                check.SoLuong += soluong;
-                check.TongTien = (decimal)check.GiaTien * check.SoLuong;
-            }
-            else
-            {
-                items.Add(item);
+                Items.Remove(checkDelete);
             }
         }
-        public void delete(int id)
+
+        public void UpdateQuantity(int id,  int quantity)
         {
-            var checkItem = items.SingleOrDefault(item => item.MaSP == id);
-            if (checkItem != null)
+            var checkExits = Items.SingleOrDefault(x => x.MaSP == id);
+            if (checkExits != null)
             {
-                items.Remove(checkItem);
+                checkExits.SoLuong = quantity;
+                checkExits.TongTien = checkExits.GiaTien * checkExits.SoLuong;
             }
+        }
+        
+        public decimal GetTotalPrice()
+        {
+            return Items.Sum(x => x.TongTien);
+        }
+
+        public int GetTotalQuantity()
+        {
+            return Items.Sum(x => x.SoLuong);
         }
     }
+
     public class ShoppingCartItem
     {
         public int MaSP { get; set; }
         public string TenSP { get; set; }
-        public string MaLoai { get; set; }
-        public string HinhAnh { get; set; }
         public int SoLuong { get; set; }
-        public float GiaTien { get; set; }
+        public string Image { get; set; }
+        public decimal GiaTien { get; set; }
         public decimal TongTien { get; set; }
-        public DateTime NgayDatHang { get; set; }
     }
 }

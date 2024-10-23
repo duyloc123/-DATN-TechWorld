@@ -1,12 +1,88 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\shoppingcart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\shoppingcart\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\shoppingcart\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\views\\shared\\_layoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\shared\\_layoutuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\datn\\-datn-techworld\\techworld\\techworld\\styles\\shoppingcart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\styles\\shoppingcart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShoppingCart.js",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Styles\\ShoppingCart.js",
+              "RelativeDocumentMoniker": "TechWorld\\Styles\\ShoppingCart.js",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Styles\\ShoppingCart.js",
+              "RelativeToolTip": "TechWorld\\Styles\\ShoppingCart.js",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEYAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-23T13:54:04.926Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_LayoutUser.cshtml",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Shared\\_LayoutUser.cshtml",
+              "RelativeDocumentMoniker": "TechWorld\\Views\\Shared\\_LayoutUser.cshtml",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Shared\\_LayoutUser.cshtml",
+              "RelativeToolTip": "TechWorld\\Views\\Shared\\_LayoutUser.cshtml",
+              "ViewState": "AQIAACoCAAAAAAAAAAAAADoCAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-23T13:35:10.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Payment.cshtml",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\ShoppingCart\\Payment.cshtml",
+              "RelativeDocumentMoniker": "TechWorld\\Views\\ShoppingCart\\Payment.cshtml",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\ShoppingCart\\Payment.cshtml",
+              "RelativeToolTip": "TechWorld\\Views\\ShoppingCart\\Payment.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-23T13:12:36.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\ShoppingCart\\Index.cshtml",
+              "RelativeDocumentMoniker": "TechWorld\\Views\\ShoppingCart\\Index.cshtml",
+              "ToolTip": "D:\\DATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\ShoppingCart\\Index.cshtml",
+              "RelativeToolTip": "TechWorld\\Views\\ShoppingCart\\Index.cshtml",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAAGMAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-23T13:05:56.147Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

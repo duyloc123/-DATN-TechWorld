@@ -57,6 +57,7 @@ namespace TechWorld.Controllers
                         Session["DiaChi"] = data.FirstOrDefault().DiaChi;
                         Session["SoDienThoai"] = data.FirstOrDefault().SoDienThoai;
                         Session["MaKH"] = data.FirstOrDefault().MaKH;
+
                         return Json(new { success = true, redirectUrl = Url.Action("Index", "User") });
                     }
                 }
@@ -102,5 +103,6 @@ namespace TechWorld.Controllers
             Session.Clear();
             return RedirectToAction("Index","User");
         }
+
     }
 }

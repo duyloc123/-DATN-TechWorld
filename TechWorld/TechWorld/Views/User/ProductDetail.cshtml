@@ -80,8 +80,8 @@
                 <div class="p-6">
                     <h1 class="font-bold text-2xl text-black">@item.TenSP</h1>
                     <div class="mt-6 flex flex-row gap-6 items-center">
-                        <h2 class="text-3xl text-red-600 font-bold">@String.Format("{0:#,##0}", item.GiaTienDaKhuyenMai) <span>Đ</span></h2>
-                        <p class="text-xl text-gray-400 font-semibold"><del>@String.Format("{0:#,##0}", item.GiaTien) <span>Đ</span></del></p>
+                        <h2 class="text-3xl text-red-600 font-bold">@String.Format("{0:#,##0 VNĐ}", item.GiaTienDaKhuyenMai)</h2>
+                        <p class="text-xl text-gray-400 font-semibold"><del>@String.Format("{0:#,##0 VNĐ}", item.GiaTien)</del></p>
                         <span class="px-2 py-[3px] border border-red-500 rounded-lg text-red-500">-7%</span>
                     </div>
                     <div class="custom-number-input h-10 w-32 mt-2">
@@ -89,11 +89,11 @@
                             Số lượng
                         </label>
                         <div class="flex flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-                            <button data-action="decrement" class=" bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                            <button data-action="decrement" id="decrementQuantity" class=" bg-gray-200 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
                                 <span class="m-auto text-2xl font-thin">−</span>
                             </button>
                             <input type="text" id="quantity_value" class="outline-none focus:outline-none text-center w-full bg-gray-200 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="1"/>
-                            <button data-action="increment" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                            <button data-action="increment" id="incrementQuantity" class="bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
                                 <span class="m-auto text-2xl font-thin">+</span>
                             </button>
                         </div>
@@ -236,9 +236,9 @@
                                 <img src="@similarProduct.HinhAnh" alt="" class="w-28 h-28 rounded-lg mt-8">
                                 <div>
                                     <h3 class="text-3.5 font-semibold mb-3.5 cursor-pointer">@similarProduct.TenSP</h3>
-                                    <h4 class="text-sm"><del>@String.Format("{0:#,##0}", similarProduct.GiaTien) <span>Đ</span></del></h4>
+                                    <h4 class="text-sm"><del>@String.Format("{0:#,##0 VNĐ}", similarProduct.GiaTien)</del></h4>
                                     <div class="flex gap-4">
-                                        <h4 class="text-4 mb-3 text-red-500">@String.Format("{0:#,##0}", similarProduct.GiaTienDaKhuyenMai)<span>Đ</span></h4>
+                                        <h4 class="text-4 mb-3 text-red-500">@String.Format("{0:#,##0 VNĐ}", similarProduct.GiaTienDaKhuyenMai)</h4>
                                         <span class="h-6 text-red-500 border border-red-500 px-2">8%</span>
                                     </div>
                                 </div>

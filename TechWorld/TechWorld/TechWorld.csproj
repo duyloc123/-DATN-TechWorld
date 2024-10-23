@@ -127,7 +127,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\ComputerComponentController.cs" />
     <Compile Include="Controllers\InfomationUserController.cs" />
     <Compile Include="Controllers\EarphoneController.cs" />
@@ -137,6 +136,7 @@
     <Compile Include="Controllers\LaptopGamingController.cs" />
     <Compile Include="Controllers\MonitorController.cs" />
     <Compile Include="Controllers\ProductMobileController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -256,6 +256,7 @@
     <Content Include="Styles\Image\persent.png" />
     <Content Include="Styles\Image\power-supply.png" />
     <Content Include="Styles\Image\quality.png" />
+    <Content Include="Styles\Image\refresh.png" />
     <Content Include="Styles\Image\reliability.png" />
     <Content Include="Styles\Image\rog.png" />
     <Content Include="Styles\Image\samsung.png" />
@@ -265,9 +266,10 @@
     <Content Include="Styles\Image\user-interface.png" />
     <Content Include="Styles\Image\video-card.png" />
     <Content Include="Styles\Image\view.png" />
-    <Content Include="Styles\shoppingCart.js" />
     <Content Include="Styles\main.js" />
+    <Content Include="Styles\ShoppingCart.js" />
     <Content Include="Styles\styles.css" />
+    <Content Include="Styles\styleCart.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -367,7 +369,8 @@
     <Content Include="Views\User\ProductFind.cshtml" />
     <Content Include="Views\User\SortAsc.cshtml" />
     <Content Include="Views\User\SortDesc.cshtml" />
-    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\Payment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

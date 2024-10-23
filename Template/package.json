@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@preline/input-number": "^2.5.0"
+  }
+}
