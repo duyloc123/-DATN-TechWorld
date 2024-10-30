@@ -1,8 +1,113 @@
-﻿
+﻿﻿@model IEnumerable<TechWorld.Models.CartModel>
+
 @{
     ViewBag.Title = "Payment";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
 
-<h2>Payment</h2>
+<div class="mt-10">
+    <div class="max-w-xl mx-auto bg-gray-100 rounded-lg p-8">
+        <div class="flex justify-center mb-8">
+            <ol class="flex items-center w-3/4">
+                <li class="flex w-full items-center text-white after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-300 after:border-4 after:inline-block">
+                    <span class="flex items-center justify-center w-10 h-10 bg-blue-300 rounded-full lg:h-12 lg:w-12 shrink-0">
+                        <svg class="w-3.5 h-3.5 text-blue-700 lg:w-4 lg:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                        </svg>
+                    </span>
+                </li>
+                <li class="flex w-full items-center text-white after:content-[''] after:w-full after:h-1 after:border-b after:border-blue-300 after:border-4 after:inline-block">
+                    <span class="flex items-center justify-center w-10 h-10 bg-blue-300 rounded-full lg:h-12 lg:w-12 shrink-0">
+                        <svg class="w-3.5 h-3.5 text-blue-700 lg:w-4 lg:h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 12">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5.917 5.724 10.5 15 1.5" />
+                        </svg>
+                    </span>
+                </li>
+                <li class="flex items-center w-full">
+                    <span class="flex items-center justify-center w-10 h-10 bg-gray-300 rounded-full lg:h-12 lg:w-12 shrink-0">
+                        <svg class="w-4 h-4 text-gray-500 lg:w-5 lg:h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 20">
+                            <path d="M16 1h-3.278A1.992 1.992 0 0 0 11 0H7a1.993 1.993 0 0 0-1.722 1H2a2 2 0 0 0-2 2v15a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2ZM7 2h4v3H7V2Zm5.7 8.289-3.975 3.857a1 1 0 0 1-1.393 0L5.3 12.182a1.002 1.002 0 1 1 1.4-1.436l1.328 1.289 3.28-3.181a1 1 0 1 1 1.392 1.435Z" />
+                        </svg>
+                    </span>
+                </li>
+            </ol>
+        </div>
+        @using (Ajax.BeginForm("Payment", "ShoppingCart", new AjaxOptions
+        {
+            HttpMethod = "POST",
+            UpdateTargetId = "load_data"
+        }))
+        {
+            @Html.AntiForgeryToken()
+    <form class="mt-10">
+        <input class="hidden"  type="text" name="MaKH" value="@Session["MaKH"]" />
+        <div class="grid md:grid-cols-2 md:gap-6">
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="text" name="HoTen" id="TenKhacHang" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" value="@Session["TenKhachHang"]" required />
+                <label for="HoTen" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Họ Tên</label>
+            </div>
+            <div class="relative z-0 w-full mb-5 group">
+                <input type="tel" name="SoDienThoai" id="floating_phone" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " value="@Session["SoDienThoai"]" required />
+                <label for="SoDienThoai" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Số điện thoại</label>
+            </div>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="email" name="Email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " value="@Session["Gmail"]" required />
+            <label for="Email" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Địa chỉ Email</label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="DiaChi" id="floating_address" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " value="@Session["DiaChi"]" required />
+            <label for="DiaChi" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Địa chỉ</label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group">
+            <input type="text" name="floating_address" id="floating_address" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none border-gray-600 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+            <label for="floating_address" class="peer-focus:font-medium absolute text-md text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Yêu cầu khác (Không bắt buộc)</label>
+        </div>
+        <div class="relative z-0 w-full mb-5 group mt-10">
+            <h3 class="text-lg text-gray-900 mb-4 font-semibold">Phương thức thanh toán</h3>
+            <div class="w-[280px] relative group">
+                <select class="w-full p-4 rounded-lg border border-gray-300
+                                   appearance-none cursor-pointer
+                                   bg-white
+                                   hover:border-blue-500
+                                   focus:border-blue-500 focus:outline-none
+                                   transition-all duration-300 ease-in-out
+                                   text-gray-700"
+                        name="methodPayment"
+                        id="methodPayment">
+                    <option value="">Thanh toán khi nhận hàng COD</option>
+                    <option value="">Thanh toán bằng Paypal</option>
+                </select>
 
+                <!-- Custom arrow icon -->
+                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                    <svg class="w-4 h-4 text-gray-500 transform origin-center transition-all duration-300"
+                         fill="none"
+                         stroke="currentColor"
+                         viewBox="0 0 24 24">
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M19 9l-7 7-7-7">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        @if (Session["TongTien"] != null)
+        {
+            var tongTien = (decimal)Session["TongTien"];
+            <div class="relative z-0 w-full mb-5 group">
+                <div class="mt-10 flex justify-between border-t border-gray-300 pt-4">
+                    <span class="text-black font-bold text-xl">Tổng Tiền</span>
+                    <span class="text-2xl text-semibold text-red-500">@String.Format("{0:#,##0 VNĐ}", tongTien)</span>
+                </div>
+            </div>
+        }
+        <button type="submit" class="shine-button bg-blue-600 text-xl uppercase text-white py-3 px-6 rounded-lg w-full hover:bg-blue-700 transition-colors relative overflow-hidden">
+            Thanh Toán
+        </button>
+    </form>
+        }
+    </div>
+</div>

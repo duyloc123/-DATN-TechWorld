@@ -16,8 +16,8 @@ namespace TechWorld.Models
     {
         public int MaDH { get; set; }
         public int MaSP { get; set; }
-        public int SoLuong { get; set; }
-        public double GiaBan { get; set; }
+        public Nullable<System.DateTime> NgayDat { get; set; }
+        public double TongTien { get; set; }
     
         public virtual DonHang DonHang { get; set; }
         public virtual SanPham SanPham { get; set; }

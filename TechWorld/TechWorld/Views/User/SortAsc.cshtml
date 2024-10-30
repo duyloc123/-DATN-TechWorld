@@ -191,8 +191,10 @@
                                 <h3 class="text-2xl text-red-600">@String.Format("{0:#,##0}", item.GiaTienDaKhuyenMai) <span>Đ</span></h3>
                                 <span class="text-black border bg-red-500 p-1 rounded-full">-3%</span>
                             </div>
+                            <input class="hidden" name="maSP" id="maSP" value="@item.MaSP" />
                             <button class="rounded-md bg-blue-600 py-2 px-4 mt-4 border border-transparent text-center text-sm text-white transition-all duration-250 ease-linear shadow-md hover:shadow-lg focus:bg-blue-700 focus:shadow-none active:bg-blue-700 hover:bg-blue-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none ml-2"
-                                    type="button">
+                                    type="button"
+                                    id="btnAddToCart">
                                 Thêm vào giỏ hàng
                             </button>
                         </div>

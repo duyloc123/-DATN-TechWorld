@@ -20,5 +20,6 @@ namespace TechWorld.Models
         public Nullable<System.DateTime> NgayDang { get; set; }
         public string TacGia { get; set; }
         public string HinhAnh { get; set; }
+        public string TrangThai { get; set; }
     }
 }

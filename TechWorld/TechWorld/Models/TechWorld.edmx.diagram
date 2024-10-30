@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="45975f536dca48c6a5e2e22cda650bd4" Name="Diagram1">
+        <EntityTypeShape EntityType="TechWorldModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.DonHang" Width="1.5" PointX="3" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.KhachHang" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.LoaiHang" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.SanPham" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.TaiKhoan" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.TinTuc" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.YeuThich" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="TechWorldModel.FK__ChiTietDon__MaDH__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__ChiTietDon__MaSP__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__DonHang__MAKH__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__YeuThich__MaKH__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__SanPham__MaLoai__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__SanPham__MaNCC__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__YeuThich__MaSP__5FB337D6" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -56,18 +56,6 @@ incrementButtons.forEach(btn => {
     btn.addEventListener("click", increment);
 });
 
-
-$(document).ready(function () {
-    // Ưu tiên lấy từ localStorage để UI cập nhật nhanh
-    const localCount = localStorage.getItem('cartCount');
-    if (localCount) {
-        $('#checkout_items').html(localCount);
-    }
-
-    // Sau đó gọi API để đồng bộ với server
-    ShowCount();
-});
-
 // Cart
 const addToCart = document.getElementById("btnAddToCart");
 const id = document.getElementById("maSP").value;
@@ -123,16 +111,6 @@ function UpdateCart(id) {
     })
 }
 
-// Show Count
-function ShowCount() {
-    $.ajax({
-        url: "/ShoppingCart/ShowCount",
-        type: "GET",
-        success: function (rs) {
-            $('#checkout_items').html(rs.Count);
-        }
-    })
-}
 // Button Quantity Cart
 function incrementCart() {
     let quantityInput = document.getElementById('quantity');

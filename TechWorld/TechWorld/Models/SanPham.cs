@@ -25,10 +25,13 @@ namespace TechWorld.Models
         public string TenSP { get; set; }
         public System.DateTime NgayNhap { get; set; }
         public double GiaTien { get; set; }
-        public double GiaTienDaKhuyenMai { get; set; }
+        public Nullable<double> GiaTienDaKhuyenMai { get; set; }
         public int SoLuong { get; set; }
+        public string MoTa { get; set; }
         public string MoTaSanPham { get; set; }
         public string HinhAnh { get; set; }
+        public string GiamGia { get; set; }
+        public string TinhTrangSP { get; set; }
         public Nullable<int> MaLoai { get; set; }
         public Nullable<int> MaNCC { get; set; }
     

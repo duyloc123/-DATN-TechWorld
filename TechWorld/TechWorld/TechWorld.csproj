@@ -128,6 +128,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ComputerComponentController.cs" />
+    <Compile Include="Controllers\OrderViewModel.cs" />
     <Compile Include="Controllers\InfomationUserController.cs" />
     <Compile Include="Controllers\EarphoneController.cs" />
     <Compile Include="Controllers\GamingChairController.cs" />
@@ -141,67 +142,65 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\ChiTietDonHang.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ProductDetailViewModel.cs" />
     <Compile Include="Models\DonHang.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\KhachHang.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\LoaiHang.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\NhaCungCap.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductDetailViewModel.cs" />
     <Compile Include="Models\SanPham.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ShoppingCart.cs" />
-    <Compile Include="Models\sysdiagram.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TaiKhoan.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TechWorldModel.Context.cs">
+    <Compile Include="Models\TechWorld.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TechWorldModel.Context.tt</DependentUpon>
+      <DependentUpon>TechWorld.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TechWorldModel.cs">
+    <Compile Include="Models\TechWorld.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TechWorldModel.Designer.cs">
+    <Compile Include="Models\TechWorld.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TechWorldModel.edmx</DependentUpon>
+      <DependentUpon>TechWorld.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\TinTuc.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\YeuThich.cs">
-      <DependentUpon>TechWorldModel.tt</DependentUpon>
+      <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Models\TechWorldModel.Context.tt">
+    <Content Include="Models\TechWorld.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TechWorldModel.edmx</DependentUpon>
-      <LastGenOutput>TechWorldModel.Context.cs</LastGenOutput>
+      <DependentUpon>TechWorld.edmx</DependentUpon>
+      <LastGenOutput>TechWorld.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\TechWorldModel.tt">
+    <Content Include="Models\TechWorld.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TechWorldModel.edmx</DependentUpon>
-      <LastGenOutput>TechWorldModel.cs</LastGenOutput>
+      <DependentUpon>TechWorld.edmx</DependentUpon>
+      <LastGenOutput>TechWorld.cs</LastGenOutput>
     </Content>
     <Content Include="Styles\Image\2023_11_3_638346181356369639_shipper.jpg" />
     <Content Include="Styles\Image\648858cbfae720397e600c8f6c57ab29.png" />
@@ -227,6 +226,7 @@
     <Content Include="Styles\Image\hide.png" />
     <Content Include="Styles\Image\icons8-aorus-logo-64.png" />
     <Content Include="Styles\Image\icons8-asus-64.png" />
+    <Content Include="Styles\Image\icons8-cod-64.png" />
     <Content Include="Styles\Image\icons8-dell-logo-48.png" />
     <Content Include="Styles\Image\icons8-earphone-64.png" />
     <Content Include="Styles\Image\icons8-hp-logo-48.png" />
@@ -287,12 +287,12 @@
     <Folder Include="Views\ProductDetailViewModel\" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\TechWorldModel.edmx">
+    <EntityDeploy Include="Models\TechWorld.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TechWorldModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>TechWorld.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\TechWorldModel.edmx.diagram">
-      <DependentUpon>TechWorldModel.edmx</DependentUpon>
+    <Content Include="Models\TechWorld.edmx.diagram">
+      <DependentUpon>TechWorld.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
     <Content Include="Views\User\Index.cshtml" />
@@ -371,6 +371,7 @@
     <Content Include="Views\User\SortDesc.cshtml" />
     <Content Include="Views\ShoppingCart\Index.cshtml" />
     <Content Include="Views\ShoppingCart\Payment.cshtml" />
+    <Content Include="Views\ShoppingCart\OrderSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

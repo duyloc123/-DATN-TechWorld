@@ -172,3 +172,26 @@ input[type='number']::-webkit-outer-spin-button {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
+
+@keyframes bounceArrow {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.group:hover svg {
+    animation: bounceArrow 1s ease-in-out infinite;
+}
+
+.group:not(:hover) svg {
+    animation: none;
+    transform: rotate(0);
+}

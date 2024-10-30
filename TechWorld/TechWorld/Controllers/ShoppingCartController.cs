@@ -16,6 +16,8 @@ namespace TechWorld.Controllers
             ShoppingCart cart = (ShoppingCart)Session["Cart"];
             if(cart != null)
             {
+                var tongTien = cart.Items.Sum(item => item.TongTien);
+                Session["TongTien"] = tongTien;
                 return View(cart.Items);
             }
             return View();
@@ -94,5 +96,43 @@ namespace TechWorld.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Payment(OrderViewModel req)
+        {
+            var code = new { Success = false, Code = -1 };
+            if (ModelState.IsValid)
+            {
+                ShoppingCart cart = (ShoppingCart)Session["Cart"];
+                if(cart != null)
+                {
+                    DonHang dh = new DonHang();
+                    dh.MAKH = req.MaKH;
+                    dh.NgayDat = DateTime.Now;
+                    dh.TongTien = (double)cart.Items.Sum(s => s.GiaTien * s.SoLuong);
+                    dh.PTThanhToan = req.PTThanhToan;
+                    dh.TTDonHang = "Chưa giao hàng";
+                    dh.TTThanhToan = "Chưa thanh toán";
+                    Random rand = new Random(10000);
+                    dh.MaDH = rand.Next();
+                    cart.Items.ForEach(item => dh.ChiTietDonHangs.Add(new ChiTietDonHang
+                    {
+                        MaSP = item.MaSP,
+                        TongTien = (double)item.TongTien
+
+                    }));
+                    db.DonHangs.Add(dh);
+                    db.SaveChanges();
+
+                    Session["Cart"] = null;
+
+                    code = new { Success = true, Code = 1 };
+                    return RedirectToAction("OrderSuccess");
+                }
+            }
+            return Json(code);
+        }
+
+        public ActionResult OrderSuccess() { return View(); }
     }
 }
