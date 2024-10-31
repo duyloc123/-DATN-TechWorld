@@ -36,6 +36,7 @@
     <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="MatKhau" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HinhAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="DonHangs" Relationship="Self.FK__DonHang__MAKH__5629CD9C" FromRole="KhachHang" ToRole="DonHang" />
     <NavigationProperty Name="YeuThiches" Relationship="Self.FK__YeuThich__MaKH__5EBF139D" FromRole="KhachHang" ToRole="YeuThich" />
   </EntityType>
@@ -45,6 +46,7 @@
     </Key>
     <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="TenLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HinhAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaLoai__4F7CD00D" FromRole="LoaiHang" ToRole="SanPham" />
   </EntityType>
   <EntityType Name="NhaCungCap">
@@ -55,6 +57,7 @@
     <Property Name="TenNCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SoDienThoaiNCC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DiaChiNCC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="HinhAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaNCC__5070F446" FromRole="NhaCungCap" ToRole="SanPham" />
   </EntityType>
   <EntityType Name="SanPham">

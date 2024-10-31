@@ -37,6 +37,7 @@
           <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
           <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
           <Property Name="MatKhau" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="LoaiHang">
           <Key>
@@ -44,6 +45,7 @@
           </Key>
           <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenLoai" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="NhaCungCap">
           <Key>
@@ -53,6 +55,7 @@
           <Property Name="TenNCC" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="SoDienThoaiNCC" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="DiaChiNCC" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="SanPham">
           <Key>
@@ -264,6 +267,7 @@
           <Property Name="DiaChi" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="SoDienThoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MatKhau" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DonHangs" Relationship="Self.FK__DonHang__MAKH__5629CD9C" FromRole="KhachHang" ToRole="DonHang" />
           <NavigationProperty Name="YeuThiches" Relationship="Self.FK__YeuThich__MaKH__5EBF139D" FromRole="KhachHang" ToRole="YeuThich" />
         </EntityType>
@@ -273,6 +277,7 @@
           </Key>
           <Property Name="MaLoai" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaLoai__4F7CD00D" FromRole="LoaiHang" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="NhaCungCap">
@@ -283,6 +288,7 @@
           <Property Name="TenNCC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="SoDienThoaiNCC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="DiaChiNCC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaNCC__5070F446" FromRole="NhaCungCap" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="SanPham">
@@ -498,6 +504,7 @@
                 <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
                 <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
                 <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -506,6 +513,7 @@
               <MappingFragment StoreEntitySet="LoaiHang">
                 <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
                 <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -516,6 +524,7 @@
                 <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
                 <ScalarProperty Name="SoDienThoaiNCC" ColumnName="SoDienThoaiNCC" />
                 <ScalarProperty Name="DiaChiNCC" ColumnName="DiaChiNCC" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

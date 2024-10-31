@@ -1,12 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\\u0110ATN\\-DATN-TechWorld\\TechWorld\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\\u0111atn\\-datn-techworld\\techworld\\techworld\\views\\admin\\sanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\admin\\sanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\\u0111atn\\-datn-techworld\\techworld\\techworld\\views\\admin\\createsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\admin\\createsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\\u0111atn\\-datn-techworld\\techworld\\techworld\\controllers\\admin\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\controllers\\admin\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "createSanPham.cshtml",
+              "DocumentMoniker": "D:\\\u0110ATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Admin\\createSanPham.cshtml",
+              "RelativeDocumentMoniker": "TechWorld\\Views\\Admin\\createSanPham.cshtml",
+              "ToolTip": "D:\\\u0110ATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Admin\\createSanPham.cshtml",
+              "RelativeToolTip": "TechWorld\\Views\\Admin\\createSanPham.cshtml",
+              "ViewState": "AQIAADAAAAAAAAAAAAAqwFMAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T17:12:25.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SanPham.cshtml",
+              "DocumentMoniker": "D:\\\u0110ATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Admin\\SanPham.cshtml",
+              "RelativeDocumentMoniker": "TechWorld\\Views\\Admin\\SanPham.cshtml",
+              "ToolTip": "D:\\\u0110ATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Admin\\SanPham.cshtml",
+              "RelativeToolTip": "TechWorld\\Views\\Admin\\SanPham.cshtml",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABMAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-31T16:20:13.885Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\\u0110ATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\Admin\\AdminController.cs",
+              "RelativeDocumentMoniker": "TechWorld\\Controllers\\Admin\\AdminController.cs",
+              "ToolTip": "D:\\\u0110ATN\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\Admin\\AdminController.cs",
+              "RelativeToolTip": "TechWorld\\Controllers\\Admin\\AdminController.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAAAH4AAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-31T06:42:23.801Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

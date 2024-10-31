@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "createSanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="bg-white border border-4 rounded-lg shadow relative m-10">
+
+    <div class="flex items-start justify-between p-5 border-b rounded-t">
+        <h3 class="text-xl font-semibold">
+            Thêm Sản Phẩm
+        </h3>
+    </div>
+
+    <div class="p-6 space-y-6">
+        <form action="#">
+            <div class="grid grid-cols-9 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
+                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
+                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Date</label>
+                    <input type="date" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
+                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
+                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
+                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
+                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
+                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
+                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label class="mb-5 block text-xl font-semibold text-[#07074D]">
+                        Upload File
+                    </label>
+                    <input type="file" name="file" id="file" class="sr-only" />
+                    <label for="file"
+                            class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center">
+                        <div>
+                            <span class="mb-2 block text-xl font-semibold text-[#07074D]">
+                                Drop files here
+                            </span>
+                            <span class="mb-2 block text-base font-medium text-[#6B7280]">
+                                Or
+                            </span>
+                            <span class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]">
+                                Browse
+                            </span>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="col-span-full">
+                    <label for="product-details" class="text-sm font-medium text-gray-900 block mb-2">Product Details</label>
+                    <textarea id="product-details" rows="6" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Details"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="p-6 border-t border-gray-200 rounded-b">
+        <button class="text-white bg-cyan-600 hover:bg-cyan-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-200 ease-in-out" type="submit">Lưu thông tin</button>
+    </div>
+
+</div>

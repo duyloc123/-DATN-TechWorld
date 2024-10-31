@@ -33,6 +33,7 @@
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -41,6 +42,7 @@
         <MappingFragment StoreEntitySet="LoaiHang">
           <ScalarProperty Name="MaLoai" ColumnName="MaLoai" />
           <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -51,6 +53,7 @@
           <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
           <ScalarProperty Name="SoDienThoaiNCC" ColumnName="SoDienThoaiNCC" />
           <ScalarProperty Name="DiaChiNCC" ColumnName="DiaChiNCC" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

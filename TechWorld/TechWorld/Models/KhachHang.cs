@@ -27,6 +27,7 @@ namespace TechWorld.Models
         public string DiaChi { get; set; }
         public string SoDienThoai { get; set; }
         public string MatKhau { get; set; }
+        public string HinhAnh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DonHang> DonHangs { get; set; }

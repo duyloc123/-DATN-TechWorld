@@ -32,6 +32,7 @@
     <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
     <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
     <Property Name="MatKhau" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="LoaiHang">
     <Key>
@@ -39,6 +40,7 @@
     </Key>
     <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TenLoai" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="NhaCungCap">
     <Key>
@@ -48,6 +50,7 @@
     <Property Name="TenNCC" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="SoDienThoaiNCC" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="DiaChiNCC" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="SanPham">
     <Key>
