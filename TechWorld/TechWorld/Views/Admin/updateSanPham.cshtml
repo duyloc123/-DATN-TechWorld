@@ -1,0 +1,90 @@
+﻿@model TechWorld.Models.LoaiHangNCCViewModel
+@{
+    ViewBag.Title = "updateSanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="bg-white border border-4 rounded-lg shadow relative m-10">
+    <div class="p-6 space-y-6">
+        @using (Html.BeginForm("updateSanPham", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <form>
+                <div class="grid grid-cols-9 gap-6">
+                    <div class="col-span-6 sm:col-span-3">
+                        <input type="hidden" name="MaSP" value="@Model.MaSP" />
+                        <label for="MaLoai" class="text-sm font-medium text-gray-900 block mb-2">Loại hàng</label>
+                        <select name="MaLoai" id="MaLoai" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5">
+                            @foreach (var loaihang in Model.LoaiHangList)
+                            {
+                                <option value="@loaihang.MaLoai" @(loaihang.MaLoai == Model.MaLoai ? "selected" : "")>
+                                    @loaihang.TenLoai
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="MaNCC" class="text-sm font-medium text-gray-900 block mb-2">Nhà cung cấp</label>
+                        <select name="MaNCC" id="MaNCC" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5">
+                            @foreach (var nhacungcap in Model.NhaCungCapList)
+                            {
+                                <option value="@nhacungcap.MaNCC" @(nhacungcap.MaNCC == Model.MaNCC ? "selected" : "")>
+                                     @nhacungcap.TenNCC
+                                </option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="TenSP" class="text-sm font-medium text-gray-900 block mb-2">Tên sản phẩm</label>
+                        <input type="text" name="TenSP" id="TenSP" value="@Model.TenSP" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required="">
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="GiaTien" class="text-sm font-medium text-gray-900 block mb-2">Giá tiền</label>
+                        <input type="number" name="GiaTien" id="GiaTien" value="@Model.GiaTien" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="...">
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="GiamGia" class="text-sm font-medium text-gray-900 block mb-2">Giảm giá (%)</label>
+                        <input type="number" name="GiamGia" id="GiamGia" value="@Model.GiamGia" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required="">
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="NgayNhap" class="text-sm font-medium text-gray-900 block mb-2">Date</label>
+                        <input type="date" name="NgayNhap" id="NgayNhap" value="@Model.NgayNhap" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" required="">
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="soLuong" class="text-sm font-medium text-gray-900 block mb-2">Số Lượng</label>
+                        <input type="text" name="soLuong" id="soLuong" value="@Model.SoLuong" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required="">
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label class="mb-5 block text-xl font-semibold text-[#07074D]">
+                            Hình ảnh
+                        </label>
+                        <input type="file" name="HinhAnh" id="file" class="sr-only" value="@Model.HinhAnh" />
+                        <label for="file"
+                               class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center">
+                            <div>
+                                <span class="mb-2 block text-xl font-semibold text-[#07074D]">
+                                    Drop files here
+                                </span>
+                                <span class="mb-2 block text-base font-medium text-[#6B7280]">
+                                    Or
+                                </span>
+                                <span class="inline-flex rounded border border-[#e0e0e0] py-2 px-7 text-base font-medium text-[#07074D]">
+                                    Browse
+                                </span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="col-span-full">
+                        <label for="product-details" class="text-sm font-medium text-gray-900 block mb-2">Mô tả sản phẩm</label>
+                        <textarea id="product-details" name="MoTa" rows="6" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="">@Model.MoTa</textarea>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-gray-200 rounded-b">
+                    <button class="text-white bg-cyan-600 hover:bg-cyan-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-200 ease-in-out" type="submit">Lưu thông tin</button>
+                </div>
+            </form>
+        }
+    </div>
+</div>
+
+

@@ -24,7 +24,7 @@ namespace TechWorld.Controllers.Admin
         }
         public ActionResult FindKhachHang(string nameSearch)
         {
-            if(nameSearch != "")
+            if (nameSearch != "")
             {
                 ViewBag.ActivePage = "KhachHangList";
                 var find = db.KhachHangs.Where(item => item.HoTen.Contains(nameSearch));
@@ -74,14 +74,14 @@ namespace TechWorld.Controllers.Admin
             ViewBag.ActivePage = "NhaCungCapList";
             var listNhaCungCap = db.NhaCungCaps.ToList();
             var findNhaCungCap = db.NhaCungCaps.Find(id);
-                Session["MaNCC"] = findNhaCungCap.MaNCC.ToString();
-                Session["TenNCC"] = findNhaCungCap.TenNCC.ToString();
-                Session["SoDienThoaiNCC"] = findNhaCungCap.SoDienThoaiNCC.ToString();
-                Session["DiaChiNCC"] = findNhaCungCap.DiaChiNCC.ToString();
-                return View(listNhaCungCap);
+            Session["MaNCC"] = findNhaCungCap.MaNCC.ToString();
+            Session["TenNCC"] = findNhaCungCap.TenNCC.ToString();
+            Session["SoDienThoaiNCC"] = findNhaCungCap.SoDienThoaiNCC.ToString();
+            Session["DiaChiNCC"] = findNhaCungCap.DiaChiNCC.ToString();
+            return View(listNhaCungCap);
         }
         [HttpPost]
-        public ActionResult submitUpdateNCC(int id,NhaCungCapModel req, HttpPostedFileBase HinhAnh)
+        public ActionResult submitUpdateNCC(int id, NhaCungCapModel req, HttpPostedFileBase HinhAnh)
         {
             var findNhaCungCap = db.NhaCungCaps.Find(id);
 
@@ -139,13 +139,13 @@ namespace TechWorld.Controllers.Admin
         public ActionResult deleteLoaiHang(int id)
         {
             var delete = db.LoaiHangs.Find(id);
-            if (delete != null )
+            if (delete != null)
             {
                 db.LoaiHangs.Remove(delete);
                 db.SaveChanges();
                 return RedirectToAction("LoaiHangList");
             }
-            return RedirectToAction("Error","Shared");
+            return RedirectToAction("Error", "Shared");
         }
         [HttpGet]
         public ActionResult updateLoaiHang(int id)
@@ -164,7 +164,7 @@ namespace TechWorld.Controllers.Admin
             if (findLoaiHang != null)
             {
                 findLoaiHang.TenLoai = req.TenLoai;
-                if(req.HinhAnh != null)
+                if (req.HinhAnh != null)
                 {
                     string rootFolder = Server.MapPath("/DataImageSql/");
                     string pathImage = rootFolder + HinhAnh.FileName;
@@ -198,7 +198,125 @@ namespace TechWorld.Controllers.Admin
         public ActionResult createSanPham()
         {
             ViewBag.ActivePage = "SanPhamList";
-            return View();
+            var viewModel = new LoaiHangNCCViewModel
+            {
+                LoaiHangList = db.LoaiHangs.ToList(),
+                NhaCungCapList = db.NhaCungCaps.ToList(),
+            };
+            return View(viewModel);
+        }
+        [HttpPost]
+        public ActionResult createSanPham(SanPham req, HttpPostedFileBase HinhAnh)
+        {
+            if (HinhAnh.ContentLength > 0)
+            {
+                string rootFolder = Server.MapPath("/DataImageSql/");
+                string pathImage = rootFolder + HinhAnh.FileName;
+                HinhAnh.SaveAs(pathImage);
+                req.HinhAnh = "DataImageSql/" + HinhAnh.FileName;
+                SanPham sp = new SanPham();
+                sp.TenSP = req.TenSP;
+                sp.NgayNhap = req.NgayNhap;
+                sp.GiaTien = req.GiaTien;
+                sp.SoLuong = req.SoLuong;
+                sp.MoTa = req.MoTa;
+                sp.MoTaSanPham = req.MoTa;
+                sp.HinhAnh = req.HinhAnh;
+                sp.MaNCC = req.MaNCC;
+                sp.MaLoai = req.MaLoai;
+                if (req.GiamGia != "")
+                {
+                    sp.GiamGia = req.GiamGia;
+                    sp.GiaTienDaKhuyenMai = req.GiaTien - (req.GiaTien * float.Parse(req.GiamGia) / 100);
+                }
+                sp.TinhTrangSP = "Còn hàng";
+                db.SanPhams.Add(sp);
+                db.SaveChanges();
+            }
+            return RedirectToAction("SanPham");
+        }
+        [HttpGet]
+        public ActionResult deleteSanPham(int id)
+        {
+            var findSanPham = db.SanPhams.Find(id);
+            db.SanPhams.Remove(findSanPham);
+            db.SaveChanges();
+            return RedirectToAction("SanPham");
+        }
+        public ActionResult updateSanPham(int id)
+        {
+            ViewBag.ActivePage = "SanPhamList";
+            var sanPham = db.SanPhams.FirstOrDefault(item => item.MaSP == id);
+            var viewModel = new LoaiHangNCCViewModel
+            {
+                MaSP = sanPham.MaSP,
+                MaLoai = (int)sanPham.MaLoai,
+                MaNCC = (int)sanPham.MaNCC,
+                TenSP = sanPham.TenSP,
+                GiaTien = sanPham.GiaTien.ToString(),
+                NgayNhap = sanPham.NgayNhap.ToString("yyyy-MM-dd"),
+                SoLuong = sanPham.SoLuong,
+                MoTa = sanPham.MoTa,
+                GiamGia = sanPham.GiamGia.ToString(),
+            };
+            viewModel.LoaiHangList = db.LoaiHangs.ToList();
+            viewModel.NhaCungCapList = db.NhaCungCaps.ToList();
+            return View(viewModel);
+        }
+        [HttpPost]
+        public ActionResult updateSanPham(LoaiHangNCCViewModel req, HttpPostedFileBase HinhAnh)
+        {
+            if (ModelState.IsValid)
+            {
+                var sanPham = db.SanPhams.Find(req.MaSP);
+                sanPham.MaLoai = req.MaLoai;
+                sanPham.MaNCC = req.MaNCC;
+                sanPham.TenSP = req.TenSP;
+                sanPham.GiaTien = float.Parse(req.GiaTien);
+                sanPham.GiamGia = req.GiamGia;
+                sanPham.NgayNhap = DateTime.Parse(req.NgayNhap);
+                sanPham.SoLuong = req.SoLuong;
+                sanPham.MoTa = req.MoTa;
+                if(req.HinhAnh != null)
+                {
+                    string rootFolder = Server.MapPath("/DataImageSql/");
+                    string pathImage = rootFolder + HinhAnh.FileName;
+                    HinhAnh.SaveAs(pathImage);
+                    req.HinhAnh = "DataImageSql/" + HinhAnh.FileName;
+                    sanPham.HinhAnh = req.HinhAnh;
+                }
+                if(req.SoLuong == 0)
+                {
+                    sanPham.TinhTrangSP = "Hết hàng";
+                }
+                else
+                {
+                    sanPham.TinhTrangSP = "Còn hàng";
+                }
+                if(req.GiamGia != "")
+                {
+                    float giaTien = float.Parse(req.GiaTien);
+                    float giamGia = float.Parse(req.GiamGia);
+                    sanPham.GiaTienDaKhuyenMai = giaTien - (giaTien * giamGia / 100);
+                }
+                else
+                {
+                    sanPham.GiaTienDaKhuyenMai = 0;
+                }
+                db.SaveChanges();
+                return RedirectToAction("SanPham");
+            }
+            return RedirectToAction("updateSanPham");
+        }
+        public ActionResult findSanPham(string nameSearch)
+        {
+            ViewBag.ActivePage = "SanPhamList";
+            if (nameSearch != "")
+            {
+                var find = db.SanPhams.Where(item => item.TenSP.Contains(nameSearch)).ToList();
+                return View(find);
+            }
+            return RedirectToAction("SanPham");
         }
     }
 }

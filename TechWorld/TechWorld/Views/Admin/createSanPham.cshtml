@@ -1,4 +1,5 @@
-﻿
+﻿@model TechWorld.Models.LoaiHangNCCViewModel
+
 @{
     ViewBag.Title = "createSanPham";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -12,51 +13,62 @@
     </div>
 
     <div class="p-6 space-y-6">
-        <form action="#">
+        @using (Ajax.BeginForm("createSanPham", "Admin", new AjaxOptions
+        {
+            HttpMethod = "POST",
+            UpdateTargetId = "load_data"
+        },
+            new { enctype = "multipart/form-data" }
+        ))
+        {
+            @Html.AntiForgeryToken()
+        <form>
             <div class="grid grid-cols-9 gap-6">
                 <div class="col-span-6 sm:col-span-3">
-                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
-                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                    <label for="MaLoai" class="text-sm font-medium text-gray-900 block mb-2">Loại hàng</label>
+                    <select name="MaLoai" id="MaLoai" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5">
+                        @foreach (var loaihang in Model.LoaiHangList)
+                        {
+                            <option value="@loaihang.MaLoai" name="MaLoai">@loaihang.TenLoai</option>
+                        }
+                    </select>
                 </div>
                 <div class="col-span-6 sm:col-span-3">
-                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
-                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                    <label for="MaNCC" class="text-sm font-medium text-gray-900 block mb-2">Nhà cung cấp</label>
+                    <select name="MaNCC" id="MaNCC" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5">
+                        @foreach (var nhacungcap in Model.NhaCungCapList)
+                        {
+                            <option value="@nhacungcap.MaNCC">@nhacungcap.TenNCC</option>
+                        }
+                    </select>
                 </div>
                 <div class="col-span-6 sm:col-span-3">
-                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Date</label>
-                    <input type="date" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                    <label for="TenSP" class="text-sm font-medium text-gray-900 block mb-2">Tên sản phẩm</label>
+                    <input type="text" name="TenSP" id="TenSP" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required="">
                 </div>
                 <div class="col-span-6 sm:col-span-3">
-                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
-                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                    <label for="GiaTien" class="text-sm font-medium text-gray-900 block mb-2">Giá tiền</label>
+                    <input type="number" name="GiaTien" id="GiaTien" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required="">
                 </div>
                 <div class="col-span-6 sm:col-span-3">
-                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
-                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                    <label for="GiamGia" class="text-sm font-medium text-gray-900 block mb-2">Giảm giá (%)</label>
+                    <input type="number" name="GiamGia" id="GiamGia" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required="">
                 </div>
                 <div class="col-span-6 sm:col-span-3">
-                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
-                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                    <label for="NgayNhap" class="text-sm font-medium text-gray-900 block mb-2">Date</label>
+                    <input type="date" name="NgayNhap" id="NgayNhap" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required="">
                 </div>
                 <div class="col-span-6 sm:col-span-3">
-                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
-                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
-                </div>
-                <div class="col-span-6 sm:col-span-3">
-                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
-                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
-                </div>
-                <div class="col-span-6 sm:col-span-3">
-                    <label for="category" class="text-sm font-medium text-gray-900 block mb-2">Category</label>
-                    <input type="text" name="category" id="category" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Electronics" required="">
+                    <label for="soLuong" class="text-sm font-medium text-gray-900 block mb-2">Số Lượng</label>
+                    <input type="text" name="soLuong" id="soLuong" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required="">
                 </div>
                 <div class="col-span-6 sm:col-span-3">
                     <label class="mb-5 block text-xl font-semibold text-[#07074D]">
-                        Upload File
+                        Hình ảnh
                     </label>
-                    <input type="file" name="file" id="file" class="sr-only" />
+                    <input type="file" name="HinhAnh" id="file" class="sr-only" />
                     <label for="file"
-                            class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center">
+                           class="relative flex min-h-[200px] items-center justify-center rounded-md border border-dashed border-[#e0e0e0] p-12 text-center">
                         <div>
                             <span class="mb-2 block text-xl font-semibold text-[#07074D]">
                                 Drop files here
@@ -72,15 +84,14 @@
                 </div>
 
                 <div class="col-span-full">
-                    <label for="product-details" class="text-sm font-medium text-gray-900 block mb-2">Product Details</label>
-                    <textarea id="product-details" rows="6" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Details"></textarea>
+                    <label for="product-details" class="text-sm font-medium text-gray-900 block mb-2">Mô tả sản phẩm</label>
+                    <textarea id="product-details" name="MoTa" rows="6" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Details"></textarea>
                 </div>
             </div>
+            <div class="p-6 border-t border-gray-200 rounded-b">
+                <button class="text-white bg-cyan-600 hover:bg-cyan-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-200 ease-in-out" type="submit">Lưu thông tin</button>
+            </div>
         </form>
+        }
     </div>
-
-    <div class="p-6 border-t border-gray-200 rounded-b">
-        <button class="text-white bg-cyan-600 hover:bg-cyan-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-200 ease-in-out" type="submit">Lưu thông tin</button>
-    </div>
-
 </div>
