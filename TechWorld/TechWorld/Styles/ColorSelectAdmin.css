@@ -1,0 +1,22 @@
+﻿/* Style cho selected option */
+select {
+    color: inherit;
+}
+
+select:has(option[value="COD"]:checked) {
+    color: #22c55e;
+}
+
+select:has(option[value="Paypal"]:checked) {
+    color: #2563eb;
+}
+
+select:has(option[value="Đã giao hàng"]:checked),
+select:has(option[value="Đã thanh toán"]:checked){
+    color: #16a34a;
+}
+
+select:has(option[value="Chưa giao hàng"]:checked),
+select:has(option[value="Chưa thanh toán"]:checked) {
+    color: #f44336;
+}

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -317,6 +318,62 @@ namespace TechWorld.Controllers.Admin
                 return View(find);
             }
             return RedirectToAction("SanPham");
+        }
+
+        // Đơn Hàng
+        public ActionResult DonHang()
+        {
+            ViewBag.ActivePage = "DonHangList";
+            var donHangList = db.DonHangs.ToList();
+            return View(donHangList);
+        }
+        [HttpGet]
+        public ActionResult deleteDonHang(int id)
+        {
+            var deleteDH = db.DonHangs.Find(id);
+            if (deleteDH != null)
+            {
+                db.DonHangs.Remove(deleteDH);
+                db.SaveChanges();
+                return RedirectToAction("DonHang");
+            }
+            return View();
+        }
+        [HttpPost]
+        public ActionResult updateDonHang(int id, DonHang dh)
+        {
+            var donHang = db.DonHangs.FirstOrDefault(item => item.MaDH == id);
+
+            if (donHang == null)
+            {
+                return HttpNotFound("Không tìm thấy đơn hàng.");
+            }
+
+            donHang.PTThanhToan = dh.PTThanhToan;
+            donHang.TTDonHang = dh.TTDonHang;
+            donHang.TTThanhToan = dh.TTThanhToan;
+
+            db.SaveChanges();
+
+            TempData["Message"] = "Cập nhật đơn hàng thành công!";
+            return RedirectToAction("DonHang");
+        }
+        public ActionResult findDonHang(string nameSearch)
+        {
+            ViewBag.ActivePage = "DonHangList";
+            if (nameSearch != "")
+            {
+                var find = db.DonHangs.Where(item => item.KhachHang.HoTen.Contains(nameSearch)).ToList();
+                return View(find);
+            }
+            return RedirectToAction("DonHang");
+        }
+
+        // Doanh Thu
+        public ActionResult DoanhThu()
+        {
+            ViewBag.ActivePage = "DoanhThu";
+            return View();
         }
     }
 }

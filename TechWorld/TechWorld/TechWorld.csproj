@@ -206,6 +206,7 @@
       <DependentUpon>TechWorld.edmx</DependentUpon>
       <LastGenOutput>TechWorld.cs</LastGenOutput>
     </Content>
+    <Content Include="Styles\ColorSelectAdmin.css" />
     <Content Include="Styles\dropdown.js" />
     <Content Include="Styles\Image\2023_11_3_638346181356369639_shipper.jpg" />
     <Content Include="Styles\Image\648858cbfae720397e600c8f6c57ab29.png" />
@@ -231,6 +232,7 @@
     <Content Include="Styles\Image\hide.png" />
     <Content Include="Styles\Image\icons8-aorus-logo-64.png" />
     <Content Include="Styles\Image\icons8-asus-64.png" />
+    <Content Include="Styles\Image\icons8-bill-64.png" />
     <Content Include="Styles\Image\icons8-category-50.png" />
     <Content Include="Styles\Image\icons8-cod-64.png" />
     <Content Include="Styles\Image\icons8-dashboard-50.png" />
@@ -403,6 +405,9 @@
     <Content Include="Views\Admin\createSanPham.cshtml" />
     <Content Include="Views\Admin\updateSanPham.cshtml" />
     <Content Include="Views\Admin\findSanPham.cshtml" />
+    <Content Include="Views\Admin\DonHang.cshtml" />
+    <Content Include="Views\Admin\DoanhThu.cshtml" />
+    <Content Include="Views\Admin\findDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
