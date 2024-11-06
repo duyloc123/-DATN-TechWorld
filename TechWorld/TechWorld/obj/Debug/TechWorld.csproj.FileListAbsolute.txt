@@ -164,3 +164,7 @@ D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.csproj.CoreComp
 D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.csproj.Up2Date
 D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.dll
 D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.pdb
+D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\bin\PagedList.dll
+D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\bin\PagedList.Mvc.dll
+D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\bin\PagedList.xml
+D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\bin\PagedList.Mvc.xml

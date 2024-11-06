@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TechWorld.Models;
+using PagedList;
+using System.CodeDom;
 
 namespace TechWorld.Controllers.Admin
 {
@@ -17,27 +19,37 @@ namespace TechWorld.Controllers.Admin
             ViewBag.ActivePage = "Index";
             return View();
         }
-        public ActionResult KhachHangList()
+        public ActionResult KhachHangList(int? page, int? pageSize)
         {
             ViewBag.ActivePage = "KhachHangList";
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
             var KhachHangList = db.KhachHangs.ToList();
-            return View(KhachHangList);
+            return View(KhachHangList.ToPagedList((int)page, (int)pageSize));
         }
-        public ActionResult FindKhachHang(string nameSearch)
+        public ActionResult FindKhachHang(string nameSearch, int? page, int? pageSize)
         {
             if (nameSearch != "")
             {
                 ViewBag.ActivePage = "KhachHangList";
-                var find = db.KhachHangs.Where(item => item.HoTen.Contains(nameSearch));
-                return View(find);
+                var find = db.KhachHangs.Where(item => item.HoTen.Contains(nameSearch)).OrderBy(item => item.HoTen);
+                // page
+                if (page == null) page = 1;
+                if (pageSize == null) pageSize = 5;
+
+                return View(find.ToPagedList((int)page, (int)pageSize));
             }
             return RedirectToAction("KhachHangList");
         }
-        public ActionResult NhaCungCapList()
+        
+        // Nhà Cung Cấp
+        public ActionResult NhaCungCapList(int? page, int? pageSize)
         {
             ViewBag.ActivePage = "NhaCungCapList";
             var NhaCungCapList = db.NhaCungCaps.ToList();
-            return View(NhaCungCapList);
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
+            return View(NhaCungCapList.ToPagedList((int)page, (int)pageSize));
         }
         [HttpPost]
         public ActionResult createNhaCungCap(NhaCungCap req, HttpPostedFileBase HinhAnh)
@@ -104,23 +116,27 @@ namespace TechWorld.Controllers.Admin
 
             return RedirectToAction("NhaCungCapList");
         }
-        public ActionResult findNCC(string nameSearch)
+        public ActionResult findNCC(string nameSearch, int? page, int? pageSize)
         {
             ViewBag.ActivePage = "NhaCungCapList";
             if (nameSearch != "")
             {
                 var find = db.NhaCungCaps.Where(item => item.TenNCC.Contains(nameSearch)).ToList();
-                return View(find);
+                if (page == null) page = 1;
+                if (pageSize == null) pageSize = 5;
+                return View(find.ToPagedList((int)page, (int)pageSize));
             }
             return RedirectToAction("NhaCungCapList");
         }
 
         // Loại Hàng
-        public ActionResult LoaiHangList()
+        public ActionResult LoaiHangList(int? page, int? pageSize)
         {
             ViewBag.ActivePage = "LoaiHangList";
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
             var list = db.LoaiHangs.ToList();
-            return View(list);
+            return View(list.ToPagedList((int)page, (int)pageSize));
         }
         [HttpPost]
         public ActionResult createLoaiHang(LoaiHang req, HttpPostedFileBase HinhAnh)
@@ -178,23 +194,27 @@ namespace TechWorld.Controllers.Admin
 
             return RedirectToAction("LoaiHangList");
         }
-        public ActionResult findLoaiHang(string nameSearch)
+        public ActionResult findLoaiHang(string nameSearch, int? page, int? pageSize)
         {
             ViewBag.ActivePage = "LoaiHangList";
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
             if (nameSearch != "")
             {
                 var find = db.LoaiHangs.Where(item => item.TenLoai.Contains(nameSearch)).ToList();
-                return View(find);
+                return View(find.ToPagedList((int)page, (int)pageSize));
             }
             return RedirectToAction("LoaiHangList");
         }
 
         // Sản Phẩm
-        public ActionResult SanPham()
+        public ActionResult SanPham(int? page, int? pageSize)
         {
             ViewBag.ActivePage = "SanPhamList";
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
             var listSanPham = db.SanPhams.ToList();
-            return View(listSanPham);
+            return View(listSanPham.ToPagedList((int)page, (int)pageSize));
         }
         public ActionResult createSanPham()
         {
@@ -309,23 +329,27 @@ namespace TechWorld.Controllers.Admin
             }
             return RedirectToAction("updateSanPham");
         }
-        public ActionResult findSanPham(string nameSearch)
+        public ActionResult findSanPham(string nameSearch, int? page, int? pageSize)
         {
             ViewBag.ActivePage = "SanPhamList";
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
             if (nameSearch != "")
             {
                 var find = db.SanPhams.Where(item => item.TenSP.Contains(nameSearch)).ToList();
-                return View(find);
+                return View(find.ToPagedList((int)page, (int)pageSize));
             }
             return RedirectToAction("SanPham");
         }
 
         // Đơn Hàng
-        public ActionResult DonHang()
+        public ActionResult DonHang(int? page, int? pageSize)
         {
             ViewBag.ActivePage = "DonHangList";
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
             var donHangList = db.DonHangs.ToList();
-            return View(donHangList);
+            return View(donHangList.ToPagedList((int)page, (int)pageSize));
         }
         [HttpGet]
         public ActionResult deleteDonHang(int id)
@@ -358,13 +382,16 @@ namespace TechWorld.Controllers.Admin
             TempData["Message"] = "Cập nhật đơn hàng thành công!";
             return RedirectToAction("DonHang");
         }
-        public ActionResult findDonHang(string nameSearch)
+        public ActionResult findDonHang(string nameSearch, int? page, int? pageSize)
         {
+
             ViewBag.ActivePage = "DonHangList";
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
             if (nameSearch != "")
             {
                 var find = db.DonHangs.Where(item => item.KhachHang.HoTen.Contains(nameSearch)).ToList();
-                return View(find);
+                return View(find.ToPagedList((int)page, (int)pageSize));
             }
             return RedirectToAction("DonHang");
         }

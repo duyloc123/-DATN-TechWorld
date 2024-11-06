@@ -104,5 +104,11 @@ namespace TechWorld.Controllers
             return RedirectToAction("Index","User");
         }
 
+        // Thông tin khách hàng
+        public ActionResult UserInfomation()
+        {
+            return View();
+        }
+
     }
 }

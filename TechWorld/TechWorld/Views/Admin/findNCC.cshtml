@@ -1,6 +1,9 @@
-﻿
+﻿@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<TechWorld.Models.NhaCungCap>
+
 @{
-    ViewBag.Title = "findNCC";
+    ViewBag.Title = "NhaCungCapList";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -42,7 +45,7 @@
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <div class="flex px-2 py-1">
                                             <div>
-                                                <img src="~/Styles/image/icons8-user-50.png" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-soft-in-out h-9 w-9 rounded-xl" alt="user1" />
+                                                <img src="~/@item.HinhAnh" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-soft-in-out h-9 w-9 rounded-xl" alt="user1" />
                                             </div>
                                             <h6 class="mb-0 text-base leading-normal translate-y-[7px]">@item.TenNCC</h6>
                                         </div>
@@ -82,7 +85,9 @@
     {
         HttpMethod = "POST",
         UpdateTargetId = "load_data"
-    }))
+    },
+        new { enctype = "multipart/form-data" }
+    ))
     {
         @Html.AntiForgeryToken()
         <div class="w-[300px]">
@@ -97,6 +102,10 @@
                     <div class="w-full max-w-sm min-w-[200px] mt-4">
                         <input name="DiaChiNCC" class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-purple-500 hover:border-purple-300 shadow-sm focus:shadow" placeholder="Địa chỉ" />
                     </div>
+                    <div class="w-full max-w-sm min-w-[200px] mt-4">
+                        <input class="w-full bg-transparent text-sm text-gray-900 border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-purple-500 hover:border-purple-300 shadow-sm focus:shadow"
+                               id="file_input" type="file" name="HinhAnh" />
+                    </div>
                     <button type="submit"
                             class="text-white bg-blue-500 rounded-lg hover:shadow-lg hover:shadow-blue-500/50 font-medium text-sm px-3 py-1.5 text-center me-2 mb-4 duration-200 ease-in-out mt-4">
                         Thêm nhà cung cấp
@@ -104,6 +113,29 @@
                 </div>
             </form>
         </div>
+    }
+</div>
+
+<div class="flex justify-start space-x-2 mx-10 my-4">
+    @if (Model.PageNumber > 1)
+    {
+        <a href="@Url.Action("NhaCungCapList", new { page = Model.PageNumber - 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
+            Prev
+        </a>
+    }
+
+    @for (int i = 1; i <= Model.PageCount; i++)
+    {
+        <a href="@Url.Action("NhaCungCapList", new { page = i })" class="px-4 py-2 rounded-md @(i == Model.PageNumber ? "bg-blue-500 text-white" : "bg-gray-200 hover:bg-gray-300")">
+            @i
+        </a>
+    }
+
+    @if (Model.PageNumber < Model.PageCount)
+    {
+        <a href="@Url.Action("NhaCungCapList", new { page = Model.PageNumber + 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
+            Next
+        </a>
     }
 </div>
 
