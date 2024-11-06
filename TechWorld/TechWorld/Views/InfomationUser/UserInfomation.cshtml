@@ -3,5 +3,88 @@
     ViewBag.Title = "UserInfomation";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
-
+<!-- Infomation User -->
+<div class="container flex justify-center mx-auto">
+    <div class="flex w-[1300px] bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 gap-4">
+        <!-- Left -->
+        <div class="basis-80">
+            <div class="flex gap-8 items-center border-b pb-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/21/21104.png" alt="" class="w-12 h-12">
+                <h2 class="font-semibold text-lg text-black">Duy Lộc</h2>
+            </div>
+            <ul class="text-center mt-6">
+                <a href="">
+                    <li class="w-full inline-block text-lg text-semibold text-gray-950 flex items-center hover:text-red-500 duration-300 ease-in-out">
+                        <i class="fas fa-user w-8 mr-4 group"></i>
+                        Thông tin tài khoản
+                    </li>
+                </a>
+                <a href="">
+                    <li class="w-full inline-block text-lg text-semibold text-gray-950 flex items-center mt-6 hover:text-red-500 duration-300 ease-in-out">
+                        <i class="fa-solid fa-clipboard-check w-8 mr-4"></i>
+                        Quản lí đơn hàng
+                    </li>
+                </a>
+                <a href="#">
+                    <li class="w-full inline-block text-lg text-semibold text-gray-950 flex items-center mt-6 hover:text-red-500 duration-300 ease-in-out">
+                        <i class="fa-solid fa-arrow-right-from-bracket w-8 mr-4"></i>
+                        Đăng xuất
+                    </li>
+                </a>
+            </ul>
+        </div>
+        <!-- Right -->
+        <div class="basis-3/4 flex flex-col items-center">
+            <h1 class="text-2xl font-semibold ml-10 text-black">Thông tin tài khoản</h1>
+            <div class="w-full max-w-lg">
+                @using (Ajax.BeginForm("updateUser", "InfomationUser", new AjaxOptions
+                {
+                    HttpMethod = "POST",
+                }))
+                {
+                    @Html.AntiForgeryToken()
+                    <form class="mt-10">
+                        @foreach (var kh in Model)
+                        {
+                            <input class="hidden" name="MaKH" value="@kh.MaKH"/>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                                    Họ Tên
+                                </label>
+                                <input class="shadow appearance-none border rounded w-full bg-white py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="HoTen" id="username" type="text" value="@kh.HoTen" required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+                                    Email
+                                </label>
+                                <input class="shadow appearance-none border rounded w-full bg-white py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="Email" id="email" type="email" value="@kh.Email">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="address">
+                                    Địa chỉ
+                                </label>
+                                <input class="shadow appearance-none border rounded w-full bg-white py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="DiaChi" id="address" type="text" value="@kh.DiaChi">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="numberPhone">
+                                    Số điện thoại
+                                </label>
+                                <input class="shadow appearance-none border rounded w-full bg-white py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="SoDienThoai" id="numberPhone" type="number" value="@kh.SoDienThoai">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+                                    Mật khẩu
+                                </label>
+                                <input class="shadow appearance-none border rounded w-full bg-white py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="MatKhau" id="password" type="text" value="@kh.MatKhau">
+                            </div>
+                        }
+                        <div class="text-center">
+                            <button type="submit" class="px-8 py-2 bg-blue-600 rounded-md text-white hover:bg-blue-600/50 duration-200 ease-in-out">Lưu Thông Tin</button>
+                        </div>
+                    </form>
+                }
+                </div>
+        </div>
+    </div>
+</div>
 

@@ -52,6 +52,7 @@ namespace TechWorld.Controllers
                     var data = db.KhachHangs.Where(p => p.Email.Equals(user) && p.MatKhau.Equals(password));
                     if (data.Count() > 0)
                     {
+                        Session["MaKH"] = data.FirstOrDefault().MaKH;
                         Session["TenKhachHang"] = data.FirstOrDefault().HoTen;
                         Session["Gmail"] = data.FirstOrDefault().Email;
                         Session["DiaChi"] = data.FirstOrDefault().DiaChi;
@@ -105,9 +106,26 @@ namespace TechWorld.Controllers
         }
 
         // Thông tin khách hàng
-        public ActionResult UserInfomation()
+        public ActionResult UserInfomation(int id)
         {
-            return View();
+            var infomation = db.KhachHangs.Where(item => item.MaKH == id);
+            return View(infomation);
+        }
+        [HttpPost]
+        public ActionResult updateUser(KhachHangModel req)
+        {
+            if(req != null)
+            {
+                var kh = db.KhachHangs.Find(req.MaKH);
+                kh.HoTen = req.HoTen;
+                kh.Email = req.Email;
+                kh.DiaChi = req.DiaChi;
+                kh.SoDienThoai = req.SoDienThoai;
+                kh.MatKhau = req.MatKhau;
+                db.SaveChanges();
+                return RedirectToAction("Index","User");
+            }
+            return RedirectToAction("UserInfomation");
         }
 
     }

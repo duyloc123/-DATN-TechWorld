@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="~/styles/styles.css" />
     <link rel="stylesheet" href="~/styles/stylecart.css" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/db6ac4acea.js" crossorigin="anonymous"></script>
 
     <title>TechWorld</title>
     <link rel="icon" type="image/x-icon" href="~/Styles/image/techworld-high-resolution-logo-grayscale-transparent.png" />
@@ -91,7 +92,7 @@
                     </div>
                     <ul tabindex="0" class="dropdown-content menu bg-gray-200 rounded-box z-[1] w-52 p-2 shadow mt-2">
                         <li><a class="text-black">@Session["tenKhachHang"]</a></li>
-                        <li><a class="text-black hover:text-black">Thông tin khách hàng</a>
+                        <li><a href="~/InfomationUser/Userinfomation?id=@Session["MaKH"]" class="text-black hover:text-black">Thông tin khách hàng</a>
                         <li>
                         <li><a class="text-black hover:text-black">Xem đơn hàng</a></li>
                         <li><a class="text-black hover:text-black" href="/InfomationUser/Exit">Đăng xuất</a></li>
@@ -287,25 +288,34 @@
                         <div>
                             <label for="fullName" class="block mb-2 text-sm font-medium text-black ">Tài khoản</label>
                             <input type="text" name="hoTen" id="user" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Họ tên..." required />
+                            <small id="userError" class="text-red-500 text-sm"></small>
                         </div>
                         <div>
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Gmail</label>
-                            <input type="email" name="email" id="email" placeholder="...gmail.com" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                            <input type="email" name="email" id="emailFirst" placeholder="...gmail.com" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                            <small id="emailFirstError" class="text-red-500 text-sm"></small>
                         </div>
                         <div>
                             <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Địa chỉ</label>
                             <input type="text" name="address" id="address" placeholder="Địa chỉ..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                            <small id="addressError" class="text-red-500 text-sm"></small>
                         </div>
                         <div>
                             <label for="numberPhone" class="block mb-2 text-sm font-medium text-gray-900">Số điện thoại</label>
                             <input type="number" name="numberPhone" id="numberPhone" placeholder="Số điện thoại" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
+                            <small id="numberPhoneError" class="text-red-500 text-sm"></small>
                         </div>
                         <div>
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Mật khẩu</label>
                             <div class="relative">
-                                <input type="password" name="password" id="passwordFirst" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required />
-                                <img src="~/Styles/image/hide.png" id="iconPassword" alt="" class="w-8 h-8 top-1 right-2 absolute cursor-pointer">
+                                <input type="password"
+                                       name="password"
+                                       id="passwordFirst"
+                                       placeholder="••••••••"
+                                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                       required />
                             </div>
+                            <small id="passwordError" class="text-red-500 text-sm"></small>
                         </div>
                         <div class="flex justify-between">
                             <div class="flex items-start">
@@ -707,6 +717,79 @@
         window.onload = function () {
             ShowCount();
         }
+
+        document.getElementById('user').addEventListener('input', function () {
+            const user = this.value;
+            const userError = document.getElementById('userError');
+
+            if (user.length == 0) {
+                userError.textContent = "Họ tên không được để trống";
+            }
+            else {
+                userError.textContent = "";
+            }
+        })
+
+        document.getElementById('address').addEventListener('input', function () {
+            const address = this.value;
+            const addressError = document.getElementById('addressError');
+            if (address.length == 0) {
+                addressError.textContent = "Địa chỉ không được để trống";
+            } else {
+                addressError.textContent = "";
+            }
+        })
+
+        document.getElementById('emailFirst').addEventListener('input', function () {
+            const email = this.value;
+            const emailError = document.getElementById('emailFirstError');
+
+            // Kiểm tra nếu email trống
+            if (email.length == 0) {
+                emailError.textContent = "Không được để trống email";
+            }
+            // Kiểm tra định dạng email đúng với biểu thức chính quy
+            else if (!/^[a-zA-Z0-9._-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
+                emailError.textContent = "Địa chỉ email không đúng định dạng (Đúng định dạng: example@gmail.com)";
+            }
+            // Nếu đúng, xóa thông báo lỗi
+            else {
+                emailError.textContent = "";
+            }
+        });
+
+        document.getElementById('numberPhone').addEventListener('input', function () {
+            const numberPhone = this.value;
+            const numberPhoneError = document.getElementById('numberPhoneError');
+            if (numberPhone.length == 0) {
+                numberPhoneError.textContent = "Số điện thoại không được để trống";
+            } else if (!/^(\+84|0)[0-9]{9}$/.test(numberPhone)) {
+                numberPhoneError.textContent = "Số điện thoại không đúng định dạng";
+            } else {
+                numberPhoneError.textContent = "";
+            }
+        })
+
+        // Hàm kiểm tra độ mạnh của mật khẩu
+        document.getElementById('passwordFirst').addEventListener('input', function () {
+        const password = this.value;
+        const passwordError = document.getElementById('passwordError');
+
+        // Kiểm tra các điều kiện độ mạnh của mật khẩu
+        if (password.length < 8) {
+            passwordError.textContent = 'Mật khẩu phải có ít nhất 8 ký tự.';
+        } else if (!/[A-Z]/.test(password)) {
+            passwordError.textContent = 'Mật khẩu phải có ít nhất một chữ hoa.';
+        } else if (!/[a-z]/.test(password)) {
+            passwordError.textContent = 'Mật khẩu phải có ít nhất một chữ thường.';
+        } else if (!/[0-9]/.test(password)) {
+            passwordError.textContent = 'Mật khẩu phải có ít nhất một chữ số.';
+        } else if (!/[@@!#$%^&*]/.test(password)) {
+             passwordError.textContent = ("'Mật khẩu phải có ít nhất một ký tự đặc biệt (!@@#$%^&*).'");
+        } else {
+            passwordError.textContent = ''; // Xóa thông báo lỗi nếu mật khẩu hợp lệ
+        }
+    });
 
         // Count Cart
         function ShowCount() {
