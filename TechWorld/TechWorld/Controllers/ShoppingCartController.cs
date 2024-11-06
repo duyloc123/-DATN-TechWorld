@@ -58,6 +58,7 @@ namespace TechWorld.Controllers
                 item.TongTien = item.SoLuong * item.GiaTien;
                 cart.AddToCart(item, quantity);
                 Session["Cart"] = cart;
+                Session["SoLuong"] = item.SoLuong;
                 code = new { Success = true, msg = "Thêm vào giỏ hàng thành công!", code = 1, Count = cart.Items.Count };
             }
             return Json(code);
@@ -118,8 +119,7 @@ namespace TechWorld.Controllers
                     cart.Items.ForEach(item => dh.ChiTietDonHangs.Add(new ChiTietDonHang
                     {
                         MaSP = item.MaSP,
-                        TongTien = (double)item.TongTien
-
+                        TongTien = (double)item.TongTien,
                     }));
                     db.DonHangs.Add(dh);
                     db.SaveChanges();

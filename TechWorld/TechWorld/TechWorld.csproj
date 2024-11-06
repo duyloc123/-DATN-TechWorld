@@ -138,6 +138,7 @@
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DoanhThu.cs" />
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>

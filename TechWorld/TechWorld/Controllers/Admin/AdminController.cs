@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using TechWorld.Models;
 using PagedList;
 using System.CodeDom;
+using System.Globalization;
+using System.Web.Configuration;
 
 namespace TechWorld.Controllers.Admin
 {
@@ -17,7 +19,23 @@ namespace TechWorld.Controllers.Admin
         public ActionResult Index()
         {
             ViewBag.ActivePage = "Index";
-            return View();
+            var revenueData = db.DonHangs
+            .GroupBy(s => s.NgayDat.Value.Month)
+            .Select(g => new DoanhThu
+            {
+                Month = g.Key,
+                Total = g.Sum(s => (float)s.TongTien)
+            })
+            .ToList();
+            int tongKhachHang = db.DonHangs.Select(item => item.KhachHang).Distinct().Count();
+            float tongDoanhThu = revenueData.Sum(item => item.Total);
+            int tongSanPham = db.SanPhams.Select(item => item.TenSP).Distinct().Count();
+            float giamGia = (float)db.SanPhams.Sum(item => item.GiaTien - item.GiaTienDaKhuyenMai);
+            ViewBag.tongKhachHang = tongKhachHang;
+            ViewBag.tongDoanhThu = tongDoanhThu;
+            ViewBag.tongSanPham = tongSanPham;
+            ViewBag.giamGia = giamGia;
+            return View(revenueData);
         }
         public ActionResult KhachHangList(int? page, int? pageSize)
         {
@@ -399,8 +417,15 @@ namespace TechWorld.Controllers.Admin
         // Doanh Thu
         public ActionResult DoanhThu()
         {
-            ViewBag.ActivePage = "DoanhThu";
-            return View();
+            var revenueData = db.DonHangs
+            .GroupBy(s => s.NgayDat.Value.Month)
+            .Select(g => new DoanhThu
+            {
+                Month = g.Key,
+                Total = g.Sum(s => (float)s.TongTien)
+            })
+            .ToList();
+            return View(revenueData);
         }
     }
 }

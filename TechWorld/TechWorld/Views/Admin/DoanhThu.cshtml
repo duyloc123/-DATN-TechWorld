@@ -1,8 +1,51 @@
-﻿
+﻿@model List<TechWorld.Models.DoanhThu>
 @{
     ViewBag.Title = "DoanhThu";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>DoanhThu</h2>
+<h2 class="font-semibold text-xl">Biểu đồ Doanh Thu Theo Tháng</h2>
+<canvas id="revenueChart" width="400" height="200"></canvas>
 
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+            var ctx = document.getElementById('revenueChart').getContext('2d');
+            var revenueChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: @Html.Raw(Json.Encode(Model.Select(m => "Tháng " + m.Month))),
+                    datasets: [{
+                        label: 'Doanh thu',
+                        data: @Html.Raw(Json.Encode(Model.Select(m => m.Total))),
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(201, 203, 207, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+    </script>
+}
