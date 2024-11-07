@@ -22,7 +22,7 @@ namespace TechWorld.Controllers
         {
             ViewBag.ActivePage = "Product";
 
-            var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Dien Thoai").ToList();
+            var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Điện thoại").ToList();
             return View(list);
         }
 
@@ -59,7 +59,7 @@ namespace TechWorld.Controllers
 
             ViewBag.ActivePage = "Product";
             var ascMobile = (from item in db.SanPhams
-                             where item.LoaiHang.TenLoai == "Dien Thoai"
+                             where item.LoaiHang.TenLoai == "Điện thoại"
                              orderby item.GiaTienDaKhuyenMai 
                              ascending 
                              select item).ToList();
@@ -71,7 +71,7 @@ namespace TechWorld.Controllers
             ViewBag.ActivePage = "Product";
             string name = Session["IphoneCategory"] as string;
             var ascMobile = (from item in db.SanPhams
-                             where item.NhaCungCap.TenNCC == name && item.LoaiHang.TenLoai == "Dien Thoai"
+                             where item.NhaCungCap.TenNCC == name && item.LoaiHang.TenLoai == "Điện thoại"
                              orderby item.GiaTienDaKhuyenMai
                              ascending
                              select item).ToList();
@@ -82,7 +82,7 @@ namespace TechWorld.Controllers
         {
             ViewBag.ActivePage = "Product";
             var descMobile = (from item in db.SanPhams
-                              where item.LoaiHang.TenLoai == "Dien Thoai"
+                              where item.LoaiHang.TenLoai == "Điện thoại"
                               orderby item.GiaTienDaKhuyenMai
                               descending
                               select item).ToList();
@@ -94,7 +94,7 @@ namespace TechWorld.Controllers
             ViewBag.ActivePage = "Product";
             string name = Session["IphoneCategory"] as string;
             var descMobile = (from item in db.SanPhams
-                              where item.LoaiHang.TenLoai == "Dien Thoai" && item.NhaCungCap.TenNCC == name
+                              where item.LoaiHang.TenLoai == "Điện thoại" && item.NhaCungCap.TenNCC == name
                               orderby item.GiaTienDaKhuyenMai
                               descending
                               select item).ToList();

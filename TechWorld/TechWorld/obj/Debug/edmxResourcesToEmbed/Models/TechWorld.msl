@@ -6,7 +6,7 @@
         <MappingFragment StoreEntitySet="ChiTietDonHang">
           <ScalarProperty Name="MaDH" ColumnName="MaDH" />
           <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="NgayDat" ColumnName="NgayDat" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
           <ScalarProperty Name="TongTien" ColumnName="TongTien" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -33,7 +33,6 @@
           <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
           <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
           <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

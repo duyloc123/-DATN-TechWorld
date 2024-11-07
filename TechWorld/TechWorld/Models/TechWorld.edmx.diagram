@@ -4,23 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="335be71282e245a39643a2ef879b6851" Name="Diagram1">
+      <Diagram DiagramId="27c59cf027f2465f89e796f85e2ef25f" Name="Diagram1">
         <EntityTypeShape EntityType="TechWorldModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechWorldModel.DonHang" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TechWorldModel.KhachHang" Width="1.5" PointX="3" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.DonHang" Width="1.5" PointX="3" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechWorldModel.KhachHang" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TechWorldModel.LoaiHang" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="TechWorldModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TechWorldModel.SanPham" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TechWorldModel.TaiKhoan" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TechWorldModel.TinTuc" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TechWorldModel.YeuThich" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <AssociationConnector Association="TechWorldModel.FK__ChiTietDon__MaDH__59FA5E80" ManuallyRouted="false" />
-        <AssociationConnector Association="TechWorldModel.FK__ChiTietDon__MaSP__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__ChiTietDon__MaDH__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__ChiTietDon__MaSP__59FA5E80" ManuallyRouted="false" />
         <AssociationConnector Association="TechWorldModel.FK__DonHang__MAKH__5629CD9C" ManuallyRouted="false" />
-        <AssociationConnector Association="TechWorldModel.FK__YeuThich__MaKH__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__YeuThich__MaKH__5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="TechWorldModel.FK__SanPham__MaLoai__4F7CD00D" ManuallyRouted="false" />
         <AssociationConnector Association="TechWorldModel.FK__SanPham__MaNCC__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="TechWorldModel.FK__YeuThich__MaSP__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="TechWorldModel.FK__YeuThich__MaSP__5EBF139D" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

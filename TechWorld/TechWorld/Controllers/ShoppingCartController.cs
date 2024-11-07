@@ -120,6 +120,7 @@ namespace TechWorld.Controllers
                     {
                         MaSP = item.MaSP,
                         TongTien = (double)item.TongTien,
+                        SoLuong = item.SoLuong,
                     }));
                     db.DonHangs.Add(dh);
                     db.SaveChanges();

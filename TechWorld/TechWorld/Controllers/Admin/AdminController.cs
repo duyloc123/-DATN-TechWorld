@@ -31,6 +31,22 @@ namespace TechWorld.Controllers.Admin
             float tongDoanhThu = revenueData.Sum(item => item.Total);
             int tongSanPham = db.SanPhams.Select(item => item.TenSP).Distinct().Count();
             float giamGia = (float)db.SanPhams.Sum(item => item.GiaTien - item.GiaTienDaKhuyenMai);
+
+            var result = db.ChiTietDonHangs
+            .GroupBy(x => x.MaSP)
+            .Select(g => new TopSanPhamViewModel
+            {
+                MaSP = g.Key,
+                TenSP = g.FirstOrDefault().SanPham.TenSP, 
+                HinhAnh = g.FirstOrDefault().SanPham.HinhAnh,
+                TongSoLuong = g.Sum(x => x.SoLuong),
+                TongTien = (float)g.Sum(x => x.TongTien)
+            })
+            .OrderByDescending(x => x.TongSoLuong)
+            .Take(10)
+            .ToList();
+            ViewBag.ThongKeSanPham = result;
+
             ViewBag.tongKhachHang = tongKhachHang;
             ViewBag.tongDoanhThu = tongDoanhThu;
             ViewBag.tongSanPham = tongSanPham;
@@ -427,5 +443,12 @@ namespace TechWorld.Controllers.Admin
             .ToList();
             return View(revenueData);
         }
+
+        // Đăng Xuất
+        public ActionResult DangXuat()
+        {
+            return RedirectToAction("Index", "User");
+        }
+
     }
 }

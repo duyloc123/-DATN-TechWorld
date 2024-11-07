@@ -15,6 +15,72 @@ namespace TechWorld.Controllers
         public ActionResult Index()
         {
             ViewBag.ActivePage = "Index";
+
+            var result = db.ChiTietDonHangs
+            .Where(x => x.SanPham.LoaiHang.TenLoai == "Điện thoại")
+            .GroupBy(x => x.MaSP)
+            .Select(g => new TopSanPhamViewModel
+            {
+                MaSP = g.Key,
+                TenSP = g.FirstOrDefault().SanPham.TenSP,
+                HinhAnh = g.FirstOrDefault().SanPham.HinhAnh,
+                TongSoLuong = g.Sum(x => x.SoLuong),
+                GiaSP = (float)(g.FirstOrDefault().SanPham.GiaTienDaKhuyenMai ?? g.FirstOrDefault().SanPham.GiaTien),
+            })
+            .OrderByDescending(x => x.TongSoLuong)
+            .Take(10)
+            .ToList();
+
+            var laptop = db.ChiTietDonHangs
+            .Where(x => x.SanPham.LoaiHang.TenLoai == "Laptop")
+            .GroupBy(x => x.MaSP)
+            .Select(g => new TopSanPhamViewModel
+            {
+                MaSP = g.Key,
+                TenSP = g.FirstOrDefault().SanPham.TenSP,
+                HinhAnh = g.FirstOrDefault().SanPham.HinhAnh,
+                TongSoLuong = g.Sum(x => x.SoLuong),
+                GiaSP = (float)(g.FirstOrDefault().SanPham.GiaTienDaKhuyenMai ?? g.FirstOrDefault().SanPham.GiaTien),
+            })
+            .OrderByDescending(x => x.TongSoLuong)
+            .Take(10)
+            .ToList();
+
+            var keyboard = db.ChiTietDonHangs
+            .Where(x => x.SanPham.LoaiHang.TenLoai == "Keyboard & Mouse")
+            .GroupBy(x => x.MaSP)
+            .Select(g => new TopSanPhamViewModel
+            {
+                MaSP = g.Key,
+                TenSP = g.FirstOrDefault().SanPham.TenSP,
+                HinhAnh = g.FirstOrDefault().SanPham.HinhAnh,
+                TongSoLuong = g.Sum(x => x.SoLuong),
+                GiaSP = (float)(g.FirstOrDefault().SanPham.GiaTienDaKhuyenMai ?? g.FirstOrDefault().SanPham.GiaTien),
+            })
+            .OrderByDescending(x => x.TongSoLuong)
+            .Take(10)
+            .ToList();
+
+            var monitor = db.ChiTietDonHangs
+            .Where(x => x.SanPham.LoaiHang.TenLoai == "Monitor")
+            .GroupBy(x => x.MaSP)
+            .Select(g => new TopSanPhamViewModel
+            {
+                MaSP = g.Key,
+                TenSP = g.FirstOrDefault().SanPham.TenSP,
+                HinhAnh = g.FirstOrDefault().SanPham.HinhAnh,
+                TongSoLuong = g.Sum(x => x.SoLuong),
+                GiaSP = (float)(g.FirstOrDefault().SanPham.GiaTienDaKhuyenMai ?? g.FirstOrDefault().SanPham.GiaTien),
+            })
+            .OrderByDescending(x => x.TongSoLuong)
+            .Take(10)
+            .ToList();
+
+            ViewBag.ThongKeMonitor = monitor;
+            ViewBag.ThongKeKeyBoard = keyboard;
+            ViewBag.ThongKeLaptop = laptop;
+            ViewBag.ThongKeSanPham = result;
+
             return View();
         }
 

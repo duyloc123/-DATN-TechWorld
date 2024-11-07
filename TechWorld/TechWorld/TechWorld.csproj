@@ -196,6 +196,7 @@
     <Compile Include="Models\TinTuc.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TopSanPhamViewModel.cs" />
     <Compile Include="Models\YeuThich.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>

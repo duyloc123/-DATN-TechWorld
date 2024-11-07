@@ -7,7 +7,7 @@
     </Key>
     <Property Name="MaDH" Type="int" Nullable="false" />
     <Property Name="MaSP" Type="int" Nullable="false" />
-    <Property Name="NgayDat" Type="datetime" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="TongTien" Type="float" Nullable="false" />
   </EntityType>
   <EntityType Name="DonHang">
@@ -32,7 +32,6 @@
     <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
     <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
     <Property Name="MatKhau" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="HinhAnh" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="LoaiHang">
     <Key>
@@ -98,7 +97,7 @@
     <Property Name="MaSP" Type="int" Nullable="false" />
     <Property Name="NgayThemVao" Type="datetime" />
   </EntityType>
-  <Association Name="FK__ChiTietDon__MaDH__59FA5E80">
+  <Association Name="FK__ChiTietDon__MaDH__59063A47">
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="1" />
     <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -110,7 +109,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ChiTietDon__MaSP__5AEE82B9">
+  <Association Name="FK__ChiTietDon__MaSP__59FA5E80">
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
     <End Role="ChiTietDonHang" Type="Self.ChiTietDonHang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -158,7 +157,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__YeuThich__MaKH__5EBF139D">
+  <Association Name="FK__YeuThich__MaKH__5DCAEF64">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
     <End Role="YeuThich" Type="Self.YeuThich" Multiplicity="*" />
     <ReferentialConstraint>
@@ -170,7 +169,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__YeuThich__MaSP__5FB337D6">
+  <Association Name="FK__YeuThich__MaSP__5EBF139D">
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
     <End Role="YeuThich" Type="Self.YeuThich" Multiplicity="*" />
     <ReferentialConstraint>
@@ -192,11 +191,11 @@
     <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="YeuThich" EntityType="Self.YeuThich" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ChiTietDon__MaDH__59FA5E80" Association="Self.FK__ChiTietDon__MaDH__59FA5E80">
+    <AssociationSet Name="FK__ChiTietDon__MaDH__59063A47" Association="Self.FK__ChiTietDon__MaDH__59063A47">
       <End Role="DonHang" EntitySet="DonHang" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
     </AssociationSet>
-    <AssociationSet Name="FK__ChiTietDon__MaSP__5AEE82B9" Association="Self.FK__ChiTietDon__MaSP__5AEE82B9">
+    <AssociationSet Name="FK__ChiTietDon__MaSP__59FA5E80" Association="Self.FK__ChiTietDon__MaSP__59FA5E80">
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
     </AssociationSet>
@@ -212,11 +211,11 @@
       <End Role="NhaCungCap" EntitySet="NhaCungCap" />
       <End Role="SanPham" EntitySet="SanPham" />
     </AssociationSet>
-    <AssociationSet Name="FK__YeuThich__MaKH__5EBF139D" Association="Self.FK__YeuThich__MaKH__5EBF139D">
+    <AssociationSet Name="FK__YeuThich__MaKH__5DCAEF64" Association="Self.FK__YeuThich__MaKH__5DCAEF64">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="YeuThich" EntitySet="YeuThich" />
     </AssociationSet>
-    <AssociationSet Name="FK__YeuThich__MaSP__5FB337D6" Association="Self.FK__YeuThich__MaSP__5FB337D6">
+    <AssociationSet Name="FK__YeuThich__MaSP__5EBF139D" Association="Self.FK__YeuThich__MaSP__5EBF139D">
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="YeuThich" EntitySet="YeuThich" />
     </AssociationSet>
