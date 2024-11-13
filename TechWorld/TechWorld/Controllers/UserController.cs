@@ -33,7 +33,7 @@ namespace TechWorld.Controllers
 
             var laptop = db.ChiTietDonHangs
             .Where(x => x.SanPham.LoaiHang.TenLoai == "Laptop")
-            .GroupBy(x => x.MaSP)
+            .GroupBy(x => x.MaSP)       
             .Select(g => new TopSanPhamViewModel
             {
                 MaSP = g.Key,
