@@ -80,9 +80,16 @@
                 <div class="p-6">
                     <h1 class="font-bold text-2xl text-black">@item.TenSP</h1>
                     <div class="mt-6 flex flex-row gap-6 items-center">
-                        <h2 class="text-3xl text-red-600 font-bold">@String.Format("{0:#,##0 VNĐ}", item.GiaTienDaKhuyenMai)</h2>
-                        <p class="text-xl text-gray-400 font-semibold"><del>@String.Format("{0:#,##0 VNĐ}", item.GiaTien)</del></p>
-                        <span class="px-2 py-[3px] border border-red-500 rounded-lg text-red-500">-7%</span>
+                        @if (int.Parse(item.GiamGia) == 0)
+                        {
+                            <h2 class="text-3xl text-red-600 font-bold">@String.Format("{0:#,##0 VNĐ}", item.GiaTien)</h2>
+                        }
+                        else
+                        {
+                            <h2 class="text-3xl text-red-600 font-bold">@String.Format("{0:#,##0 VNĐ}", item.GiaTienDaKhuyenMai)</h2>
+                            <p class="text-xl text-gray-400 font-semibold"><del>@String.Format("{0:#,##0 VNĐ}", item.GiaTien)</del></p>
+                            <span class="px-2 py-[3px] border border-red-500 rounded-lg text-red-500">-@item.GiamGia%</span>
+                        }
                     </div>
                     <div class="custom-number-input h-10 w-32 mt-2">
                         <label for="custom-input-number" class="w-full text-gray-700 text-sm font-semibold">
@@ -149,82 +156,8 @@
             <div class="p-4">
                 <div class="flex flex-row gap-40">
                     <div class="w-[800px] bg-white p-6 rounded-lg shadow-lg">
-                        <h2 class="text-2xl text-black">Thông tin sản phẩm</h2>
-                        <h3 class="text-[22px] font-bold my-4 text-black">Thông số kỹ thuật:</h3>
-                        <!-- Table -->
-                        <div class="relative w-auto overflow-x-auto sm:rounded-lg">
-                            <table class="text-sm text-left rtl:text-right text-gray-500">
-                                <tbody class="border border-gray-200">
-                                    <tr>
-                                        <th scope="row" class="px-2 py-4 w-[200px] font-medium text-lg text-blue-700 whitespace-nowrap bg-gray-200 text-center uppercase border-b border-gray-300">
-                                            <a href="#">CPU</a>
-                                        </th>
-                                        <td class="px-6 py-4 text-black border-b border-gray-300">
-                                            Intel® Core™ Ultra 5 Processor 125H 1.2 GHz (18MB Cache, up to 4.5 GHz, 14 cores, 18 Threads); Intel® AI Boost NPU
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="px-2 py-4 w-[200px] font-medium text-lg text-blue-700 whitespace-nowrap bg-gray-200 text-center uppercase border-b border-gray-300">
-                                            <a href="#">CPU</a>
-                                        </th>
-                                        <td class="px-6 py-4 text-black border-b border-gray-300">
-                                            Intel® Core™ Ultra 5 Processor 125H 1.2 GHz (18MB Cache, up to 4.5 GHz, 14 cores, 18 Threads); Intel® AI Boost NPU
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="px-2 py-4 w-[200px] font-medium text-lg text-blue-700 whitespace-nowrap bg-gray-200 text-center uppercase border-b border-gray-300">
-                                            <a href="#">CPU</a>
-                                        </th>
-                                        <td class="px-6 py-4 text-black border-b border-gray-300">
-                                            Intel® Core™ Ultra 5 Processor 125H 1.2 GHz (18MB Cache, up to 4.5 GHz, 14 cores, 18 Threads); Intel® AI Boost NPU
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="px-2 py-4 w-[200px] font-medium text-lg text-blue-700 whitespace-nowrap bg-gray-200 text-center uppercase border-b border-gray-300">
-                                            <a href="#">CPU</a>
-                                        </th>
-                                        <td class="px-6 py-4 text-black border-b border-gray-300">
-                                            Intel® Core™ Ultra 5 Processor 125H 1.2 GHz (18MB Cache, up to 4.5 GHz, 14 cores, 18 Threads); Intel® AI Boost NPU
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="px-2 py-4 w-[200px] font-medium text-lg text-blue-700 whitespace-nowrap bg-gray-200 text-center uppercase border-b border-gray-300">
-                                            <a href="#">CPU</a>
-                                        </th>
-                                        <td class="px-6 py-4 text-black border-b border-gray-300">
-                                            Intel® Core™ Ultra 5 Processor 125H 1.2 GHz (18MB Cache, up to 4.5 GHz, 14 cores, 18 Threads); Intel® AI Boost NPU
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="px-2 py-4 w-[200px] font-medium text-lg text-blue-700 whitespace-nowrap bg-gray-200 text-center uppercase border-b border-gray-300">
-                                            <a href="#">CPU</a>
-                                        </th>
-                                        <td class="px-6 py-4 text-black border-b border-gray-300">
-                                            Intel® Core™ Ultra 5 Processor 125H 1.2 GHz (18MB Cache, up to 4.5 GHz, 14 cores, 18 Threads); Intel® AI Boost NPU
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="px-2 py-4 w-[200px] font-medium text-lg text-blue-700 whitespace-nowrap bg-gray-200 text-center uppercase border-b border-gray-300">
-                                            <a href="#">CPU</a>
-                                        </th>
-                                        <td class="px-6 py-4 text-black border-b border-gray-300">
-                                            Intel® Core™ Ultra 5 Processor 125H 1.2 GHz (18MB Cache, up to 4.5 GHz, 14 cores, 18 Threads); Intel® AI Boost NPU
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="px-2 py-4 w-[200px] font-medium text-lg text-blue-700 whitespace-nowrap bg-gray-200 text-center uppercase border-b border-gray-300">
-                                            <a href="#">CPU</a>
-                                        </th>
-                                        <td class="px-6 py-4 text-black border-b border-gray-300">
-                                            Intel® Core™ Ultra 5 Processor 125H 1.2 GHz (18MB Cache, up to 4.5 GHz, 14 cores, 18 Threads); Intel® AI Boost NPU
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <h2 class="text-2xl mt-4 font-bold text-black">Thiết kế hiện đại, khả năng di động cao</h2>
-                        <p class="mt-4 text-lg text-gray-500 text-justify">@item.MoTaSanPham</p>
-                        <img src="https://product.hstatic.net/200000722513/product/er-steel-gray-05.tif-custom_3eab1a2f4dbf41a3a19b04c3f5e5fd06_1024x1024_7cb6d3e07426430f90aa9598a9966b74_grande.png" alt="">
+                        <h2 class="text-2xl text-black pb-5">Thông tin sản phẩm</h2>
+                        @Html.Raw(item.MoTaSanPham)
                     </div>
 
                     <!-- Similar Products Section -->
@@ -232,15 +165,18 @@
                         <h2 class="text-2xl font-bold text-black">Sản phẩm tương tự</h2>
                         @foreach (var similarProduct in Model.SimilarProducts)
                         {
-                            <div class="flex items-end gap-4 cursor-pointer">
-                                <img src="@similarProduct.HinhAnh" alt="" class="w-28 h-28 rounded-lg mt-8">
+                            <div class="flex items-center gap-4 cursor-pointer">
+                                <img src="~/@similarProduct.HinhAnh" alt="" class="w-28 h-28 rounded-lg mt-8">
                                 <div>
                                     <h3 class="text-3.5 font-semibold mb-3.5 cursor-pointer">@similarProduct.TenSP</h3>
-                                    <h4 class="text-sm"><del>@String.Format("{0:#,##0 VNĐ}", similarProduct.GiaTien)</del></h4>
-                                    <div class="flex gap-4">
-                                        <h4 class="text-4 mb-3 text-red-500">@String.Format("{0:#,##0 VNĐ}", similarProduct.GiaTienDaKhuyenMai)</h4>
-                                        <span class="h-6 text-red-500 border border-red-500 px-2">8%</span>
-                                    </div>
+                                    @if (item.GiaTienDaKhuyenMai == 0)
+                                    {
+                                        <h2 class="text-sm text-red-600 font-bold">@String.Format("{0:#,##0 VNĐ}", similarProduct.GiaTien)</h2>
+                                    }
+                                    else
+                                    {
+                                        <h2 class="text-sm text-red-600 font-bold">@String.Format("{0:#,##0 VNĐ}", similarProduct.GiaTienDaKhuyenMai)</h2>
+                                    }
                                 </div>
                             </div>
                         }

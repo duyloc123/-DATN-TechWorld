@@ -772,24 +772,24 @@
 
         // Hàm kiểm tra độ mạnh của mật khẩu
         document.getElementById('passwordFirst').addEventListener('input', function () {
-        const password = this.value;
-        const passwordError = document.getElementById('passwordError');
+            const password = this.value;
+            const passwordError = document.getElementById('passwordError');
 
-        // Kiểm tra các điều kiện độ mạnh của mật khẩu
-        if (password.length < 8) {
-            passwordError.textContent = 'Mật khẩu phải có ít nhất 8 ký tự.';
-        } else if (!/[A-Z]/.test(password)) {
-            passwordError.textContent = 'Mật khẩu phải có ít nhất một chữ hoa.';
-        } else if (!/[a-z]/.test(password)) {
-            passwordError.textContent = 'Mật khẩu phải có ít nhất một chữ thường.';
-        } else if (!/[0-9]/.test(password)) {
-            passwordError.textContent = 'Mật khẩu phải có ít nhất một chữ số.';
-        } else if (!/[@@!#$%^&*]/.test(password)) {
-             passwordError.textContent = ("'Mật khẩu phải có ít nhất một ký tự đặc biệt (!@@#$%^&*).'");
-        } else {
-            passwordError.textContent = ''; // Xóa thông báo lỗi nếu mật khẩu hợp lệ
-        }
-    });
+            // Kiểm tra các điều kiện độ mạnh của mật khẩu
+            if (password.length < 8) {
+                passwordError.textContent = 'Mật khẩu phải có ít nhất 8 ký tự.';
+            } else if (!/[A-Z]/.test(password)) {
+                passwordError.textContent = 'Mật khẩu phải có ít nhất một chữ hoa.';
+            } else if (!/[a-z]/.test(password)) {
+                passwordError.textContent = 'Mật khẩu phải có ít nhất một chữ thường.';
+            } else if (!/[0-9]/.test(password)) {
+                passwordError.textContent = 'Mật khẩu phải có ít nhất một chữ số.';
+            } else if (!/[@@!#$%^&*]/.test(password)) {
+                passwordError.textContent = ("'Mật khẩu phải có ít nhất một ký tự đặc biệt (!@@#$%^&*).'");
+            } else {
+                passwordError.textContent = ''; // Xóa thông báo lỗi nếu mật khẩu hợp lệ
+            }
+        });
 
         // Count Cart
         function ShowCount() {

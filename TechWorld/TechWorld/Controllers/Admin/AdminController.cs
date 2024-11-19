@@ -9,6 +9,7 @@ using PagedList;
 using System.CodeDom;
 using System.Globalization;
 using System.Web.Configuration;
+using System.IO;
 
 namespace TechWorld.Controllers.Admin
 {
@@ -261,30 +262,42 @@ namespace TechWorld.Controllers.Admin
             return View(viewModel);
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult createSanPham(SanPham req, HttpPostedFileBase HinhAnh)
         {
-            if (HinhAnh.ContentLength > 0)
+            if (ModelState.IsValid)
             {
-                string rootFolder = Server.MapPath("/DataImageSql/");
-                string pathImage = rootFolder + HinhAnh.FileName;
-                HinhAnh.SaveAs(pathImage);
-                req.HinhAnh = "DataImageSql/" + HinhAnh.FileName;
-                SanPham sp = new SanPham();
-                sp.TenSP = req.TenSP;
-                sp.NgayNhap = req.NgayNhap;
-                sp.GiaTien = req.GiaTien;
-                sp.SoLuong = req.SoLuong;
-                sp.MoTa = req.MoTa;
-                sp.MoTaSanPham = req.MoTa;
-                sp.HinhAnh = req.HinhAnh;
-                sp.MaNCC = req.MaNCC;
-                sp.MaLoai = req.MaLoai;
-                if (req.GiamGia != "")
+                // Xử lý upload hình ảnh (như code cũ)
+                if (HinhAnh != null && HinhAnh.ContentLength > 0)
+                {
+                    string rootFolder = Server.MapPath("/DataImageSql/");
+                    string pathImage = Path.Combine(rootFolder, HinhAnh.FileName);
+                    HinhAnh.SaveAs(pathImage);
+                    req.HinhAnh = "DataImageSql/" + HinhAnh.FileName;
+                }
+
+                // Tạo đối tượng SanPham mới
+                var sp = new SanPham
+                {
+                    TenSP = req.TenSP,
+                    NgayNhap = req.NgayNhap,
+                    GiaTien = req.GiaTien,
+                    SoLuong = req.SoLuong,
+                    MoTa = req.MoTa,
+                    MoTaSanPham = req.MoTaSanPham,
+                    HinhAnh = req.HinhAnh,
+                    MaNCC = req.MaNCC,
+                    MaLoai = req.MaLoai,
+                    TinhTrangSP = "Còn hàng"
+                };
+
+                // Xử lý giảm giá
+                if (!string.IsNullOrEmpty(req.GiamGia))
                 {
                     sp.GiamGia = req.GiamGia;
                     sp.GiaTienDaKhuyenMai = req.GiaTien - (req.GiaTien * float.Parse(req.GiamGia) / 100);
                 }
-                sp.TinhTrangSP = "Còn hàng";
+
                 db.SanPhams.Add(sp);
                 db.SaveChanges();
             }
@@ -312,6 +325,7 @@ namespace TechWorld.Controllers.Admin
                 NgayNhap = sanPham.NgayNhap.ToString("yyyy-MM-dd"),
                 SoLuong = sanPham.SoLuong,
                 MoTa = sanPham.MoTa,
+                MoTaSanPham = sanPham.MoTaSanPham,
                 GiamGia = sanPham.GiamGia.ToString(),
             };
             viewModel.LoaiHangList = db.LoaiHangs.ToList();
@@ -319,6 +333,7 @@ namespace TechWorld.Controllers.Admin
             return View(viewModel);
         }
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult updateSanPham(LoaiHangNCCViewModel req, HttpPostedFileBase HinhAnh)
         {
             if (ModelState.IsValid)
@@ -332,6 +347,7 @@ namespace TechWorld.Controllers.Admin
                 sanPham.NgayNhap = DateTime.Parse(req.NgayNhap);
                 sanPham.SoLuong = req.SoLuong;
                 sanPham.MoTa = req.MoTa;
+                sanPham.MoTaSanPham = req.MoTaSanPham;
                 if(req.HinhAnh != null)
                 {
                     string rootFolder = Server.MapPath("/DataImageSql/");

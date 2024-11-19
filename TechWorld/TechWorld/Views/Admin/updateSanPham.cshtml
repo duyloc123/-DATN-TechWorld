@@ -28,7 +28,7 @@
                             @foreach (var nhacungcap in Model.NhaCungCapList)
                             {
                                 <option value="@nhacungcap.MaNCC" @(nhacungcap.MaNCC == Model.MaNCC ? "selected" : "")>
-                                     @nhacungcap.TenNCC
+                                    @nhacungcap.TenNCC
                                 </option>
                             }
                         </select>
@@ -74,9 +74,15 @@
                         </label>
                     </div>
 
+
                     <div class="col-span-full">
-                        <label for="product-details" class="text-sm font-medium text-gray-900 block mb-2">Mô tả sản phẩm</label>
-                        <textarea id="product-details" name="MoTa" rows="6" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="">@Model.MoTa</textarea>
+                        <label for="product-description" class="text-sm font-medium text-gray-900 block mb-2">Mô tả sản phẩm</label>
+                        <input type="text" id="product-description" name="MoTa" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Details" value="@Model.MoTa"></input>
+                    </div>
+
+                    <div class="col-span-full">
+                        <label for="product-details" class="text-sm font-medium text-gray-900 block mb-2">Mô tả chi tiết sản phẩm</label>
+                        <textarea id="product-details" name="MoTaSanPham" rows="6" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Details">@Model.MoTaSanPham</textarea>
                     </div>
                 </div>
                 <div class="p-6 border-t border-gray-200 rounded-b">
@@ -86,5 +92,11 @@
         }
     </div>
 </div>
+
+@section scripts {
+    <script>
+        CKEDITOR.replace("MoTaSanPham");
+    </script>
+}
 
 

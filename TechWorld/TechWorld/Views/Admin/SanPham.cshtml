@@ -72,9 +72,6 @@
                                         <span class="text-base font-semibold leading-tight text-slate-400">@item.SoLuong</span>
                                     </td>
                                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <span class="text-base font-semibold leading-tight text-slate-400">@item.MoTa</span>
-                                    </td>
-                                    <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         @if (item.TinhTrangSP == "Còn hàng")
                                         {
                                             <span class="text-base font-semibold leading-tight text-green-400">@item.TinhTrangSP</span>
@@ -83,6 +80,9 @@
                                         {
                                             <span class="text-base font-semibold leading-tight text-red-400">@item.TinhTrangSP</span>
                                         }
+                                    </td>
+                                    <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                        <span class="text-base font-semibold leading-tight text-slate-400">@item.MoTa</span>
                                     </td>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <div class="flex flex-row gap-4">
@@ -111,21 +111,21 @@
 <div class="flex justify-center space-x-2 my-4">
     @if (Model.PageNumber > 1)
     {
-        <a href="@Url.Action("KhachHangList", new { page = Model.PageNumber - 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
+        <a href="@Url.Action("SanPham", new { page = Model.PageNumber - 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
             Prev
         </a>
     }
 
     @for (int i = 1; i <= Model.PageCount; i++)
     {
-        <a href="@Url.Action("KhachHangList", new { page = i })" class="px-4 py-2 rounded-md @(i == Model.PageNumber ? "bg-blue-500 text-white" : "bg-gray-200 hover:bg-gray-300")">
+        <a href="@Url.Action("SanPham", new { page = i })" class="px-4 py-2 rounded-md @(i == Model.PageNumber ? "bg-blue-500 text-white" : "bg-gray-200 hover:bg-gray-300")">
             @i
         </a>
     }
 
     @if (Model.PageNumber < Model.PageCount)
     {
-        <a href="@Url.Action("KhachHangList", new { page = Model.PageNumber + 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
+        <a href="@Url.Action("SanPham", new { page = Model.PageNumber + 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
             Next
         </a>
     }
