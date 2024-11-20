@@ -255,3 +255,5 @@ D:\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.csproj.CoreCompileInp
 D:\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.csproj.Up2Date
 D:\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.dll
 D:\-DATN-TechWorld\TechWorld\TechWorld\obj\Debug\TechWorld.pdb
+D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\bin\PayPal.dll
+D:\ĐATN\-DATN-TechWorld\TechWorld\TechWorld\bin\PayPal.xml

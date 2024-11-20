@@ -20,7 +20,7 @@ namespace TechWorld.Models
             this.ChiTietDonHangs = new HashSet<ChiTietDonHang>();
         }
     
-        public int MaDH { get; set; }
+        public string MaDH { get; set; }
         public Nullable<System.DateTime> NgayDat { get; set; }
         public double TongTien { get; set; }
         public string PTThanhToan { get; set; }

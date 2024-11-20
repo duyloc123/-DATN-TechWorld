@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -108,6 +109,8 @@ namespace TechWorld.Controllers
         // Thông tin khách hàng
         public ActionResult UserInfomation(int id)
         {
+            ViewBag.ActivePage = "ThongTinKH";
+
             var infomation = db.KhachHangs.Where(item => item.MaKH == id);
             return View(infomation);
         }
@@ -128,5 +131,34 @@ namespace TechWorld.Controllers
             return RedirectToAction("UserInfomation");
         }
 
+        // Quản lý đơn hàng
+        public ActionResult DonHangUser(int id)
+        {
+            ViewBag.ActivePage = "DonHangUser";
+            Session["MaKH"] = db.DonHangs.FirstOrDefault().MAKH;
+
+            var DonHang = db.DonHangs.Where(item => item.MAKH == id).ToList();
+            return View(DonHang); 
+        }
+
+        public ActionResult SearchDonHang(string nameSearch, int id)
+        {
+            ViewBag.ActivePage = "DonHangUser";
+
+            Session["MaKH"] = db.DonHangs.FirstOrDefault().MAKH;
+
+            if (!string.IsNullOrEmpty(nameSearch))
+            {
+                var find = db.DonHangs.Where(item => item.MaDH.Contains(nameSearch)).ToList();
+
+                if (find.Any())
+                {
+                    return View(find);
+                }
+                TempData["Message"] = "Không tìm thấy mã đơn hàng!";
+            }
+            var DonHang = db.DonHangs.Where(item => item.MAKH == id).ToList();
+            return View(DonHang);
+        }
     }
 }

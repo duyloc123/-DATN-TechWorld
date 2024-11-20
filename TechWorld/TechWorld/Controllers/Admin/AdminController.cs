@@ -64,15 +64,27 @@ namespace TechWorld.Controllers.Admin
         }
         public ActionResult FindKhachHang(string nameSearch, int? page, int? pageSize)
         {
-            if (nameSearch != "")
-            {
-                ViewBag.ActivePage = "KhachHangList";
-                var find = db.KhachHangs.Where(item => item.HoTen.Contains(nameSearch)).OrderBy(item => item.HoTen);
-                // page
-                if (page == null) page = 1;
-                if (pageSize == null) pageSize = 5;
+            ViewBag.ActivePage = "KhachHangList";
 
-                return View(find.ToPagedList((int)page, (int)pageSize));
+            if (!string.IsNullOrEmpty(nameSearch))
+            {
+                var find = db.KhachHangs
+                             .Where(item => item.HoTen.Contains(nameSearch))
+                             .OrderBy(item => item.HoTen)
+                             .ToList();
+
+                if (find.Any())
+                {
+                    // Xử lý phân trang
+                    if (page == null) page = 1;
+                    if (pageSize == null) pageSize = 5;
+
+                    return View(find.ToPagedList((int)page, (int)pageSize));
+                }
+
+                // Không tìm thấy kết quả
+                TempData["Message"] = "Không tìm thấy thông tin khách hàng!";
+                return View(new List<KhachHang>().ToPagedList(1, pageSize ?? 5));
             }
             return RedirectToAction("KhachHangList");
         }
@@ -157,9 +169,19 @@ namespace TechWorld.Controllers.Admin
             if (nameSearch != "")
             {
                 var find = db.NhaCungCaps.Where(item => item.TenNCC.Contains(nameSearch)).ToList();
-                if (page == null) page = 1;
-                if (pageSize == null) pageSize = 5;
-                return View(find.ToPagedList((int)page, (int)pageSize));
+
+                if (find.Any())
+                {
+                    // Xử lý phân trang
+                    if (page == null) page = 1;
+                    if (pageSize == null) pageSize = 5;
+
+                    return View(find.ToPagedList((int)page, (int)pageSize));
+                }
+
+                // Không tìm thấy kết quả
+                TempData["Message"] = "Không tìm thấy thông tin nhà cung cấp!";
+                return View(new List<NhaCungCap>().ToPagedList(1, pageSize ?? 5));
             }
             return RedirectToAction("NhaCungCapList");
         }
@@ -237,7 +259,18 @@ namespace TechWorld.Controllers.Admin
             if (nameSearch != "")
             {
                 var find = db.LoaiHangs.Where(item => item.TenLoai.Contains(nameSearch)).ToList();
-                return View(find.ToPagedList((int)page, (int)pageSize));
+                if (find.Any())
+                {
+                    // Xử lý phân trang
+                    if (page == null) page = 1;
+                    if (pageSize == null) pageSize = 5;
+
+                    return View(find.ToPagedList((int)page, (int)pageSize));
+                }
+
+                // Không tìm thấy kết quả
+                TempData["Message"] = "Không tìm thấy thông tin loại hàng!";
+                return View(new List<LoaiHang>().ToPagedList(1, pageSize ?? 5));
             }
             return RedirectToAction("LoaiHangList");
         }
@@ -387,7 +420,18 @@ namespace TechWorld.Controllers.Admin
             if (nameSearch != "")
             {
                 var find = db.SanPhams.Where(item => item.TenSP.Contains(nameSearch)).ToList();
-                return View(find.ToPagedList((int)page, (int)pageSize));
+                if (find.Any())
+                {
+                    // Xử lý phân trang
+                    if (page == null) page = 1;
+                    if (pageSize == null) pageSize = 5;
+
+                    return View(find.ToPagedList((int)page, (int)pageSize));
+                }
+
+                // Không tìm thấy kết quả
+                TempData["Message"] = "Không tìm thấy thông tin sản phẩm!";
+                return View(new List<SanPham>().ToPagedList(1, pageSize ?? 5));
             }
             return RedirectToAction("SanPham");
         }
@@ -414,7 +458,7 @@ namespace TechWorld.Controllers.Admin
             return View();
         }
         [HttpPost]
-        public ActionResult updateDonHang(int id, DonHang dh)
+        public ActionResult updateDonHang(string id, DonHang dh)
         {
             var donHang = db.DonHangs.FirstOrDefault(item => item.MaDH == id);
 
@@ -440,8 +484,19 @@ namespace TechWorld.Controllers.Admin
             if (pageSize == null) pageSize = 5;
             if (nameSearch != "")
             {
-                var find = db.DonHangs.Where(item => item.KhachHang.HoTen.Contains(nameSearch)).ToList();
-                return View(find.ToPagedList((int)page, (int)pageSize));
+                var find = db.DonHangs.Where(item => item.MaDH.Contains(nameSearch)).ToList();
+                if (find.Any())
+                {
+                    // Xử lý phân trang
+                    if (page == null) page = 1;
+                    if (pageSize == null) pageSize = 5;
+
+                    return View(find.ToPagedList((int)page, (int)pageSize));
+                }
+
+                // Không tìm thấy kết quả
+                TempData["Message"] = "Không tìm thấy thông tin đơn hàng!";
+                return View(new List<DonHang>().ToPagedList(1, pageSize ?? 5));
             }
             return RedirectToAction("DonHang");
         }

@@ -5,7 +5,7 @@
       <PropertyRef Name="MaDH" />
       <PropertyRef Name="MaSP" />
     </Key>
-    <Property Name="MaDH" Type="int" Nullable="false" />
+    <Property Name="MaDH" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MaSP" Type="int" Nullable="false" />
     <Property Name="SoLuong" Type="int" Nullable="false" />
     <Property Name="TongTien" Type="float" Nullable="false" />
@@ -14,7 +14,7 @@
     <Key>
       <PropertyRef Name="MaDH" />
     </Key>
-    <Property Name="MaDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaDH" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="NgayDat" Type="datetime" />
     <Property Name="TongTien" Type="float" Nullable="false" />
     <Property Name="PTThanhToan" Type="nvarchar" MaxLength="100" />

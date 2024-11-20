@@ -53,6 +53,12 @@ namespace TechWorld.Models
         {
             return Items.Sum(x => x.SoLuong);
         }
+
+        public double Total()
+        {
+            var total = Items.Sum(s => Math.Round(s.GiaTien / 25410,2) * s.SoLuong);
+            return (double)total;
+        }
     }
 
     public class ShoppingCartItem

@@ -1,97 +1,12 @@
 {
   "Version": 1,
-<<<<<<< HEAD
   "WorkspaceRootPath": "D:\\\u0110ATN\\-DATN-TechWorld\\TechWorld\\",
   "Documents": [],
-=======
-  "WorkspaceRootPath": "D:\\-DATN-TechWorld\\TechWorld\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\-datn-techworld\\techworld\\techworld\\views\\admin\\donhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\admin\\donhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\-datn-techworld\\techworld\\techworld\\views\\admin\\finddonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\admin\\finddonhang.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\-datn-techworld\\techworld\\techworld\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|d:\\-datn-techworld\\techworld\\techworld\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D673F0F7-F4C2-49C6-B15B-C4BE3C520EF2}|TechWorld\\TechWorld.csproj|solutionrelative:techworld\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
->>>>>>> 0cdde49e76b4a6f3a1a60eb545800d60f397db8f
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 166,
-<<<<<<< HEAD
       "DocumentGroups": []
-=======
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 1,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "findDonHang.cshtml",
-              "DocumentMoniker": "D:\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Admin\\findDonHang.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\Admin\\findDonHang.cshtml",
-              "ToolTip": "D:\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Admin\\findDonHang.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\Admin\\findDonHang.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-13T04:46:55.595Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DonHang.cshtml",
-              "DocumentMoniker": "D:\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Admin\\DonHang.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\Admin\\DonHang.cshtml",
-              "ToolTip": "D:\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\Admin\\DonHang.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\Admin\\DonHang.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEEAAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-13T04:39:47.602Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "TechWorld\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\-DATN-TechWorld\\TechWorld\\TechWorld\\Controllers\\UserController.cs",
-              "RelativeToolTip": "TechWorld\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwCMAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-13T02:52:54.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\User\\Index.cshtml",
-              "RelativeDocumentMoniker": "TechWorld\\Views\\User\\Index.cshtml",
-              "ToolTip": "D:\\-DATN-TechWorld\\TechWorld\\TechWorld\\Views\\User\\Index.cshtml",
-              "RelativeToolTip": "TechWorld\\Views\\User\\Index.cshtml",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAAAHUAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-07T08:25:34.499Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
->>>>>>> 0cdde49e76b4a6f3a1a60eb545800d60f397db8f
     }
   ]
 }

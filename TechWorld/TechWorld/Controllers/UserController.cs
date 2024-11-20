@@ -128,7 +128,6 @@ namespace TechWorld.Controllers
         {
             ViewBag.ActivePage = "Product";
             var ascProduct = (from item in db.SanPhams
-                                where item.MaLoai != 1
                                 orderby item.GiaTienDaKhuyenMai
                                 ascending
                                 select item).ToList();
@@ -139,7 +138,6 @@ namespace TechWorld.Controllers
         {
             ViewBag.ActivePage = "Product";
             var ascProduct = (from item in db.SanPhams
-                              where item.MaLoai != 1
                               orderby item.GiaTienDaKhuyenMai
                               descending
                               select item).ToList();

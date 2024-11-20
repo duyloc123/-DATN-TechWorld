@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "SearchDonHang";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<!-- Infomation User -->
+<div class="container flex justify-center mx-auto">
+    <div class="flex w-[1300px] bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 gap-4">
+        <!-- Left -->
+        <div class="basis-80">
+            <div class="flex gap-8 items-center border-b pb-4">
+                <img src="https://cdn-icons-png.flaticon.com/512/21/21104.png" alt="" class="w-12 h-12">
+                <h2 class="font-semibold text-lg text-black">@Session["TenKhachHang"]</h2>
+            </div>
+            <ul class="text-center mt-6">
+                <li class="w-full inline-block text-lg text-semibold @(ViewBag.ActivePage == "ThongTinKH" ? "text-red-500" : "text-gray-950") flex items-center hover:text-red-500 duration-300 ease-in-out">
+                    <a href="~/InfomationUser/UserInfomation?id=@Session["MaKH"]">
+                        <i class="fas fa-user w-8 mr-4 group"></i>
+                        Thông tin tài khoản
+                    </a>
+                </li>
+                <li class="w-full inline-block text-lg text-semibold  @(ViewBag.ActivePage == "DonHangUser" ? "text-red-500" : "text-gray-950") flex items-center mt-6 hover:text-red-500 duration-300 ease-in-out">
+                    <a href="~/InfomationUser/DonHangUser?id=@Session["MaKH"]">
+                        <i class="fa-solid fa-clipboard-check w-8 mr-4"></i>
+                        Quản lí đơn hàng
+                    </a>
+                </li>
+                <li class="w-full inline-block text-lg text-semibold text-gray-950 flex items-center mt-6 hover:text-red-500 duration-300 ease-in-out">
+                    <i class="fa-solid fa-arrow-right-from-bracket w-8 mr-4"></i>
+                    Đăng xuất
+                </li>
+            </ul>
+        </div>
+        <!-- Right -->
+        <div class="basis-3/4 flex flex-col items-center">
+            <h1 class="text-2xl font-semibold ml-10 text-black mb-5">Tìm kiếm đơn hàng</h1>
+            <!-- Search-->
+            <div class="width-[250px]">
+                <form action="~/InfomationUser/SearchDonHang">
+                    <input type="hidden" name="id" value="@Session["MaKH"]" />
+                    <div class="relative flex flex-wrap items-stretch w-full mb-6 ml-2 transition-all rounded-lg ease-soft">
+                        <span class="text-sm ease-soft right-0 leading-5.6 absolute z-50 -ml-px flex h-full items-center whitespace-nowrap rounded-lg rounded-tr-none rounded-br-none border border-r-0 border-transparent bg-transparent py-2 px-2.5 text-center font-normal text-slate-500 transition-all">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <input type="text"
+                               class="pl-5 text-sm focus:shadow-soft-primary-outline ease-soft w-1/100 leading-5.6 relative -ml-px block min-w-0 flex-auto rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 pr-3 text-gray-700 transition-all placeholder:text-gray-500 focus:border-fuchsia-300 focus:outline-none focus:transition-shadow"
+                               placeholder="Tìm kiếm đơn hàng..."
+                               name="nameSearch" />
+                    </div>
+                </form>
+            </div>
+            <div class="overflow-x-auto">
+                <table class="table">
+                    <!-- head -->
+                    <thead>
+                        <tr>
+                            <th class="text-black">Mã ĐH</th>
+                            <th class="text-black">Ngày đặt</th>
+                            <th class="text-black">Tổng tiền</th>
+                            <th class="text-black">Thanh toán</th>
+                            <th class="text-black">Đơn hàng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (TempData["Message"] != null)
+                        {
+                            <tr>
+                                <td colspan="5" class="text-center text-red-500 font-bold">@TempData["Message"]</td>
+                            </tr>
+                        }
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="font-bold text-black">@item.MaDH</td>
+                                    <td>@String.Format("{0:dd/MM/yyyy}", item.NgayDat)</td>
+                                    <td class="font-bold text-black">@String.Format("{0:#,##0 VNĐ}", item.TongTien)</td>
+                                    <td class="@(item.TTThanhToan == "Đã thanh toán" ? "text-green-500" : " text-red-500")">@item.TTThanhToan</td>
+                                    <td class="@(item.TTDonHang == "Đã giao hàng" ? "text-green-500" : "text-red-500")">@item.TTDonHang</td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>

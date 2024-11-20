@@ -60,6 +60,9 @@
     <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
       <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
+    <Reference Include="PayPal, Version=1.9.1.0, Culture=neutral, PublicKeyToken=5b4afc1ccaef40fb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayPal.1.9.1\lib\net451\PayPal.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -171,6 +174,7 @@
     </Compile>
     <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\NhaCungCapModel.cs" />
+    <Compile Include="Models\PaypalConfiguration.cs" />
     <Compile Include="Models\ProductDetailViewModel.cs" />
     <Compile Include="Models\SanPham.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
@@ -681,9 +685,11 @@
     <Content Include="Styles\Image\video-card.png" />
     <Content Include="Styles\Image\view.png" />
     <Content Include="Styles\main.js" />
+    <Content Include="Styles\Modal.js" />
     <Content Include="Styles\nucleo-icons.css" />
     <Content Include="Styles\nucleo-svg.css" />
     <Content Include="Styles\ShoppingCart.js" />
+    <Content Include="Styles\ShowPassword.js" />
     <Content Include="Styles\sidenav-burger.js" />
     <Content Include="Styles\soft-ui-dashboard-tailwind.css" />
     <Content Include="Styles\soft-ui-dashboard-tailwind.js" />
@@ -824,6 +830,9 @@
     <Content Include="Styles\ckeditor\samples\toolbarconfigurator\font\fontello.woff" />
     <Content Include="Styles\ckeditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="Styles\ckeditor\skins\moono-lisa\readme.md" />
+    <Content Include="Views\ShoppingCart\OrderFailed.cshtml" />
+    <Content Include="Views\InfomationUser\DonHangUser.cshtml" />
+    <Content Include="Views\InfomationUser\SearchDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

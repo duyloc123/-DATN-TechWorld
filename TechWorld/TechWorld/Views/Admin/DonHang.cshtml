@@ -24,13 +24,14 @@
     <div class="flex-none w-full max-w-full px-3">
         <div class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-soft-xl rounded-2xl bg-clip-border">
             <div class="p-6 pb-0 mb-0 bg-white border-b-0 border-b-solid rounded-t-2xl border-b-transparent">
-                <h6>Thông tin khách hàng</h6>
+                <h6>Thông tin đơn hàng</h6>
             </div>
             <div class="flex-auto px-0 pt-0 pb-2">
                 <div class="p-0 overflow-x-auto">
                     <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
                         <thead class="align-bottom">
                             <tr>
+                                <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Mã ĐH</th>
                                 <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Họ Tên</th>
                                 <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Địa Chỉ</th>
                                 <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Ngày Đặt</th>
@@ -46,6 +47,9 @@
                             {
                                 <tr>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                        <span class="text-base font-semibold leading-tight text-slate-400 ml-6">@item.MaDH</span>
+                                    </td>
+                                    <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <span class="text-base font-semibold leading-tight text-slate-400 ml-6">@item.KhachHang.HoTen</span>
                                     </td>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -58,33 +62,33 @@
                                         <span class="text-base font-semibold leading-tight text-slate-400">@String.Format("{0:#,##0} VNĐ", item.TongTien)</span>
                                     </td>
                                     <form method="post" action="@Url.Action("updateDonHang", "Admin", new { id = item.MaDH })">
-                                        <td class="relative p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                            <select name="PTThanhToan" class="text-base font-semibold leading-tight px-2 border-none focus:outline-none appearance-none">
-                                                <option value="COD" @(item.PTThanhToan == "COD" ? "selected" : "") class="text-[#22c55e] px-2">COD</option>
-                                                <option value="Paypal" @(item.PTThanhToan == "Paypal" ? "selected" : "") class="text-[#2563eb] px-2">Paypal</option>
-                                            </select>
-                                            <div class="pointer-events-none absolute inset-y-0 right-10 flex items-center px-2 text-gray-700">
-                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                                            </div>
-                                        </td>
-                                        <td class="relative p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                            <select name="TTDonHang" class="text-base font-semibold leading-tight focus:outline-none px-2 border-none focus:outline-none appearance-none">
-                                                <option value="Chưa giao hàng" @(item.TTDonHang == "Chưa giao hàng" ? "selected" : "") class="text-red-500">Chưa giao hàng</option>
-                                                <option value="Đã giao hàng" @(item.TTDonHang == "Đã giao hàng" ? "selected" : "") class="text-green-500">Đã giao hàng</option>
-                                            </select>
-                                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                                            </div>
-                                        </td>
-                                        <td class="relative p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                            <select name="TTThanhToan" class="text-base font-semibold leading-tight focus:outline-none px-2 border-none focus:outline-none appearance-none">
-                                                <option value="Chưa thanh toán" @(item.TTThanhToan == "Chưa thanh toán" ? "selected" : "") class="text-red-500">Chưa thanh toán</option>
-                                                <option value="Đã thanh toán" @(item.TTThanhToan == "Đã thanh toán" ? "selected" : "") class="text-green-500">Đã thanh toán</option>
-                                            </select>
-                                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
-                                            </div>
-                                        </td>
+                                    <td class="relative p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                        <select name="PTThanhToan" class="text-base font-semibold leading-tight px-2 border-none focus:outline-none appearance-none">
+                                            <option value="COD" @(item.PTThanhToan == "COD" ? "selected" : "") class="text-[#22c55e] px-2">COD</option>
+                                            <option value="Paypal" @(item.PTThanhToan == "Paypal" ? "selected" : "") class="text-[#2563eb] px-2">Paypal</option>
+                                        </select>
+                                        <div class="pointer-events-none absolute inset-y-0 right-10 flex items-center px-2 text-gray-700">
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                                        </div>
+                                    </td>
+                                    <td class="relative p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                        <select name="TTDonHang" class="text-base font-semibold leading-tight focus:outline-none px-2 border-none focus:outline-none appearance-none">
+                                            <option value="Chưa giao hàng" @(item.TTDonHang == "Chưa giao hàng" ? "selected" : "") class="text-red-500">Chưa giao hàng</option>
+                                            <option value="Đã giao hàng" @(item.TTDonHang == "Đã giao hàng" ? "selected" : "") class="text-green-500">Đã giao hàng</option>
+                                        </select>
+                                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                                        </div>
+                                    </td>
+                                    <td class="relative p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                        <select name="TTThanhToan" class="text-base font-semibold leading-tight focus:outline-none px-2 border-none focus:outline-none appearance-none">
+                                            <option value="Chưa thanh toán" @(item.TTThanhToan == "Chưa thanh toán" ? "selected" : "") class="text-red-500">Chưa thanh toán</option>
+                                            <option value="Đã thanh toán" @(item.TTThanhToan == "Đã thanh toán" ? "selected" : "") class="text-green-500">Đã thanh toán</option>
+                                        </select>
+                                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+                                        </div>
+                                    </td>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <div class="flex flex-row gap-4">
                                             <a href="@Url.Action("deleteDonHang", "Admin", new { id = item.MaDH })" class="text-gray-700 hover:text-red-500 duration-200 ease-in-out cursor-pointer">

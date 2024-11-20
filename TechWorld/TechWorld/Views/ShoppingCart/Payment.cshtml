@@ -70,9 +70,12 @@
                                    transition-all duration-300 ease-in-out
                                    text-gray-700"
                         name="PTThanhToan"
-                        id="PTThanhToan">
+                        id="PTThanhToan"
+                        onchange="handlePaymentChange(this)">
                     <option value="COD">Thanh toán khi nhận hàng COD</option>
-                    <option value="Paypal">Thanh toán bằng Paypal</option>
+                    <option value="Paypal">
+                        Thanh toán bằng Paypal
+                    </option>
                 </select>
 
                 <!-- Custom arrow icon -->
@@ -107,3 +110,13 @@
         }
     </div>
 </div>
+
+@* Select option Paypal *@
+
+<script>
+    function handlePaymentChange(select) {
+        if (select.value === "Paypal") {
+            window.location.href = "/shoppingcart/PaymentWithPayPal";
+        }
+    }
+</script>

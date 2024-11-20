@@ -14,7 +14,7 @@ namespace TechWorld.Models
     
     public partial class ChiTietDonHang
     {
-        public int MaDH { get; set; }
+        public string MaDH { get; set; }
         public int MaSP { get; set; }
         public int SoLuong { get; set; }
         public double TongTien { get; set; }
