@@ -76,10 +76,17 @@ namespace TechWorld.Controllers
             .Take(10)
             .ToList();
 
+            var newsIndex = db.TinTucs.Where(item => item.TrangThai == "Hiện" && item.TrangDang == "Trang chủ").ToList().Take(4);
+            var newsBanner = db.TinTucs.Where(item => item.TrangThai == "Hiện" && item.TrangDang == "Trang chủ/Banner").ToList().Take(6);
+            var newsOutStanding = db.TinTucs.Where(item => item.TrangThai == "Nổi bật" && item.TrangDang == "Sales").ToList().Take(1);
+
             ViewBag.ThongKeMonitor = monitor;
             ViewBag.ThongKeKeyBoard = keyboard;
             ViewBag.ThongKeLaptop = laptop;
             ViewBag.ThongKeSanPham = result;
+            ViewBag.newsIndex = newsIndex;
+            ViewBag.newsBanner = newsBanner;
+            ViewBag.newsOutStanding = newsOutStanding;
 
             return View();
         }
@@ -153,8 +160,15 @@ namespace TechWorld.Controllers
         public ActionResult News()
         {
             ViewBag.ActivePage = "News";
-            var news = db.TinTucs.ToList();
-            return View(news);
+            var TinTuc = db.TinTucs.Where(item => item.TrangDang == "Tin Tức" && item.TrangThai == "Hiện").ToList();
+            var TinTucBanner = db.TinTucs.Where(item => item.TrangDang == "Banner" && item.TrangThai == "Hiện").ToList();
+
+            var viewModel = new NewsViewModel
+            {
+                TinTuc = TinTuc,
+                TinTucBanner = TinTucBanner
+            };
+            return View(viewModel);
         }
     }
 }

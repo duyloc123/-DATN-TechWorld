@@ -11,31 +11,16 @@
          data-carousel="static">
         <!-- Carousel wrapper -->
         <div class="relative overflow-hidden rounded-lg h-[200px] sm:h-[300px] md:h-[31rem]">
-            <!-- Item 1 -->
-            <div class="hidden duration-700 ease-in-out"
-                 data-carousel-item="active">
-                <img src="https://file.hstatic.net/200000722513/file/t10_thu_cu_doi_moi_web_slider_800x400.png"
-                     class="absolute block w-full h-full object-fill -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                     alt="Banner 1" />
-            </div>
-            <!-- Item 2 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="https://file.hstatic.net/200000722513/file/banner_web_slider_800x400_laptop_gaming_wukong_d33e1e6762764ec799820bfcc5814047.jpg"
-                     class="absolute block w-full h-full object-fill -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                     alt="Banner 2" />
-            </div>
-            <!-- Item 3 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="https://file.hstatic.net/200000722513/file/web_slider_800x400_man_hinh.png"
-                     class="absolute block w-full h-full object-fill -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                     alt="Banner 3" />
-            </div>
-            <!-- Item 4 -->
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="https://file.hstatic.net/200000722513/file/uu_dai_soc_banner_web_slider_800x400.png"
-                     class="absolute block w-full h-full object-fill -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                     alt="Banner 4" />
-            </div>
+            @foreach (var newsBanner in ViewBag.newsBanner)
+            {
+                <!-- Item 1 -->
+                <div class="hidden duration-700 ease-in-out"
+                     data-carousel-item="active">
+                    <img src="~/@newsBanner.HinhAnh"
+                         class="absolute block w-full h-full object-fill -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                         alt="Banner 1" />
+                </div>
+            }
         </div>
         <!-- Slider controls -->
         <button type="button"
@@ -702,9 +687,12 @@
 <div class="mt-10">
     <div class="container mx-auto">
         <div class="flex gap-2 h-[800px] max-sm:mx-2">
-            <img src="https://nguyencongpc.vn/media/news/1307_banner851x512.jpg"
-                 class="w-[1000px] rounded-lg hover:shadow-2xl object-fill duration-300 ease-linear cursor-pointer"
-                 alt="sale" />
+            @foreach (var newsOutStanding in ViewBag.newsOutStanding)
+            {
+                <img src="~/@newsOutStanding.HinhAnh"
+                     class="w-[1000px] rounded-lg hover:shadow-2xl object-fill duration-300 ease-linear cursor-pointer"
+                     alt="sale" />
+            }
             <div class="flex flex-col gap-1 max-sm:invisible w-[550px]">
                 <img src="https://file.hstatic.net/200000722513/file/thang_10_artboard_12_copy_10.png"
                      class="h-[calc(50%-2px)] rounded-lg hover:shadow-2xl duration-300 ease-linear cursor-pointer"
@@ -725,78 +713,25 @@
         </h1>
         <!-- Content News -->
         <div class="flex items-center gap-8 sm:flex-col lg:flex-row">
-            <!-- Items 1-->
-            <div class="relative flex flex-col sm:w-full max-sm my-2 bg-white shadow-2xl border border-slate-200 rounded-lg w-96 cursor-pointer hover:scale-105 duration-300 ease-in">
-                <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-                    <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-                         alt="card-image"
-                         class="w-full h-full object-cover" />
+            @foreach (var news in ViewBag.newsIndex)
+            {
+                <!-- Items 1-->
+                <div class="relative flex flex-col sm:w-full max-sm my-2 bg-white shadow-2xl border border-slate-200 rounded-lg w-96 cursor-pointer hover:scale-105 duration-300 ease-in">
+                    <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
+                        <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                             alt="card-image"
+                             class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-4">
+                        <h6 class="mb-2 text-slate-800 text-2xl font-bold">
+                            @news.TieuDe
+                        </h6>
+                        <p class="text-slate-600 leading-normal font-ligh font-sans">
+                            @news.NoiDung
+                        </p>
+                    </div>
                 </div>
-                <div class="p-4">
-                    <h6 class="mb-2 text-slate-800 text-2xl font-bold">
-                        Website Review Check
-                    </h6>
-                    <p class="text-slate-600 leading-normal font-ligh font-sans">
-                        The place is close to Barceloneta Beach and bus stop just 2 min
-                        by walk and near to &quot;Naviglio&quot; where you can enjoy the
-                        main night life in Barcelona.
-                    </p>
-                </div>
-            </div>
-            <!-- Items 2-->
-            <div class="relative flex flex-col sm:w-full max-sm my-2 bg-white shadow-2xl border border-slate-200 rounded-lg w-96 cursor-pointer hover:scale-105 duration-300 ease-in">
-                <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-                    <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-                         alt="card-image"
-                         class="w-full h-full object-cover" />
-                </div>
-                <div class="p-4">
-                    <h6 class="mb-2 text-slate-800 text-2xl font-bold">
-                        Website Review Check
-                    </h6>
-                    <p class="text-slate-600 leading-normal font-ligh font-sans">
-                        The place is close to Barceloneta Beach and bus stop just 2 min
-                        by walk and near to &quot;Naviglio&quot; where you can enjoy the
-                        main night life in Barcelona.
-                    </p>
-                </div>
-            </div>
-            <!-- Items 3-->
-            <div class="relative flex flex-col sm:w-full max-sm my-2 bg-white shadow-2xl border border-slate-200 rounded-lg w-96 cursor-pointer hover:scale-105 duration-300 ease-in">
-                <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-                    <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-                         alt="card-image"
-                         class="w-full h-full object-cover" />
-                </div>
-                <div class="p-4">
-                    <h6 class="mb-2 text-slate-800 text-2xl font-bold">
-                        Website Review Check
-                    </h6>
-                    <p class="text-slate-600 leading-normal font-ligh font-sans">
-                        The place is close to Barceloneta Beach and bus stop just 2 min
-                        by walk and near to &quot;Naviglio&quot; where you can enjoy the
-                        main night life in Barcelona.
-                    </p>
-                </div>
-            </div>
-            <!-- Items 4-->
-            <div class="relative flex flex-col sm:w-full max-sm my-2 bg-white shadow-2xl border border-slate-200 rounded-lg w-96 cursor-pointer hover:scale-105 duration-300 ease-in">
-                <div class="relative h-56 m-2.5 overflow-hidden text-white rounded-md">
-                    <img src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=80"
-                         alt="card-image"
-                         class="w-full h-full object-cover" />
-                </div>
-                <div class="p-4">
-                    <h6 class="mb-2 text-slate-800 text-2xl font-bold">
-                        Website Review Check
-                    </h6>
-                    <p class="text-slate-600 leading-normal font-ligh font-sans">
-                        The place is close to Barceloneta Beach and bus stop just 2 min
-                        by walk and near to &quot;Naviglio&quot; where you can enjoy the
-                        main night life in Barcelona.
-                    </p>
-                </div>
-            </div>
+            }
         </div>
     </div>
 </div>

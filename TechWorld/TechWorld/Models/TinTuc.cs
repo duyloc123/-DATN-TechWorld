@@ -17,9 +17,10 @@ namespace TechWorld.Models
         public int MaTin { get; set; }
         public string TieuDe { get; set; }
         public string NoiDung { get; set; }
-        public Nullable<System.DateTime> NgayDang { get; set; }
+        public System.DateTime NgayDang { get; set; }
         public string TacGia { get; set; }
         public string HinhAnh { get; set; }
         public string TrangThai { get; set; }
+        public string TrangDang { get; set; }
     }
 }

@@ -53,7 +53,7 @@ CREATE TABLE KhachHang(
 
 
 CREATE TABLE DonHang(
-	MaDH INT IDENTITY(1,1) PRIMARY KEY,
+	MaDH varchar(10) PRIMARY KEY,
 	NgayDat DATETIME DEFAULT GETDATE(),
 	TongTien FLOAT NOT NULL,
 	PTThanhToan NVARCHAR(100),
@@ -64,7 +64,7 @@ CREATE TABLE DonHang(
 );
 
 CREATE TABLE ChiTietDonHang(
-	MaDH INT,
+	MaDH varchar(10),
 	MaSP INT,
 	SoLuong INT NOT NULL,
 	TongTien FLOAT NOT NULL,
@@ -86,10 +86,11 @@ CREATE TABLE TinTuc (
     MaTin INT PRIMARY KEY IDENTITY(1,1),
     TieuDe NVARCHAR(255) NOT NULL,
     NoiDung NVARCHAR(MAX),
-    NgayDang DATE DEFAULT CAST(GETDATE() AS DATE),
+    NgayDang DATE NOT NULL,
     TacGia NVARCHAR(100),
-    HinhAnh NVARCHAR(255),
-    TrangThai NVARCHAR(20) DEFAULT N'Công khai'
+    HinhAnh NVARCHAR(1000),
+    TrangThai NVARCHAR(20),
+	TrangDang NVARCHAR(20)
 );
 
 

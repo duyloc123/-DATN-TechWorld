@@ -436,6 +436,122 @@ namespace TechWorld.Controllers.Admin
             return RedirectToAction("SanPham");
         }
 
+        // Tin Tức
+        public ActionResult TinTuc(int? page, int? pageSize)
+        {
+            ViewBag.ActivePage = "TinTuc";
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
+            var TinTuc = db.TinTucs.ToList();
+            return View(TinTuc.ToPagedList((int)page, (int)pageSize));
+        }
+        public ActionResult createTinTuc()
+        {
+            ViewBag.ActivePage = "TinTuc";
+            return View();
+        }
+        [HttpPost]
+        public ActionResult createTinTuc(TinTuc req, HttpPostedFileBase HinhAnh)
+        {
+            if (ModelState.IsValid)
+            {
+                // Xử lý upload hình ảnh (như code cũ)
+                if (HinhAnh != null && HinhAnh.ContentLength > 0)
+                {
+                    string rootFolder = Server.MapPath("/DataImageSql/");
+                    string pathImage = Path.Combine(rootFolder, HinhAnh.FileName);
+                    HinhAnh.SaveAs(pathImage);
+                    req.HinhAnh = "DataImageSql/" + HinhAnh.FileName;
+                }
+
+                // Tạo đối tượng SanPham mới
+                var tintuc = new TinTuc
+                {
+                    TieuDe = req.TieuDe,
+                    NoiDung = req.NoiDung,
+                    NgayDang = req.NgayDang,
+                    TacGia = req.TacGia,
+                    TrangThai = req.TrangThai,
+                    TrangDang = req.TrangDang,
+                    HinhAnh = req.HinhAnh,
+                };
+
+                db.TinTucs.Add(tintuc);
+                db.SaveChanges();
+            }
+            return RedirectToAction("TinTuc");
+        }
+        public ActionResult deleteTinTuc(int id)
+        {
+            var delete = db.TinTucs.Find(id);
+            if(delete != null)
+            {
+                db.TinTucs.Remove(delete);
+                db.SaveChanges();
+            }
+            return RedirectToAction("TinTuc");
+        }
+        public ActionResult updateTinTuc(int id)
+        {
+            ViewBag.ActivePage = "TinTuc";
+            var tinTuc = db.TinTucs.FirstOrDefault(item => item.MaTin == id);
+            var TinTuc = new TinTucModel
+            {
+                MaTin = tinTuc.MaTin,
+                TieuDe = tinTuc.TieuDe,
+                NoiDung = tinTuc.NoiDung,
+                TacGia = tinTuc.TacGia,
+                TrangThai = tinTuc.TrangThai,
+                NgayDang = tinTuc.NgayDang.ToString("yyyy-MM-dd")
+            };
+            return View(TinTuc);
+        }
+        [HttpPost]
+        public ActionResult updateTinTuc(TinTucModel model, HttpPostedFileBase HinhAnh)
+        {
+            if (ModelState.IsValid)
+            {
+                var tinTuc = db.TinTucs.Find(model.MaTin);
+                tinTuc.TieuDe = model.TieuDe;
+                tinTuc.NoiDung = model.NoiDung;
+                tinTuc.NgayDang = DateTime.Parse(model.NgayDang);
+                tinTuc.TacGia = model.TacGia;
+                tinTuc.TrangThai = model.TrangThai;
+                tinTuc.TrangDang = model.TrangDang;
+                if (model.HinhAnh != null)
+                {
+                    string rootFolder = Server.MapPath("/DataImageSql/");
+                    string pathImage = rootFolder + HinhAnh.FileName;
+                    HinhAnh.SaveAs(pathImage);
+                    model.HinhAnh = "DataImageSql/" + HinhAnh.FileName;
+                    tinTuc.HinhAnh = model.HinhAnh;
+                }
+
+                db.SaveChanges();
+                return RedirectToAction("TinTuc");
+            }
+            return RedirectToAction("updateTinTuc");
+        }
+        public ActionResult findTinTuc(string nameSearch, int? page, int? pageSize)
+        {
+            ViewBag.ActivePage = "TinTuc";
+            if (page == null) page = 1;
+            if (pageSize == null) pageSize = 5;
+            if (nameSearch != "")
+            {
+                var find = db.TinTucs.Where(item => item.TieuDe.Contains(nameSearch)).ToList();
+                if (find.Any())
+                {
+                    if (page == null) page = 1;
+                    if (pageSize == null) pageSize = 5;
+
+                    return View(find.ToPagedList((int)page, (int)pageSize));
+                }
+                TempData["Message"] = "Không tìm thấy thông tin tin tức!";
+                return View(new List<TinTuc>().ToPagedList(1, pageSize ?? 5));
+            }
+            return RedirectToAction("TinTuc");
+        }
         // Đơn Hàng
         public ActionResult DonHang(int? page, int? pageSize)
         {

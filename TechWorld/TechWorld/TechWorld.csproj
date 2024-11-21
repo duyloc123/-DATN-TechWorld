@@ -155,6 +155,7 @@
     </Compile>
     <Compile Include="Models\LoaiHangModel.cs" />
     <Compile Include="Models\LoaiHangNCCViewModel.cs" />
+    <Compile Include="Models\NewsViewModel.cs" />
     <Compile Include="Models\NhaCungCap.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
@@ -201,6 +202,7 @@
     <Compile Include="Models\TinTuc.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\TinTucModel.cs" />
     <Compile Include="Models\TopSanPhamViewModel.cs" />
     <Compile Include="Models\YeuThich.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
@@ -651,6 +653,7 @@
     <Content Include="Styles\Image\icons8-lg-electronics-a-south-korean-multinational-electronics-company-24.png" />
     <Content Include="Styles\Image\icons8-mouse-64.png" />
     <Content Include="Styles\Image\icons8-msi-logo-48.png" />
+    <Content Include="Styles\Image\icons8-news-64.png" />
     <Content Include="Styles\Image\icons8-product-50 %281%29.png" />
     <Content Include="Styles\Image\icons8-razer-logo-48.png" />
     <Content Include="Styles\Image\icons8-user-32.png" />
@@ -833,6 +836,10 @@
     <Content Include="Views\ShoppingCart\OrderFailed.cshtml" />
     <Content Include="Views\InfomationUser\DonHangUser.cshtml" />
     <Content Include="Views\InfomationUser\SearchDonHang.cshtml" />
+    <Content Include="Views\Admin\TinTuc.cshtml" />
+    <Content Include="Views\Admin\createTinTuc.cshtml" />
+    <Content Include="Views\Admin\updateTinTuc.cshtml" />
+    <Content Include="Views\Admin\findTinTuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

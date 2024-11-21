@@ -1,5 +1,4 @@
-﻿@model IEnumerable<TechWorld.Models.TinTuc>
-
+﻿@model TechWorld.Models.NewsViewModel
 @{
     ViewBag.Title = "News";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
@@ -82,33 +81,17 @@
 <div class="mt-10">
     <div class="container mx-auto flex justify-center">
         <div class="flex justify-center mt-10 gap-4 lg:w-[1280px]">
-            <!-- Item 1 -->
-            <div class="w-1/3">
-                <img src="https://theme.hstatic.net/200000722513/1001090675/14/headblog_banner.jpg?v=6318"
-                     alt="bannerNews"
-                     class="rounded-md h-40" />
-                <h1 class="text-xl mt-2 font-semibold hover:text-red-600 duration-300 ease-linear cursor-pointer">
-                    Tổng hợp code Elemental Dungeons 2024 cập nhập liên tục, mới nhất
-                </h1>
-            </div>
-            <!-- Item 2 -->
-            <div class="w-1/3">
-                <img src="https://theme.hstatic.net/200000722513/1001090675/14/headblog_banner.jpg?v=6318"
-                     alt="bannerNews"
-                     class="rounded-md h-40" />
-                <h1 class="text-xl mt-2 font-semibold hover:text-red-600 duration-300 ease-linear cursor-pointer">
-                    Tổng hợp code Elemental Dungeons 2024 cập nhập liên tục, mới nhất
-                </h1>
-            </div>
-            <!-- Item 3 -->
-            <div class="w-1/3">
-                <img src="https://theme.hstatic.net/200000722513/1001090675/14/headblog_banner.jpg?v=6318"
-                     alt="bannerNews"
-                     class="rounded-md h-40" />
-                <h1 class="text-xl mt-2 font-semibold hover:text-red-600 duration-300 ease-linear cursor-pointer">
-                    Tổng hợp code Elemental Dungeons 2024 cập nhập liên tục, mới nhất
-                </h1>
-            </div>
+            @foreach (var banner in Model.TinTucBanner.Take(3))
+            {
+                <div class="w-1/3">
+                    <img src="~/@banner.HinhAnh"
+                         alt="bannerNews"
+                         class="rounded-md h-40" />
+                    <h1 class="text-xl mt-2 font-semibold hover:text-red-600 duration-300 ease-linear cursor-pointer">
+                        @banner.TieuDe
+                    </h1>
+                </div>
+            }
         </div>
     </div>
 </div>
@@ -117,12 +100,12 @@
 <div class="mt-10">
     <div class="container mx-auto lg:w-[1280px]">
         <!-- Card 1 -->
-        @foreach (var item in Model)
+        @foreach (var item in Model.TinTuc)
         {
-            <div class="max-w-full lg:flex mb-4 border border-gray-400 rounded-lg overflow-hidden">
+            <div class="max-w-full h-[200px] lg:flex mb-4 border border-gray-400 rounded-lg overflow-hidden">
                 <img class="h-48 lg:h-auto lg:w-[400px] flex-none bg-cover text-center overflow-hidden cursor-pointer"
                      src="~/@item.HinhAnh"
-                     title="newCard"/>
+                     title="newCard" />
                 <div class="border-r bg-white p-4 flex flex-col justify-between leading-normal flex-grow">
                     <div class="mb-8">
                         <div class="text-gray-900 font-bold text-xl mb-2 hover:text-red-600 duration-200 ease-linear cursor-pointer">

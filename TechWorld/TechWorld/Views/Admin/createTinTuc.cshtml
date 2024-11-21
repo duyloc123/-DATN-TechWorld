@@ -1,0 +1,173 @@
+﻿
+@{
+    ViewBag.Title = "createTinTuc";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="bg-white border border-4 rounded-lg shadow relative m-10">
+
+    <div class="flex items-start justify-between p-5 border-b rounded-t">
+        <h3 class="text-xl font-semibold">
+            Thêm Tin Tức
+        </h3>
+    </div>
+
+    <div class="p-6 space-y-6">
+        @using (Ajax.BeginForm("createTinTuc", "Admin", new AjaxOptions
+        {
+            HttpMethod = "POST",
+            UpdateTargetId = "load_data"
+        },
+            new { enctype = "multipart/form-data" }
+        ))
+        {
+            @Html.AntiForgeryToken()
+            <form>
+                <div class="grid grid-cols-9 gap-6">
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="TieuDe" class="text-sm font-medium text-gray-900 block mb-2">Tiêu đề</label>
+                        <input type="text" name="TieuDe" id="TieuDe" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="NgayDang" class="text-sm font-medium text-gray-900 block mb-2">Ngày đăng</label>
+                        <input type="date" name="NgayDang" id="NgayDang" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required>
+                    </div>
+                    <div class="col-span-full">
+                        <label for="NoiDung" class="text-sm font-medium text-gray-900 block mb-2">Nội dung</label>
+                        <textarea id="NoiDung" name="NoiDung" rows="6" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="Details" required></textarea>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="TacGia" class="text-sm font-medium text-gray-900 block mb-2">Tên tác giả</label>
+                        <input type="text" name="TacGia" id="TacGia" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:border-[#6A64F1] focus:shadow-md block w-full p-2.5" placeholder="..." required>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="TrangThai" class="text-sm font-medium text-gray-900 block mb-2">Trạng thái</label>
+                        <select name="TrangThai" id="TrangThai" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:shadow-md block w-full p-2.5 cursor-pointer" placeholder="..." required>
+                            <option value="Hiện">Hiện tin tức</option>
+                            <option value="Ẩn">Ẩn tin tức</option>
+                            <option value="Nổi bật">Nổi bật</option>
+                        </select>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label for="TrangDang" class="text-sm font-medium text-gray-900 block mb-2">Trang đăng</label>
+                        <select name="TrangDang" id="TrangDang" class="shadow-sm bg-gray-50 border border-[#e0e0e0] text-[#6B7280] outline-none sm:text-sm rounded-lg focus:shadow-md block w-full p-2.5 cursor-pointer" placeholder="..." required>
+                            <option value="Trang chủ">Trang chủ</option>
+                            <option value="Banner">Banner</option>
+                            <option value="Tin tức">Tin tức</option>
+                            <option value="Trang chủ/Banner">Trang chủ/Banner</option>
+                            <option value="Sales">Sales</option>
+                        </select>
+                    </div>
+                    <div class="col-span-6 sm:col-span-3">
+                        <label class="mb-5 block text-xl font-semibold text-[#07074D]">
+                            Hình ảnh
+                        </label>
+                        <input type="file"
+                               name="HinhAnh"
+                               id="file"
+                               class="hidden"
+                               accept="image/*" />
+                        <label for="file"
+                               id="dropzone"
+                               class="flex flex-col items-center justify-center w-full h-[400px] border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-white hover:border-blue-500 transition duration-300 ease-in-out">
+                            <div class="flex flex-col items-center justify-center text-center px-4">
+                                <svg class="w-16 h-16 mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                </svg>
+                                <p class="mb-2 text-base text-gray-600">
+                                    <span class="font-semibold">Kéo thả hình ảnh</span> hoặc <span class="text-blue-600">chọn tệp</span>
+                                </p>
+                                <p class="text-sm text-gray-400">PNG, JPG, GIF (Tối đa 10MB)</p>
+                            </div>
+                        </label>
+
+                        <!-- Container cho preview -->
+                        <div id="preview-container"
+                             class="mt-4 relative hidden">
+                            <div class="w-full h-[400px] flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                                <img id="preview"
+                                     class="max-w-full max-h-full object-contain"
+                                     alt="Xem trước hình ảnh" />
+                            </div>
+                            <button id="remove-image"
+                                    class="absolute top-4 right-4 bg-red-500 text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-red-600 transition">
+                                ✕
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-6 border-t border-gray-200 rounded-b mt-10">
+                    <button class="text-white bg-cyan-600 hover:bg-cyan-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-200 ease-in-out" type="submit">Lưu thông tin</button>
+                </div>
+            </form>
+        }
+    </div>
+</div>
+
+<script>
+    // Lấy các phần tử DOM
+    const fileInput = document.getElementById('file');
+    const previewContainer = document.getElementById('preview-container');
+    const previewImg = document.getElementById('preview');
+    const dropzone = document.getElementById('dropzone');
+    const removeButton = document.getElementById('remove-image');
+
+    // Sự kiện khi chọn file
+    fileInput.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file && file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                previewImg.src = e.target.result;
+                previewContainer.classList.remove('hidden');
+                dropzone.classList.add('hidden');
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // Nút xóa ảnh
+    removeButton.addEventListener('click', function () {
+        previewContainer.classList.add('hidden');
+        dropzone.classList.remove('hidden');
+        fileInput.value = ''; // Xóa file đã chọn
+    });
+
+    // Kéo thả file
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dropzone.addEventListener(eventName, highlight, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, unhighlight, false);
+    });
+
+    function highlight() {
+        dropzone.classList.add('border-blue-500', 'bg-blue-50');
+    }
+
+    function unhighlight() {
+        dropzone.classList.remove('border-blue-500', 'bg-blue-50');
+    }
+
+    dropzone.addEventListener('drop', handleDrop, false);
+
+    function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        if (files.length > 0 && files[0].type.startsWith('image/')) {
+            fileInput.files = files;
+            fileInput.dispatchEvent(new Event('change'));
+        }
+    }
+</script>
+

@@ -110,7 +110,7 @@
     }
 </div>
 
-<div class="flex justify-center space-x-2 my-4">
+<div class="flex justify-center space-x-2 my-4 max-w-[1030px]">
     @if (Model.PageNumber > 1)
     {
         <a href="@Url.Action("LoaiHangList", new { page = Model.PageNumber - 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">

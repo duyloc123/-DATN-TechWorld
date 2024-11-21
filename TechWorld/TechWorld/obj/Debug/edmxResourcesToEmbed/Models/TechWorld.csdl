@@ -8,7 +8,6 @@
     <EntitySet Name="NhaCungCaps" EntityType="TechWorldModel.NhaCungCap" />
     <EntitySet Name="SanPhams" EntityType="TechWorldModel.SanPham" />
     <EntitySet Name="TaiKhoans" EntityType="TechWorldModel.TaiKhoan" />
-    <EntitySet Name="TinTucs" EntityType="TechWorldModel.TinTuc" />
     <EntitySet Name="YeuThiches" EntityType="TechWorldModel.YeuThich" />
     <AssociationSet Name="FK__ChiTietDon__MaDH__59063A47" Association="TechWorldModel.FK__ChiTietDon__MaDH__59063A47">
       <End Role="DonHang" EntitySet="DonHangs" />
@@ -38,6 +37,7 @@
       <End Role="SanPham" EntitySet="SanPhams" />
       <End Role="YeuThich" EntitySet="YeuThiches" />
     </AssociationSet>
+    <EntitySet Name="TinTucs" EntityType="TechWorldModel.TinTuc" />
   </EntityContainer>
   <EntityType Name="ChiTietDonHang">
     <Key>
@@ -126,18 +126,6 @@
     </Key>
     <Property Name="TaiKhoan1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="TinTuc">
-    <Key>
-      <PropertyRef Name="MaTin" />
-    </Key>
-    <Property Name="MaTin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TieuDe" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="NgayDang" Type="DateTime" Precision="0" />
-    <Property Name="TacGia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="HinhAnh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="YeuThich">
     <Key>
@@ -234,4 +222,17 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="TinTuc">
+    <Key>
+      <PropertyRef Name="MaTin" />
+    </Key>
+    <Property Name="MaTin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TieuDe" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="NgayDang" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TacGia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="HinhAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TrangDang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

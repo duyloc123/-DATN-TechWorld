@@ -120,7 +120,7 @@ namespace TechWorld.Controllers
                     string newId;
                     do
                     {
-                        newId = "HD" + rand.Next(0, 9999).ToString().PadLeft(4, '0');
+                        newId = "HD#" + rand.Next(0, 9999).ToString().PadLeft(4, '0');
                     }
                     while (db.DonHangs.Any(x => x.MaDH == newId));
 
@@ -131,6 +131,10 @@ namespace TechWorld.Controllers
                         TongTien = (double)item.TongTien,
                         SoLuong = item.SoLuong,
                     }));
+                    var MaHD = dh.MaDH;
+                    Session["MaDH"] = dh.MaDH;
+                    Session["MaHD"] = HttpUtility.UrlEncode(MaHD);
+                    Session["IdKH"] = dh.MAKH;
                     db.DonHangs.Add(dh);
                     db.SaveChanges();
 

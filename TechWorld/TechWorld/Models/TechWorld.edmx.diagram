@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="TechWorldModel.NhaCungCap" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="TechWorldModel.SanPham" Width="1.5" PointX="3" PointY="2.75" />
         <EntityTypeShape EntityType="TechWorldModel.TaiKhoan" Width="1.5" PointX="5.75" PointY="7.125" />
-        <EntityTypeShape EntityType="TechWorldModel.TinTuc" Width="1.5" PointX="7.75" PointY="2.125" />
         <EntityTypeShape EntityType="TechWorldModel.YeuThich" Width="1.5" PointX="5.25" PointY="3.875" />
         <AssociationConnector Association="TechWorldModel.FK__ChiTietDon__MaDH__59063A47" />
         <AssociationConnector Association="TechWorldModel.FK__ChiTietDon__MaSP__59FA5E80" />
@@ -21,6 +20,7 @@
         <AssociationConnector Association="TechWorldModel.FK__SanPham__MaLoai__4F7CD00D" />
         <AssociationConnector Association="TechWorldModel.FK__SanPham__MaNCC__5070F446" />
         <AssociationConnector Association="TechWorldModel.FK__YeuThich__MaSP__5EBF139D" />
+        <EntityTypeShape EntityType="TechWorldModel.TinTuc" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

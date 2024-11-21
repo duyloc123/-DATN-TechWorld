@@ -83,10 +83,11 @@
     <Property Name="MaTin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TieuDe" Type="nvarchar" MaxLength="255" Nullable="false" />
     <Property Name="NoiDung" Type="nvarchar(max)" />
-    <Property Name="NgayDang" Type="date" />
+    <Property Name="NgayDang" Type="date" Nullable="false" />
     <Property Name="TacGia" Type="nvarchar" MaxLength="100" />
-    <Property Name="HinhAnh" Type="nvarchar" MaxLength="255" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="1000" />
     <Property Name="TrangThai" Type="nvarchar" MaxLength="20" />
+    <Property Name="TrangDang" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="YeuThich">
     <Key>

@@ -83,9 +83,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="YeuThiches">
+      <EntityTypeMapping TypeName="TechWorldModel.YeuThich">
+        <MappingFragment StoreEntitySet="YeuThich">
+          <ScalarProperty Name="NgayThemVao" ColumnName="NgayThemVao" />
+          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TinTucs">
       <EntityTypeMapping TypeName="TechWorldModel.TinTuc">
         <MappingFragment StoreEntitySet="TinTuc">
+          <ScalarProperty Name="TrangDang" ColumnName="TrangDang" />
           <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
           <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
           <ScalarProperty Name="TacGia" ColumnName="TacGia" />
@@ -93,15 +103,6 @@
           <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
           <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
           <ScalarProperty Name="MaTin" ColumnName="MaTin" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="YeuThiches">
-      <EntityTypeMapping TypeName="TechWorldModel.YeuThich">
-        <MappingFragment StoreEntitySet="YeuThich">
-          <ScalarProperty Name="NgayThemVao" ColumnName="NgayThemVao" />
-          <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-          <ScalarProperty Name="MaKH" ColumnName="MaKH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

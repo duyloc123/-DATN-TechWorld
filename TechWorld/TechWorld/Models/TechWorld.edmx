@@ -88,10 +88,11 @@
           <Property Name="MaTin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TieuDe" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="NoiDung" Type="nvarchar(max)" />
-          <Property Name="NgayDang" Type="date" />
+          <Property Name="NgayDang" Type="date" Nullable="false" />
           <Property Name="TacGia" Type="nvarchar" MaxLength="100" />
-          <Property Name="HinhAnh" Type="nvarchar" MaxLength="255" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="1000" />
           <Property Name="TrangThai" Type="nvarchar" MaxLength="20" />
+          <Property Name="TrangDang" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="YeuThich">
           <Key>
@@ -237,7 +238,6 @@
           <EntitySet Name="NhaCungCaps" EntityType="TechWorldModel.NhaCungCap" />
           <EntitySet Name="SanPhams" EntityType="TechWorldModel.SanPham" />
           <EntitySet Name="TaiKhoans" EntityType="TechWorldModel.TaiKhoan" />
-          <EntitySet Name="TinTucs" EntityType="TechWorldModel.TinTuc" />
           <EntitySet Name="YeuThiches" EntityType="TechWorldModel.YeuThich" />
           <AssociationSet Name="FK__ChiTietDon__MaDH__59063A47" Association="TechWorldModel.FK__ChiTietDon__MaDH__59063A47">
             <End Role="DonHang" EntitySet="DonHangs" />
@@ -267,6 +267,7 @@
             <End Role="SanPham" EntitySet="SanPhams" />
             <End Role="YeuThich" EntitySet="YeuThiches" />
           </AssociationSet>
+          <EntitySet Name="TinTucs" EntityType="TechWorldModel.TinTuc" />
         </EntityContainer>
         <EntityType Name="ChiTietDonHang">
           <Key>
@@ -355,18 +356,6 @@
           </Key>
           <Property Name="TaiKhoan1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="MatKhau" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="TinTuc">
-          <Key>
-            <PropertyRef Name="MaTin" />
-          </Key>
-          <Property Name="MaTin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TieuDe" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NgayDang" Type="DateTime" Precision="0" />
-          <Property Name="TacGia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="HinhAnh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="YeuThich">
           <Key>
@@ -463,7 +452,20 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="TinTuc">
+          <Key>
+            <PropertyRef Name="MaTin" />
+          </Key>
+          <Property Name="MaTin" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TieuDe" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayDang" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TacGia" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HinhAnh" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TrangDang" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -551,9 +553,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="YeuThiches">
+            <EntityTypeMapping TypeName="TechWorldModel.YeuThich">
+              <MappingFragment StoreEntitySet="YeuThich">
+                <ScalarProperty Name="NgayThemVao" ColumnName="NgayThemVao" />
+                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
+                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TinTucs">
             <EntityTypeMapping TypeName="TechWorldModel.TinTuc">
               <MappingFragment StoreEntitySet="TinTuc">
+                <ScalarProperty Name="TrangDang" ColumnName="TrangDang" />
                 <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
                 <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
                 <ScalarProperty Name="TacGia" ColumnName="TacGia" />
@@ -561,15 +573,6 @@
                 <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
                 <ScalarProperty Name="MaTin" ColumnName="MaTin" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="YeuThiches">
-            <EntityTypeMapping TypeName="TechWorldModel.YeuThich">
-              <MappingFragment StoreEntitySet="YeuThich">
-                <ScalarProperty Name="NgayThemVao" ColumnName="NgayThemVao" />
-                <ScalarProperty Name="MaSP" ColumnName="MaSP" />
-                <ScalarProperty Name="MaKH" ColumnName="MaKH" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

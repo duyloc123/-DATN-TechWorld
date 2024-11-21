@@ -13,6 +13,7 @@
         </svg>
         <div class="text-center">
             <h3 class="md:text-2xl text-base text-gray-900 font-semibold text-center">Thanh Toán Thành Công!</h3>
+            <p class="text-gray-600 my-2">Mã đơn hàng của bạn là: <a href="~/InfomationUser/SearchDonHang?id=@Session["IdKH"]&nameSearch=@Session["MaHD"]" class="text-blue-800 underline">@Session["MaDH"]</a></p>
             <p class="text-gray-600 my-2">Cảm ơn bạn đã mua hàng, vui lòng đợi chúng tôi xác nhận và giao tới cho bạn.</p>
             <p> Chúc bạn ngày tốt lành!  </p>
             <div class="py-10 text-center">
