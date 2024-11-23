@@ -95,6 +95,8 @@ namespace TechWorld.Controllers
         {
                 ViewBag.ActivePage = "Product"; // Đặt trang hiện tại là "Product"
                 var sanPhams = db.SanPhams.ToList();
+                Session["TenLoai"] = sanPhams.FirstOrDefault().LoaiHang.TenLoai;
+                Session["TenSP"] = sanPhams.FirstOrDefault().TenSP;
                 return View(sanPhams);
         }
 
@@ -104,6 +106,8 @@ namespace TechWorld.Controllers
 
             // Lấy sản phẩm chi tiết
             var product = db.SanPhams.FirstOrDefault(p => p.MaSP == id);
+            Session["TenLoai"] = product.LoaiHang.TenLoai;
+            Session["TenSP"] = product.TenSP;
             if (product == null)
                 return HttpNotFound();
 

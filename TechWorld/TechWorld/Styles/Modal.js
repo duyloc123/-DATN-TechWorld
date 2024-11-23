@@ -222,15 +222,15 @@ document.getElementById('address').addEventListener('input', function () {
 })
 
 document.getElementById('emailFirst').addEventListener('input', function () {
-    const email = this.value;
+    const email = this.value.trim();
     const emailError = document.getElementById('emailFirstError');
 
     // Kiểm tra nếu email trống
     if (email.length == 0) {
         emailError.textContent = "Không được để trống email";
     }
-    // Kiểm tra định dạng email đúng với biểu thức chính quy
-    else if (!/^[a-zA-Z0-9._-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(email)) {
+    // Kiểm tra email có kết thúc bằng @gmail.com
+    else if (!email.endsWith('@gmail.com')) {
         emailError.textContent = "Địa chỉ email không đúng định dạng (Đúng định dạng: example@gmail.com)";
     }
     // Nếu đúng, xóa thông báo lỗi

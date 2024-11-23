@@ -26,7 +26,7 @@ namespace TechWorld.Controllers.Admin
             {
                 Month = g.Key,
                 Total = g.Sum(s => (float)s.TongTien)
-            })
+            })F
             .ToList();
             int tongKhachHang = db.DonHangs.Select(item => item.KhachHang).Distinct().Count();
             float tongDoanhThu = revenueData.Sum(item => item.Total);
@@ -95,7 +95,7 @@ namespace TechWorld.Controllers.Admin
             ViewBag.ActivePage = "NhaCungCapList";
             var NhaCungCapList = db.NhaCungCaps.ToList();
             if (page == null) page = 1;
-            if (pageSize == null) pageSize = 5;
+            if (pageSize == null) pageSize = 10;
             return View(NhaCungCapList.ToPagedList((int)page, (int)pageSize));
         }
         [HttpPost]
@@ -174,14 +174,14 @@ namespace TechWorld.Controllers.Admin
                 {
                     // Xử lý phân trang
                     if (page == null) page = 1;
-                    if (pageSize == null) pageSize = 5;
+                    if (pageSize == null) pageSize = 10;
 
                     return View(find.ToPagedList((int)page, (int)pageSize));
                 }
 
                 // Không tìm thấy kết quả
                 TempData["Message"] = "Không tìm thấy thông tin nhà cung cấp!";
-                return View(new List<NhaCungCap>().ToPagedList(1, pageSize ?? 5));
+                return View(new List<NhaCungCap>().ToPagedList(1, pageSize ?? 10));
             }
             return RedirectToAction("NhaCungCapList");
         }
@@ -502,6 +502,7 @@ namespace TechWorld.Controllers.Admin
                 NoiDung = tinTuc.NoiDung,
                 TacGia = tinTuc.TacGia,
                 TrangThai = tinTuc.TrangThai,
+                TrangDang = tinTuc.TrangDang,
                 NgayDang = tinTuc.NgayDang.ToString("yyyy-MM-dd")
             };
             return View(TinTuc);
@@ -558,8 +559,22 @@ namespace TechWorld.Controllers.Admin
             ViewBag.ActivePage = "DonHangList";
             if (page == null) page = 1;
             if (pageSize == null) pageSize = 5;
-            var donHangList = db.DonHangs.ToList();
-            return View(donHangList.ToPagedList((int)page, (int)pageSize));
+
+            // Load đơn hàng kèm thông tin khách hàng
+            var donHangs = db.DonHangs
+                .Include(d => d.KhachHang)
+                .OrderByDescending(d => d.NgayDat)
+                .ToList();
+
+            // Load chi tiết đơn hàng kèm thông tin sản phẩm
+            var chiTietDonHangs = db.ChiTietDonHangs
+                .Include(ct => ct.SanPham)
+                .GroupBy(ct => ct.MaDH)
+                .ToDictionary(g => g.Key, g => g.ToList());
+
+            ViewBag.ChiTietDonHangs = chiTietDonHangs;
+
+            return View(donHangs.ToPagedList((int)page, (int)pageSize));
         }
         [HttpGet]
         public ActionResult deleteDonHang(int id)

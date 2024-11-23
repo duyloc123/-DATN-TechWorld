@@ -10,4 +10,9 @@
 $ npm i -D daisyui@latest
 <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
 
-#Todo: Details product category
+# Chart
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+# CKEditor
+
+#Todo: List Image Product Details

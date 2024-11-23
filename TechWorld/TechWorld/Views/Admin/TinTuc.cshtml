@@ -68,7 +68,7 @@
                                         <span class="text-base font-semibold leading-tight
                                               @(item.TrangThai == "Hiện" ? "text-blue-500" :
                                                 item.TrangThai == "Nổi bật" ? "text-green-500" :
-                                                "text-red-500")">@item.TrangThai</span>
+                                                item.TrangThai == "Ẩn" ? "text-red-500" : "")">@item.TrangThai</span>
                                         </td>
                                         <td class="relative p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent cursor-pointer">
                                             <span class="text-base font-semibold leading-tight @(
