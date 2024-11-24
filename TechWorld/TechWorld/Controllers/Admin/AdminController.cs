@@ -26,7 +26,7 @@ namespace TechWorld.Controllers.Admin
             {
                 Month = g.Key,
                 Total = g.Sum(s => (float)s.TongTien)
-            })F
+            })
             .ToList();
             int tongKhachHang = db.DonHangs.Select(item => item.KhachHang).Distinct().Count();
             float tongDoanhThu = revenueData.Sum(item => item.Total);
@@ -282,7 +282,15 @@ namespace TechWorld.Controllers.Admin
             if (page == null) page = 1;
             if (pageSize == null) pageSize = 5;
             var listSanPham = db.SanPhams.ToList();
-            return View(listSanPham.ToPagedList((int)page, (int)pageSize));
+            var listAnhSP = db.AnhSPs.ToList();  // Lấy tất cả ảnh
+
+            var viewModel = new SanPhamViewModel
+            {
+                SanPhams = listSanPham.ToPagedList((int)page, (int)pageSize),
+                AnhSPs = listAnhSP
+            };
+
+            return View(viewModel);
         }
         public ActionResult createSanPham()
         {
@@ -434,6 +442,45 @@ namespace TechWorld.Controllers.Admin
                 return View(new List<SanPham>().ToPagedList(1, pageSize ?? 5));
             }
             return RedirectToAction("SanPham");
+        }
+
+        [HttpPost]
+        public ActionResult createImage(HinhAnhSP req ,HttpPostedFileBase HinhAnh)
+        {
+            if (ModelState.IsValid)
+            {
+                // Xử lý upload hình ảnh (như code cũ)
+                if (HinhAnh != null && HinhAnh.ContentLength > 0)
+                {
+                    string rootFolder = Server.MapPath("/DataImageSql/");
+                    string pathImage = Path.Combine(rootFolder, HinhAnh.FileName);
+                    HinhAnh.SaveAs(pathImage);
+                    req.AnhSP = "DataImageSql/" + HinhAnh.FileName;
+                }
+
+                // Tạo đối tượng SanPham mới
+                var ha = new AnhSP
+                {
+                    HinhAnh = req.AnhSP,
+                    MASP = req.MaSP
+                };
+
+                db.AnhSPs.Add(ha);
+                db.SaveChanges();
+            }
+            return RedirectToAction("SanPham");
+        }
+
+        public ActionResult deleteImage(int id)
+        {
+            var delete = db.AnhSPs.Find(id);
+            if (delete != null)
+            {
+                db.AnhSPs.Remove(delete);
+                db.SaveChanges();
+                return RedirectToAction("SanPham");
+            }
+            return RedirectToAction("Error", "Shared");
         }
 
         // Tin Tức

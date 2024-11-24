@@ -9,5 +9,6 @@ namespace TechWorld.Models
     {
         public SanPham ProductDetail { get; set; }
         public List<SanPham> SimilarProducts { get; set; }
+        public List<AnhSP> HinhAnhSP { get; set; }
     }
 }

@@ -166,7 +166,7 @@
                 @foreach (var item in Model)
                 {
                     <input class="hidden product-id" name="maSP" id="maSP" value="@item.MaSP" />
-                    <div class="group flex rounded-md max-w-[300px] max-h-[400px] flex-col overflow-hidden border border-neutral-300 bg-neutral-50 text-neutral-600 sm:w-[240px]">
+                    <div class="group flex rounded-md max-w-[300px] max-h-[400px] flex-col overflow-hidden border border-neutral-300 bg-neutral-50 text-neutral-600 sm:w-[240px] mb-4">
                         <a href="/User/ProductDetail?id=@item.MaSP" class="h-52 md:h-64 overflow-hidden flex items-center justify-center bg-white">
                             <img src="~/@item.HinhAnh"
                                  class="w-full h-full object-contain"

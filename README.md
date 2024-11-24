@@ -15,4 +15,4 @@ $ npm i -D daisyui@latest
 
 # CKEditor
 
-#Todo: List Image Product Details
+#Todo: Chatbox AI

@@ -17,6 +17,7 @@ namespace TechWorld.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SanPham()
         {
+            this.AnhSPs = new HashSet<AnhSP>();
             this.ChiTietDonHangs = new HashSet<ChiTietDonHang>();
             this.YeuThiches = new HashSet<YeuThich>();
         }
@@ -35,6 +36,8 @@ namespace TechWorld.Models
         public Nullable<int> MaLoai { get; set; }
         public Nullable<int> MaNCC { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AnhSP> AnhSPs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual LoaiHang LoaiHang { get; set; }

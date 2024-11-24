@@ -12,9 +12,12 @@ namespace TechWorld.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TaiKhoan
+    public partial class AnhSP
     {
-        public string TaiKhoan1 { get; set; }
-        public string MatKhau { get; set; }
+        public int MaHinh { get; set; }
+        public string HinhAnh { get; set; }
+        public Nullable<int> MASP { get; set; }
+    
+        public virtual SanPham SanPham { get; set; }
     }
 }

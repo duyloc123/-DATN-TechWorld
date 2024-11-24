@@ -1,6 +1,6 @@
 ﻿@using PagedList.Mvc;
 @using PagedList;
-@model IPagedList<TechWorld.Models.SanPham>
+@model TechWorld.Models.SanPhamViewModel
 @{
     ViewBag.Title = "SanPham";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -44,7 +44,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model)
+                            @foreach (var item in Model.SanPhams)
                             {
                                 <tr>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -75,13 +75,13 @@
                                         <span class="text-base font-semibold leading-tight text-slate-400">@item.MoTa</span>
                                     </td>
                                     <td class="p-2 text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        @if(item.SoLuong > 0)
+                                        @if (item.SoLuong > 0)
                                         {
-                                            <span class="text-base font-semibold leading-tight text-green-400">@item.TinhTrangSP</span>
+                                            <span class="text-base font-semibold leading-tight text-green-400">Còn hàng</span>
                                         }
                                         else
                                         {
-                                            <span class="text-base font-semibold leading-tight text-red-400">@item.TinhTrangSP</span>
+                                            <span class="text-base font-semibold leading-tight text-red-400">Hết hàng</span>
                                         }
                                     </td>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
@@ -96,6 +96,81 @@
                                                     <path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z" />
                                                 </svg>
                                             </a>
+                                            <a href="#"
+                                               onclick="document.getElementById('my_modal_@item.MaSP').showModal(); return false;"
+                                               class="btn text-gray-700 hover:text-blue-500 duration-200 ease-in-out cursor-pointer">
+                                                Xem ảnh
+                                            </a>
+
+                                            <dialog id="my_modal_@item.MaSP" class="modal">
+                                                <div class="modal-action sticky top-0 z-50">
+                                                    <form method="dialog" class="float-right mr-5 mt-5">
+                                                        <button class="btn">
+                                                            <img src="~/Styles/image/close (1).png" class="w-10 h-10" />
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                                <div class="modal-box p-10">
+                                                    <div class="flex justify-between">
+                                                        <h3 class="text-lg font-bold mb-5">Danh sách ảnh sản phẩm</h3>
+                                                    </div>
+                                                    @foreach (var listImage in Model.AnhSPs.Where(x => x.MASP == item.MaSP))
+                                                    {
+                                                        <div class="relative">
+                                                            <img class="h-auto max-w-lg rounded-lg mb-5" src="~/@listImage.HinhAnh" alt="image description">
+                                                            <a href="@Url.Action("deleteImage","Admin",new {id = item.MaSP})" class="absolute top-2 right-2 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors">
+                                                                <img src="~/Styles/image/close (1).png" class="w-5 h-5" />
+                                                            </a>
+                                                        </div>
+                                                    }
+                                                    @using (Ajax.BeginForm("createImage", "Admin", new AjaxOptions
+                                                    {
+                                                        HttpMethod = "POST",
+                                                        UpdateTargetId = "load_data"
+                                                    },
+                                                        new { enctype = "multipart/form-data" }
+                                                        ))
+                                                    {
+                                                        @Html.AntiForgeryToken()
+                                                        <form>
+                                                            <input name="MASP" value="@item.MaSP" class="hidden">
+                                                            <input type="file"
+                                                                   name="HinhAnh"
+                                                                   id="file"
+                                                                   class="hidden"
+                                                                   accept="image/*" />
+                                                            <label for="file"
+                                                                   id="dropzone"
+                                                                   class="flex flex-col items-center justify-center w-full h-[400px] border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-white hover:border-blue-500 transition duration-300 ease-in-out">
+                                                                <div class="flex flex-col items-center justify-center text-center px-4">
+                                                                    <svg class="w-16 h-16 mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                                                    </svg>
+                                                                    <p class="mb-2 text-base text-gray-600">
+                                                                        <span class="font-semibold">Kéo thả hình ảnh</span> hoặc <span class="text-blue-600">chọn tệp</span>
+                                                                    </p>
+                                                                    <p class="text-sm text-gray-400">PNG, JPG, GIF (Tối đa 10MB)</p>
+                                                                </div>
+                                                            </label>
+
+                                                            <!-- Container cho preview -->
+                                                            <div id="preview-container"
+                                                                 class="mt-4 relative hidden">
+                                                                <div class="w-[512px] h-full flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
+                                                                    <img id="preview"
+                                                                         class="max-w-full max-h-full object-contain"
+                                                                         alt="Xem trước hình ảnh" />
+                                                                </div>
+                                                                <button id="remove-image"
+                                                                        class="absolute top-4 right-4 bg-red-500 text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-red-600 transition">
+                                                                    ✕
+                                                                </button>
+                                                            </div>
+                                                            <button class="text-xl text-blue-800" type="submit">Thêm ảnh</button>
+                                                        </form>
+                                                    }
+                                                </div>
+                                            </dialog>
                                         </div>
                                     </td>
                                 </tr>
@@ -109,23 +184,23 @@
 </div>
 
 <div class="flex justify-center space-x-2 my-4">
-    @if (Model.PageNumber > 1)
+    @if (Model.SanPhams.PageNumber > 1)
     {
-        <a href="@Url.Action("SanPham", new { page = Model.PageNumber - 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
+        <a href="@Url.Action("SanPham", new { page = Model.SanPhams.PageNumber - 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
             Prev
         </a>
     }
 
-    @for (int i = 1; i <= Model.PageCount; i++)
+    @for (int i = 1; i <= Model.SanPhams.PageCount; i++)
     {
-        <a href="@Url.Action("SanPham", new { page = i })" class="px-4 py-2 rounded-md @(i == Model.PageNumber ? "bg-blue-500 text-white" : "bg-gray-200 hover:bg-gray-300")">
+        <a href="@Url.Action("SanPham", new { page = i })" class="px-4 py-2 rounded-md @(i == Model.SanPhams.PageNumber ? "bg-blue-500 text-white" : "bg-gray-200 hover:bg-gray-300")">
             @i
         </a>
     }
 
-    @if (Model.PageNumber < Model.PageCount)
+    @if (Model.SanPhams.PageNumber < Model.SanPhams.PageCount)
     {
-        <a href="@Url.Action("SanPham", new { page = Model.PageNumber + 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
+        <a href="@Url.Action("SanPham", new { page = Model.SanPhams.PageNumber + 1 })" class="px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-300">
             Next
         </a>
     }

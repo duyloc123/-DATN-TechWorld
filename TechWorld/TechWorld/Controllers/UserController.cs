@@ -117,11 +117,14 @@ namespace TechWorld.Controllers
                 .Take(3)
                 .ToList();
 
+            var anhSP = db.AnhSPs.Where(item => item.MASP == id).ToList();
+
             // Tạo view model
             var viewModel = new ProductDetailViewModel
             {
                 ProductDetail = product,
-                SimilarProducts = similarProducts
+                SimilarProducts = similarProducts,
+                HinhAnhSP = anhSP
             };
 
             return View(viewModel);

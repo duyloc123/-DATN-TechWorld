@@ -139,6 +139,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\ComputerComponentController.cs" />
+    <Compile Include="Models\AnhSP.cs">
+      <DependentUpon>TechWorld.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\ChiTietDonHang.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
@@ -146,6 +149,7 @@
     <Compile Include="Models\DonHang.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HinhAnh.cs" />
     <Compile Include="Models\KhachHang.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
@@ -180,10 +184,8 @@
     <Compile Include="Models\SanPham.cs">
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\SanPhamViewModel.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
-    <Compile Include="Models\TaiKhoan.cs">
-      <DependentUpon>TechWorld.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TechWorld.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -616,6 +618,7 @@
     <Content Include="Styles\ckeditor\styles.js" />
     <Content Include="Styles\ColorSelectAdmin.css" />
     <Content Include="Styles\dropdown.js" />
+    <Content Include="Styles\HinhAnh.js" />
     <Content Include="Styles\Image\2023_11_3_638346181356369639_shipper.jpg" />
     <Content Include="Styles\Image\648858cbfae720397e600c8f6c57ab29.png" />
     <Content Include="Styles\Image\acer.png" />
@@ -626,6 +629,7 @@
     <Content Include="Styles\Image\chair.png" />
     <Content Include="Styles\Image\check.png" />
     <Content Include="Styles\Image\circuit-board.png" />
+    <Content Include="Styles\Image\close %281%29.png" />
     <Content Include="Styles\Image\computer-case.png" />
     <Content Include="Styles\Image\cong-thanh-toan-thuong-mai-dien-tu-1.png" />
     <Content Include="Styles\Image\corsair.png" />

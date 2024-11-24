@@ -68,22 +68,19 @@
         <div class="container mx-auto w-[1300px] h-[700px] bg-white rounded-lg shadow-sm">
             <div class="w-full h-full flex gap-10 rounded-lg shadow-2xl">
                 <!-- Left -->
-                <div class="h-full border-r border-gray-200 p-4">
+                <div class="w-2/3 h-full border-r border-gray-200 p-4">
                     <img src="~/@item.HinhAnh" alt="Product"
                          class="w-full h-auto rounded-lg shadow-md mb-4 object-cover" id="mainImage">
                     <div class="flex gap-4 py-4 justify-center overflow-x-auto">
-                        <img src="https://images.unsplash.com/photo-1505751171710-1f6d0ace5a85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxMnx8aGVhZHBob25lfGVufDB8MHx8fDE3MjEzMDM2OTB8MA&ixlib=rb-4.0.3&q=80&w=1080" alt="Thumbnail 1"
+                        <img src="~/@item.HinhAnh" alt="Ảnh sản phẩm"
                              class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
                              onclick="changeImage(this.src)">
-                        <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw0fHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080" alt="Thumbnail 2"
-                             class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
-                             onclick="changeImage(this.src)">
-                        <img src="https://images.unsplash.com/photo-1496957961599-e35b69ef5d7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080" alt="Thumbnail 3"
-                             class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
-                             onclick="changeImage(this.src)">
-                        <img src="https://images.unsplash.com/photo-1528148343865-51218c4a13e6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwzfHxoZWFkcGhvbmV8ZW58MHwwfHx8MTcyMTMwMzY5MHww&ixlib=rb-4.0.3&q=80&w=1080" alt="Thumbnail 4"
-                             class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
-                             onclick="changeImage(this.src)">
+                        @foreach (var anhSP in Model.HinhAnhSP)
+                        {
+                            <img src="~/@anhSP.HinhAnh" alt="Ảnh sản phẩm"
+                                 class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
+                                 onclick="changeImage(this.src)">
+                        }
                     </div>
                 </div>
                 <!-- Right -->
