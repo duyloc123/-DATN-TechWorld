@@ -10,6 +10,7 @@ namespace TechWorld.Controllers
         public int MaKH {  get; set; }
         public DateTime NgayDat { get; set; }
         public decimal TongTien { get; set; }
+        public string Email { get; set; }
         public string PTThanhToan {  get; set; }
         public string TTDonHang { get; set; }
         public string TTThanhToan { get; set; }

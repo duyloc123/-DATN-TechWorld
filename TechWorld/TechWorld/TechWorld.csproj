@@ -185,6 +185,7 @@
       <DependentUpon>TechWorld.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SanPhamViewModel.cs" />
+    <Compile Include="Models\SendMail.cs" />
     <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Models\TechWorld.Context.cs">
       <AutoGen>True</AutoGen>
@@ -702,6 +703,8 @@
     <Content Include="Styles\soft-ui-dashboard-tailwind.js" />
     <Content Include="Styles\styles.css" />
     <Content Include="Styles\styleCart.css" />
+    <Content Include="Styles\template\send1.html" />
+    <Content Include="Styles\template\send2.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

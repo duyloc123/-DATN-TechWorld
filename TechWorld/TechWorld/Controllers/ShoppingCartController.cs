@@ -105,13 +105,17 @@ namespace TechWorld.Controllers
             var code = new { Success = false, Code = -1 };
             if (ModelState.IsValid)
             {
+
                 ShoppingCart cart = (ShoppingCart)Session["Cart"];
                 if(cart != null)
                 {
+                    var khachHang = db.KhachHangs.FirstOrDefault(x => x.MaKH == req.MaKH);
+
                     DonHang dh = new DonHang();
                     dh.MAKH = req.MaKH;
                     Session["MaKH"] = req.MaKH.ToString();
                     dh.NgayDat = DateTime.Now;
+                    Session["NgayDat"] = dh.NgayDat;
                     dh.TongTien = (double)cart.Items.Sum(s => s.GiaTien * s.SoLuong);
                     dh.PTThanhToan = req.PTThanhToan;
                     dh.TTDonHang = "Chưa giao hàng";
@@ -138,6 +142,28 @@ namespace TechWorld.Controllers
                     db.DonHangs.Add(dh);
                     db.SaveChanges();
 
+                    // Send Mail
+                    var strSanPham = "";
+                    foreach(var sp in cart.Items)
+                    {
+                        strSanPham += "<tr>";
+                        strSanPham += "<td>"+sp.TenSP+"</td>";
+                        strSanPham += "<td>" + sp.SoLuong + "</td>";
+                        strSanPham += "<td>" + sp.GiaTien + "</td>";
+                        strSanPham += "</tr>";
+                    }
+                    string contentCustomer = System.IO.File.ReadAllText(Server.MapPath("~/Styles/template/send2.html"));
+                    contentCustomer = contentCustomer.Replace("{{MaDH}}", dh.MaDH);
+                    contentCustomer = contentCustomer.Replace("{{SanPham}}", strSanPham);
+                    contentCustomer = contentCustomer.Replace("{{GiaTien}}", dh.TongTien.ToString("#,##0 VNĐ"));
+                    contentCustomer = contentCustomer.Replace("{{TongTien}}", dh.TongTien.ToString("#,##0 VNĐ"));
+                    contentCustomer = contentCustomer.Replace("{{NgayDat}}", Session["NgayDat"].ToString());
+                    contentCustomer = contentCustomer.Replace("{{PTTToan}}", dh.PTThanhToan);
+                    contentCustomer = contentCustomer.Replace("{{TenKH}}", khachHang.HoTen);
+                    contentCustomer = contentCustomer.Replace("{{DiaChi}}", khachHang.DiaChi);
+                    contentCustomer = contentCustomer.Replace("{{SDT}}", khachHang.SoDienThoai);
+                    contentCustomer = contentCustomer.Replace("{{gmail}}", khachHang.Email);
+                    sendMail.SendMail("TechWorld", "Đơn hàng: "+dh.MaDH, contentCustomer, req.Email);
                     Session["Cart"] = null;
 
                     code = new { Success = true, Code = 1 };
