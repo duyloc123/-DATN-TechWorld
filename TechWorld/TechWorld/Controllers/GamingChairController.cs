@@ -18,14 +18,14 @@ namespace TechWorld.Controllers
 
         public ActionResult GamingChairList()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Gaming Chair").ToList();
             return View(list);
         }
 
         public ActionResult ChairCategory(string name)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             Session["GamingChairCategory"] = name;
             var list = db.SanPhams.Where(item => item.NhaCungCap.TenNCC == name && item.LoaiHang.TenLoai == "Gaming Chair").ToList();
             return View(list);
@@ -33,14 +33,14 @@ namespace TechWorld.Controllers
 
         public ActionResult GamingChairSearch(string Search)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var search = db.SanPhams.Where(item => item.TenSP.Contains(Search) && item.LoaiHang.TenLoai == "Gaming Chair").ToList();
             return View(search);
         }
 
         public ActionResult ChairCategorySearch(string Search)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             string name = Session["GamingChairCategory"] as string;
             var search = db.SanPhams.Where(item => item.TenSP.Contains(Search) &&
             (item.LoaiHang.TenLoai == "Gaming Chair" && item.NhaCungCap.TenNCC == name)).ToList();
@@ -49,7 +49,7 @@ namespace TechWorld.Controllers
 
         public ActionResult ChairCategoryAsc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             string name = Session["GamingChairCategory"] as string;
             var asc = (from item in db.SanPhams
                        where item.LoaiHang.TenLoai == "Gaming Chair" && item.NhaCungCap.TenNCC == name
@@ -60,7 +60,7 @@ namespace TechWorld.Controllers
 
         public ActionResult GamingChairAsc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var asc = (from item in db.SanPhams
                     where item.LoaiHang.TenLoai == "Gaming Chair"
                     orderby item.GiaTienDaKhuyenMai
@@ -71,7 +71,7 @@ namespace TechWorld.Controllers
 
         public ActionResult GamingChairDesc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var desc = (from item in db.SanPhams
                         where item.LoaiHang.TenLoai == "Gaming Chair"
                         orderby item.GiaTienDaKhuyenMai
@@ -81,7 +81,7 @@ namespace TechWorld.Controllers
         }
         public ActionResult ChairCategoryDesc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             string name = Session["GamingChairCategory"] as string;
             var desc = (from item in db.SanPhams
                         where item.LoaiHang.TenLoai == "Gaming Chair" && item.NhaCungCap.TenNCC == name

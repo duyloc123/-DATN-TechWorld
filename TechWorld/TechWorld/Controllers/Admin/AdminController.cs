@@ -159,6 +159,10 @@ namespace TechWorld.Controllers.Admin
                 findNhaCungCap.DiaChiNCC = req.DiaChiNCC;
                 findNhaCungCap.SoDienThoaiNCC = req.SoDienThoaiNCC;
                 db.SaveChanges();
+                Session["MaNCC"] = null;
+                Session["TenNCC"] = null;
+                Session["SoDienThoaiNCC"] = null;
+                Session["DiaChiNCC"] = null;
             }
 
             return RedirectToAction("NhaCungCapList");
@@ -247,6 +251,8 @@ namespace TechWorld.Controllers.Admin
                     findLoaiHang.HinhAnh = req.HinhAnh;
                 }
                 db.SaveChanges();
+                Session["MaLoai"] = null;
+                Session["TenLoai"] = null;
             }
 
             return RedirectToAction("LoaiHangList");
@@ -473,7 +479,8 @@ namespace TechWorld.Controllers.Admin
 
         public ActionResult deleteImage(int id)
         {
-            var delete = db.AnhSPs.Find(id);
+            var delete = db.AnhSPs.FirstOrDefault(a => a.MASP == id);
+
             if (delete != null)
             {
                 db.AnhSPs.Remove(delete);

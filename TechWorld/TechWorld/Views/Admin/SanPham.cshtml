@@ -34,6 +34,7 @@
                     <table class="items-center w-full mb-0 align-top border-gray-200 text-slate-500">
                         <thead class="align-bottom">
                             <tr>
+                                <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Ảnh Sản Phẩm</th>
                                 <th class="px-6 py-3 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Tên Sản Phẩm</th>
                                 <th class="px-6 py-3 pl-2 font-bold text-left uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Ngày Nhập</th>
                                 <th class="px-6 py-3 font-bold text-center uppercase align-middle bg-transparent border-b border-gray-200 shadow-none text-xxs border-b-solid tracking-none whitespace-nowrap text-slate-400 opacity-70">Giá Tiền</th>
@@ -47,13 +48,11 @@
                             @foreach (var item in Model.SanPhams)
                             {
                                 <tr>
+                                    <td class="p-2 text-center bg-transparent border-b whitespace-nowrap shadow-transparent">
+                                        <img src="~/@item.HinhAnh" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-soft-in-out h-9 w-9 rounded-xl object-cover" alt="user1" />
+                                    </td>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
-                                        <div class="flex px-2 py-1">
-                                            <div>
-                                                <img src="~/@item.HinhAnh" class="inline-flex items-center justify-center mr-4 text-sm text-white transition-all duration-200 ease-soft-in-out h-9 w-9 rounded-xl object-cover" alt="user1" />
-                                            </div>
-                                            <h6 class="mb-0 text-base leading-normal translate-y-[7px]">@item.TenSP</h6>
-                                        </div>
+                                        <h6 class="mb-0 text-base leading-normal">@item.TenSP</h6>
                                     </td>
                                     <td class="p-2 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
                                         <span class="text-base font-semibold leading-tight text-slate-400">@String.Format("{0:dd/MM/yyyy}", item.NgayNhap)</span>
@@ -132,42 +131,12 @@
                                                         ))
                                                     {
                                                         @Html.AntiForgeryToken()
-                                                        <form>
-                                                            <input name="MASP" value="@item.MaSP" class="hidden">
-                                                            <input type="file"
-                                                                   name="HinhAnh"
-                                                                   id="file"
-                                                                   class="hidden"
-                                                                   accept="image/*" />
-                                                            <label for="file"
-                                                                   id="dropzone"
-                                                                   class="flex flex-col items-center justify-center w-full h-[400px] border-2 border-dashed border-gray-300 rounded-lg cursor-pointer bg-white hover:border-blue-500 transition duration-300 ease-in-out">
-                                                                <div class="flex flex-col items-center justify-center text-center px-4">
-                                                                    <svg class="w-16 h-16 mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
-                                                                    </svg>
-                                                                    <p class="mb-2 text-base text-gray-600">
-                                                                        <span class="font-semibold">Kéo thả hình ảnh</span> hoặc <span class="text-blue-600">chọn tệp</span>
-                                                                    </p>
-                                                                    <p class="text-sm text-gray-400">PNG, JPG, GIF (Tối đa 10MB)</p>
-                                                                </div>
-                                                            </label>
-
-                                                            <!-- Container cho preview -->
-                                                            <div id="preview-container"
-                                                                 class="mt-4 relative hidden">
-                                                                <div class="w-[512px] h-full flex items-center justify-center bg-white rounded-lg shadow-md overflow-hidden">
-                                                                    <img id="preview"
-                                                                         class="max-w-full max-h-full object-contain"
-                                                                         alt="Xem trước hình ảnh" />
-                                                                </div>
-                                                                <button id="remove-image"
-                                                                        class="absolute top-4 right-4 bg-red-500 text-white w-10 h-10 flex items-center justify-center rounded-full hover:bg-red-600 transition">
-                                                                    ✕
-                                                                </button>
-                                                            </div>
-                                                            <button class="text-xl text-blue-800" type="submit">Thêm ảnh</button>
-                                                        </form>
+                                                        <input name="MASP" value="@item.MaSP" class="hidden">
+                                                        <input type="file"
+                                                               name="HinhAnh"
+                                                               id="file"
+                                                               accept="image/*" />
+                                                        <button class="text-xl bg-blue-700 text-white px-4 py-2 rounded-[10px]" type="submit">Thêm ảnh</button>
                                                     }
                                                 </div>
                                             </dialog>
@@ -205,4 +174,3 @@
         </a>
     }
 </div>
-

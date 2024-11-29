@@ -226,6 +226,7 @@
       <DependentUpon>TechWorld.edmx</DependentUpon>
       <LastGenOutput>TechWorld.cs</LastGenOutput>
     </Content>
+    <Content Include="Styles\ChatBox.js" />
     <Content Include="Styles\ckeditor\adapters\jquery.js" />
     <Content Include="Styles\ckeditor\build-config.js" />
     <Content Include="Styles\ckeditor\ckeditor.js" />
@@ -628,6 +629,7 @@
     <Content Include="Styles\Image\cash-payment.png" />
     <Content Include="Styles\Image\chair %282%29.png" />
     <Content Include="Styles\Image\chair.png" />
+    <Content Include="Styles\Image\chat.png" />
     <Content Include="Styles\Image\check.png" />
     <Content Include="Styles\Image\circuit-board.png" />
     <Content Include="Styles\Image\close %281%29.png" />

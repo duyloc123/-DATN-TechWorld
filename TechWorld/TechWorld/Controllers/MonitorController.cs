@@ -18,14 +18,14 @@ namespace TechWorld.Controllers
 
         public ActionResult MonitorList() 
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Monitor").ToList();
             return View(list); 
         }
 
         public ActionResult MonitorCategory(string name)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             Session["MonitorCategory"] = name;
 
             var monitor = db.SanPhams.Where(item => item.NhaCungCap.TenNCC == name && item.LoaiHang.TenLoai == "Monitor").ToList();
@@ -34,7 +34,7 @@ namespace TechWorld.Controllers
 
         public ActionResult MonitorSearch(string Search)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var search = db.SanPhams.Where(item => item.TenSP.Contains(Search) && item.LoaiHang.TenLoai == "Monitor").ToList();
             return View(search);
         }

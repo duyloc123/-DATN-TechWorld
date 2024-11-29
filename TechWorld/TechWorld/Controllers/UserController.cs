@@ -32,7 +32,7 @@ namespace TechWorld.Controllers
             .ToList();
 
             var laptop = db.ChiTietDonHangs
-            .Where(x => x.SanPham.LoaiHang.TenLoai == "Laptop")
+            .Where(x => x.SanPham.LoaiHang.TenLoai == "Laptop" || x.SanPham.LoaiHang.TenLoai == "Laptop Gaming")
             .GroupBy(x => x.MaSP)       
             .Select(g => new TopSanPhamViewModel
             {
@@ -47,7 +47,7 @@ namespace TechWorld.Controllers
             .ToList();
 
             var keyboard = db.ChiTietDonHangs
-            .Where(x => x.SanPham.LoaiHang.TenLoai == "Keyboard & Mouse")
+            .Where(x => x.SanPham.LoaiHang.TenLoai == "Keyboard" || x.SanPham.LoaiHang.TenLoai == "Mouse")
             .GroupBy(x => x.MaSP)
             .Select(g => new TopSanPhamViewModel
             {

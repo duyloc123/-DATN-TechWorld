@@ -18,7 +18,7 @@ namespace TechWorld.Controllers
 
         public ActionResult ComputerList()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var categories = new List<string> { "Main", "CPU", "VGA", "Case", "Nguồn/Tản", "Ổ cứng/Ram/Thẻ nhớ"};
             var list = db.SanPhams.Where(item => categories.Contains(item.LoaiHang.TenLoai)).ToList();
             return View(list);
@@ -26,7 +26,7 @@ namespace TechWorld.Controllers
 
         public ActionResult ComputerSearch(string Search)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var categories = new List<string> { "Main", "CPU", "VGA", "Case", "Nguồn/Tản", "Ổ cứng/Ram/Thẻ nhớ" };
             var search = db.SanPhams.Where(item => categories.Contains(item.LoaiHang.TenLoai) && item.TenSP.Contains(Search)).ToList();
             return View(search);
@@ -34,7 +34,7 @@ namespace TechWorld.Controllers
 
         public ActionResult ComputerAsc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var categories = new List<string> { "Main", "CPU", "VGA", "Case", "Nguồn/Tản", "Ổ cứng/Ram/Thẻ nhớ" };
             var ascComputer = (from item in db.SanPhams
                                where categories.Contains(item.LoaiHang.TenLoai)
@@ -46,7 +46,7 @@ namespace TechWorld.Controllers
 
         public ActionResult ComputerDesc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var categories = new List<string> { "Main", "CPU", "VGA", "Case", "Nguồn/Tản", "Ổ cứng/Ram/Thẻ nhớ" };
             var descComputer = (from item in db.SanPhams
                                where categories.Contains(item.LoaiHang.TenLoai)
@@ -58,7 +58,7 @@ namespace TechWorld.Controllers
 
         public ActionResult ComputerCategory(string name)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             Session["ComputerCategory"] = name;
             var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == name).ToList();
             return View(list); 
@@ -66,7 +66,7 @@ namespace TechWorld.Controllers
 
         public ActionResult ComputerCategorySearch(string Search)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             string name = Session["ComputerCategory"] as string;
             var search = db.SanPhams.Where(item => item.TenSP.Contains(Search) && item.LoaiHang.TenLoai == name).ToList();
             return View(search);
@@ -74,7 +74,7 @@ namespace TechWorld.Controllers
 
         public ActionResult ComputerCategoryAsc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             string name = Session["ComputerCategory"] as string;
             var ascCategory = (from item in db.SanPhams
                                where item.LoaiHang.TenLoai == name
@@ -85,7 +85,7 @@ namespace TechWorld.Controllers
 
         public ActionResult ComputerCategoryDesc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             string name = Session["ComputerCategory"] as string;
             var descCategory = (from item in db.SanPhams
                                where item.LoaiHang.TenLoai == name

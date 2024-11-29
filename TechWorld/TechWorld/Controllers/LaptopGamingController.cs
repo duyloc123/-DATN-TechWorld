@@ -18,7 +18,7 @@ namespace TechWorld.Controllers
 
         public ActionResult LaptopGamingList()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
 
             var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Laptop Gaming").ToList();
             return View(list);

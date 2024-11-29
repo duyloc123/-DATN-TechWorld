@@ -18,14 +18,14 @@ namespace TechWorld.Controllers
 
         public ActionResult EarphoneList()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Earphone");
             return View(list);
         }
 
         public ActionResult EarphoneCategory(string name)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             Session["EarphoneCategory"] = name;
             var category = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Earphone" && item.NhaCungCap.TenNCC == name).ToList();
             return View(category);
@@ -33,14 +33,14 @@ namespace TechWorld.Controllers
 
         public ActionResult EarphoneSearch(string Search)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var searchEarPhone = db.SanPhams.Where(item => item.TenSP.Contains(Search) && item.LoaiHang.TenLoai == "Earphone").ToList();
             return View(searchEarPhone);
         }
 
         public ActionResult CategorySearch(string Search)
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             string name = Session["EarphoneCategory"] as string;
             var searchCategory = db.SanPhams.Where(item => item.TenSP.Contains(Search) && 
             (item.NhaCungCap.TenNCC == name && item.LoaiHang.TenLoai == "Earphone")).ToList();
@@ -49,7 +49,7 @@ namespace TechWorld.Controllers
 
         public ActionResult EarphoneAsc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var ascEarphone = (from item in db.SanPhams
                               where item.LoaiHang.TenLoai == "Earphone"
                               orderby item.GiaTienDaKhuyenMai
@@ -60,7 +60,7 @@ namespace TechWorld.Controllers
 
         public ActionResult CategoryAsc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             string name = Session["EarphoneCategory"] as String;
             var ascEarphone = (from item in db.SanPhams
                                where item.LoaiHang.TenLoai == "Earphone" && item.NhaCungCap.TenNCC == name
@@ -72,7 +72,7 @@ namespace TechWorld.Controllers
 
         public ActionResult EarphoneDesc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             var descEarphone = (from item in db.SanPhams
                                 where item.LoaiHang.TenLoai == "Earphone"
                                 orderby item.GiaTienDaKhuyenMai
@@ -83,7 +83,7 @@ namespace TechWorld.Controllers
 
         public ActionResult CategoryDesc()
         {
-            ViewBag.Active = "Product";
+            ViewBag.ActivePage = "Product";
             string name = Session["EarphoneCategory"] as String;
             var descEarphone = (from item in db.SanPhams
                                where item.LoaiHang.TenLoai == "Earphone" && item.NhaCungCap.TenNCC == name

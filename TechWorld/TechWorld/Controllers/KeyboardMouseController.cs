@@ -19,7 +19,7 @@ namespace TechWorld.Controllers
 
         public ActionResult KeyBoardMouseList()
         {
-            ViewBag.ActiveBag = "Product";
+            ViewBag.ActivePage = "Product";
 
             var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == "Keyboard" || item.LoaiHang.TenLoai == "Mouse").ToList();
             return View(list); 
@@ -27,7 +27,7 @@ namespace TechWorld.Controllers
 
         public ActionResult KeyBoardMouseCategory(string name)
         {
-            ViewBag.ActiveBag = "Product";
+            ViewBag.ActivePage = "Product";
             Session["KeyBoardMouseCategory"] = name;
 
             var list = db.SanPhams.Where(item => item.LoaiHang.TenLoai == name || item.NhaCungCap.TenNCC == name).ToList();
