@@ -40,6 +40,7 @@
     <Property Name="DiaChi" Type="nvarchar" MaxLength="200" />
     <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
     <Property Name="MatKhau" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ChucVu" Type="nvarchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="LoaiHang">
     <Key>
@@ -99,7 +100,7 @@
     <Property Name="MaSP" Type="int" Nullable="false" />
     <Property Name="NgayThemVao" Type="datetime" />
   </EntityType>
-  <Association Name="FK__AnhSP__MASP__534D60F1">
+  <Association Name="FK__AnhSP__MASP__5AEE82B9">
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
     <End Role="AnhSP" Type="Self.AnhSP" Multiplicity="*" />
     <ReferentialConstraint>
@@ -135,7 +136,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__DonHang__MAKH__59063A47">
+  <Association Name="FK__DonHang__MAKH__5DCAEF64">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="0..1" />
     <End Role="DonHang" Type="Self.DonHang" Multiplicity="*" />
     <ReferentialConstraint>
@@ -147,7 +148,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SanPham__MaLoai__4F7CD00D">
+  <Association Name="FK__SanPham__MaLoai__5EBF139D">
     <End Role="LoaiHang" Type="Self.LoaiHang" Multiplicity="0..1" />
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
     <ReferentialConstraint>
@@ -159,7 +160,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SanPham__MaNCC__5070F446">
+  <Association Name="FK__SanPham__MaNCC__5FB337D6">
     <End Role="NhaCungCap" Type="Self.NhaCungCap" Multiplicity="0..1" />
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
     <ReferentialConstraint>
@@ -205,7 +206,7 @@
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TinTuc" EntityType="Self.TinTuc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="YeuThich" EntityType="Self.YeuThich" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__AnhSP__MASP__534D60F1" Association="Self.FK__AnhSP__MASP__534D60F1">
+    <AssociationSet Name="FK__AnhSP__MASP__5AEE82B9" Association="Self.FK__AnhSP__MASP__5AEE82B9">
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="AnhSP" EntitySet="AnhSP" />
     </AssociationSet>
@@ -217,15 +218,15 @@
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="ChiTietDonHang" EntitySet="ChiTietDonHang" />
     </AssociationSet>
-    <AssociationSet Name="FK__DonHang__MAKH__59063A47" Association="Self.FK__DonHang__MAKH__59063A47">
+    <AssociationSet Name="FK__DonHang__MAKH__5DCAEF64" Association="Self.FK__DonHang__MAKH__5DCAEF64">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="DonHang" EntitySet="DonHang" />
     </AssociationSet>
-    <AssociationSet Name="FK__SanPham__MaLoai__4F7CD00D" Association="Self.FK__SanPham__MaLoai__4F7CD00D">
+    <AssociationSet Name="FK__SanPham__MaLoai__5EBF139D" Association="Self.FK__SanPham__MaLoai__5EBF139D">
       <End Role="LoaiHang" EntitySet="LoaiHang" />
       <End Role="SanPham" EntitySet="SanPham" />
     </AssociationSet>
-    <AssociationSet Name="FK__SanPham__MaNCC__5070F446" Association="Self.FK__SanPham__MaNCC__5070F446">
+    <AssociationSet Name="FK__SanPham__MaNCC__5FB337D6" Association="Self.FK__SanPham__MaNCC__5FB337D6">
       <End Role="NhaCungCap" EntitySet="NhaCungCap" />
       <End Role="SanPham" EntitySet="SanPham" />
     </AssociationSet>

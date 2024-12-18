@@ -129,7 +129,7 @@ namespace TechWorld.Controllers.Admin
             return RedirectToAction("NhaCungCapList");
         }
         [HttpGet]
-        public ActionResult updateNhaCungCap(int id)
+        public ActionResult updateNhaCungCap(int id)    
         {
             ViewBag.ActivePage = "NhaCungCapList";
             var listNhaCungCap = db.NhaCungCaps.ToList();
@@ -286,7 +286,7 @@ namespace TechWorld.Controllers.Admin
         {
             ViewBag.ActivePage = "SanPhamList";
             if (page == null) page = 1;
-            if (pageSize == null) pageSize = 5;
+            if (pageSize == null) pageSize = 15;
             var listSanPham = db.SanPhams.ToList();
             var listAnhSP = db.AnhSPs.ToList();  // Lấy tất cả ảnh
 
@@ -314,7 +314,7 @@ namespace TechWorld.Controllers.Admin
         {
             if (ModelState.IsValid)
             {
-                // Xử lý upload hình ảnh (như code cũ)
+                // Xử lý upload hình ảnh
                 if (HinhAnh != null && HinhAnh.ContentLength > 0)
                 {
                     string rootFolder = Server.MapPath("/DataImageSql/");
@@ -430,7 +430,7 @@ namespace TechWorld.Controllers.Admin
         {
             ViewBag.ActivePage = "SanPhamList";
             if (page == null) page = 1;
-            if (pageSize == null) pageSize = 5;
+            if (pageSize == null) pageSize = 15;
             if (nameSearch != "")
             {
                 var find = db.SanPhams.Where(item => item.TenSP.Contains(nameSearch)).ToList();
@@ -438,14 +438,14 @@ namespace TechWorld.Controllers.Admin
                 {
                     // Xử lý phân trang
                     if (page == null) page = 1;
-                    if (pageSize == null) pageSize = 5;
+                    if (pageSize == null) pageSize = 15;
 
                     return View(find.ToPagedList((int)page, (int)pageSize));
                 }
 
                 // Không tìm thấy kết quả
                 TempData["Message"] = "Không tìm thấy thông tin sản phẩm!";
-                return View(new List<SanPham>().ToPagedList(1, pageSize ?? 5));
+                return View(new List<SanPham>().ToPagedList(1, pageSize ?? 15));
             }
             return RedirectToAction("SanPham");
         }
@@ -455,7 +455,7 @@ namespace TechWorld.Controllers.Admin
         {
             if (ModelState.IsValid)
             {
-                // Xử lý upload hình ảnh (như code cũ)
+                // Xử lý upload hình ảnh
                 if (HinhAnh != null && HinhAnh.ContentLength > 0)
                 {
                     string rootFolder = Server.MapPath("/DataImageSql/");
@@ -509,7 +509,7 @@ namespace TechWorld.Controllers.Admin
         {
             if (ModelState.IsValid)
             {
-                // Xử lý upload hình ảnh (như code cũ)
+                // Xử lý upload hình ảnh
                 if (HinhAnh != null && HinhAnh.ContentLength > 0)
                 {
                     string rootFolder = Server.MapPath("/DataImageSql/");
@@ -631,11 +631,15 @@ namespace TechWorld.Controllers.Admin
             return View(donHangs.ToPagedList((int)page, (int)pageSize));
         }
         [HttpGet]
-        public ActionResult deleteDonHang(int id)
+        public ActionResult deleteDonHang(string id)
         {
             var deleteDH = db.DonHangs.Find(id);
             if (deleteDH != null)
             {
+                var deleteCTDH = db.ChiTietDonHangs.Where(ctdh => ctdh.MaDH == id);
+                db.ChiTietDonHangs.RemoveRange(deleteCTDH);
+                db.SaveChanges();
+
                 db.DonHangs.Remove(deleteDH);
                 db.SaveChanges();
                 return RedirectToAction("DonHang");
@@ -689,6 +693,7 @@ namespace TechWorld.Controllers.Admin
         // Doanh Thu
         public ActionResult DoanhThu()
         {
+            ViewBag.ActivePage = "DoanhThu";
             var revenueData = db.DonHangs
             .GroupBy(s => s.NgayDat.Value.Month)
             .Select(g => new DoanhThu

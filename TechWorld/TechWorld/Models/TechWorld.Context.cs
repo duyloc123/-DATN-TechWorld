@@ -25,10 +25,10 @@ namespace TechWorld.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<AnhSP> AnhSPs { get; set; }
         public virtual DbSet<ChiTietDonHang> ChiTietDonHangs { get; set; }
         public virtual DbSet<DonHang> DonHangs { get; set; }
-        public virtual DbSet<KhachHang> KhachHangs { get; set; }
         public virtual DbSet<LoaiHang> LoaiHangs { get; set; }
         public virtual DbSet<NhaCungCap> NhaCungCaps { get; set; }
         public virtual DbSet<SanPham> SanPhams { get; set; }

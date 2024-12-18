@@ -70,7 +70,7 @@
                 <!-- Left -->
                 <div class="w-2/3 h-full border-r border-gray-200 p-4">
                     <img src="~/@item.HinhAnh" alt="Product"
-                         class="w-full h-auto rounded-lg shadow-md mb-4 object-cover" id="mainImage">
+                         class="w-[681px] h-[454px] rounded-lg shadow-md mb-4 object-contain" id="mainImage">
                     <div class="flex gap-4 py-4 justify-center overflow-x-auto">
                         <img src="~/@item.HinhAnh" alt="Ảnh sản phẩm"
                              class="size-16 sm:size-20 object-cover rounded-md cursor-pointer opacity-60 hover:opacity-100 transition duration-300"
@@ -172,9 +172,9 @@
                         <h2 class="text-2xl font-bold text-black">Sản phẩm tương tự</h2>
                         @foreach (var similarProduct in Model.SimilarProducts)
                         {
-                            <div class="flex items-center gap-4 cursor-pointer">
+                            <div class="flex items-center gap-4 cursor-pointer border-b pb-2">
                                 <a href="/User/ProductDetail?id=@similarProduct.MaSP">
-                                    <img src="~/@similarProduct.HinhAnh" alt="" class="w-28 h-28 rounded-lg mt-8">
+                                    <img src="~/@similarProduct.HinhAnh" alt="" class="w-28 h-28 rounded-lg mt-8 object-contain">
                                 </a>
                                 <div>
                                     <h3 class="text-3.5 font-semibold mb-3.5 cursor-pointer">@similarProduct.TenSP</h3>

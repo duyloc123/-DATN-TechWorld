@@ -44,7 +44,8 @@ namespace TechWorld.Controllers
         {
             if (ModelState.IsValid)
             {
-                if(user == "admin@gmail.com" && password == "admin")
+                var admin = db.KhachHangs.Where(p => p.Email.Equals(user) && p.MatKhau.Equals(password) && p.ChucVu == "admin");
+                if (admin.Count() > 0)
                 {
                     return Json(new { success = true, redirectUrl = Url.Action("Index", "Admin") });
                 }
